@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+
+{% block title %}{{ blog.title }}{% endblock %}
+{% block description %}{{ blog.description or blog.excerpt or blog.title }}{% endblock %}
+{% block og_title %}{{ blog.title }} | CP Club VJTI{% endblock %}
+{% block og_description %}{{ blog.description or blog.excerpt or blog.title }}{% endblock %}
+{% block keywords %}, {{ blog.tags | join(', ') }}{% endblock %}
+
+{% block head_extra %}
+{% if blog.math %}
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+{% endif %}
+{% endblock %}
+
+{% block progress_bar %}
+<div class="reading-progress" id="reading-progress" role="progressbar" aria-label="Reading progress"></div>
+{% endblock %}
+
+{% block content %}
+
+<article id="blog-post-{{ blog.slug }}" aria-labelledby="post-title">
+
+  <!-- Post Header -->
+  <header class="post-header animate-in">
+    <h1 id="post-title">{{ blog.title }}</h1>
+
+    <div class="post-meta">
+      {% if blog.author %}
+      <span class="post-meta-item author">
+        <span class="icon">✍</span> {{ blog.author }}
+      </span>
+      {% endif %}
+      {% if blog.date %}
+      <span class="post-meta-item">
+        <span class="icon">📅</span> {{ blog.date }}
+      </span>
+      {% endif %}
+      {% if blog.read_time %}
+      <span class="post-meta-item">
+        <span class="icon">⏱</span> {{ blog.read_time }} min read
+      </span>
+      {% endif %}
+    </div>
+
+    {% if blog.tags %}
+    <div class="post-tags">
+      {% for tag in blog.tags %}
+      <a href="{{ site_base }}/?tag={{ tag }}" class="tag" aria-label="Filter by tag: {{ tag }}">{{ tag }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </header>
+
+  <!-- Post Body -->
+  <div class="post-body animate-in" id="post-body">
+    {{ blog.content | safe }}
+  </div>
+
+  <!-- Post Navigation -->
+  <nav class="post-nav animate-in" aria-label="Post navigation">
+    {% if prev_blog %}
+    <a href="{{ site_base }}/blogs/{{ prev_blog.slug }}.html" class="post-nav-link prev" id="nav-prev-post">
+      <span class="post-nav-label">← Previous</span>
+      <span class="post-nav-title">{{ prev_blog.title }}</span>
+    </a>
+    {% else %}
+    <div></div>
+    {% endif %}
+
+    {% if next_blog %}
+    <a href="{{ site_base }}/blogs/{{ next_blog.slug }}.html" class="post-nav-link next" id="nav-next-post">
+      <span class="post-nav-label">Next →</span>
+      <span class="post-nav-title">{{ next_blog.title }}</span>
+    </a>
+    {% endif %}
+  </nav>
+
+</article>
+
+{% endblock %}

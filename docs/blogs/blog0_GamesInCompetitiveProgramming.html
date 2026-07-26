@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Games in Competitive Programming: Demystifying Alice and Bob | CP Club VJTI</title>
+  <meta name="description" content="If you had asked 10-year-old me what I thought about Alice and Bob, frustration would definitely not be among my top thoughts. I mean, Alice in Wonderland and…" />
+  <meta name="keywords" content="competitive programming, algorithms, data structures, VJTI, CP Club, game-theory, codeforces, competitive-programming, algorithms" />
+  <meta name="author" content="CP Club VJTI" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Games in Competitive Programming: Demystifying Alice and Bob | CP Club VJTI" />
+  <meta property="og:description" content="If you had asked 10-year-old me what I thought about Alice and Bob, frustration would definitely not be among my top thoughts. I mean, Alice in Wonderland and…" />
+  <meta property="og:type" content="website" />
+
+  <!-- Site base for JS (handles GitHub Pages subdirectory) -->
+  <meta name="site-base" content=".." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../static/style.css" />
+
+  <!-- Theme: apply early to prevent flash -->
+  <script src="../static/theme.js"></script>
+
+  
+
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+</head>
+<body>
+
+  <!-- Reading Progress (shown on blog posts) -->
+  
+<div class="reading-progress" id="reading-progress" role="progressbar" aria-label="Reading progress"></div>
+
+
+  <!-- ── Navbar ──────────────────────────────────────────────── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+
+    <!-- Hamburger (mobile) -->
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle sidebar" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Logo -->
+    <a href="../" class="navbar-logo" id="navbar-logo" aria-label="CP Club VJTI Home">
+      <img src="../static/assets/cp_club_vjti_logo.jpg" alt="CP Club VJTI Logo" height="40" />
+    </a>
+
+    <div class="navbar-spacer"></div>
+
+    <!-- Search -->
+    <div class="navbar-search" role="search">
+      <span class="search-icon" aria-hidden="true">🔍</span>
+      <input
+        type="search"
+        id="search-input"
+        placeholder="Search blogs…"
+        aria-label="Search blogs"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <div class="search-results" id="search-results" role="listbox" aria-label="Search results"></div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button
+      class="theme-toggle"
+      id="theme-toggle-btn"
+      onclick="toggleTheme()"
+      aria-label="Switch theme"
+    >
+      <span>🌙</span><span class="toggle-label">Dark</span>
+    </button>
+
+  </nav>
+
+  <!-- ── Layout ─────────────────────────────────────────────── -->
+  <div class="layout">
+
+    <!-- ── Sidebar ──────────────────────────────────────────── -->
+    <aside class="sidebar" id="sidebar" role="complementary" aria-label="Blog navigation">
+
+      <p class="sidebar-section-label">Navigation</p>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="../" id="nav-home"
+             
+             aria-current="false">
+            <span class="nav-icon">🏠</span> Home
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-divider"></div>
+      <p class="sidebar-section-label">All Blogs</p>
+
+      <ul class="sidebar-nav" id="sidebar-blog-nav">
+        
+        <li>
+          <a href="../blogs/blog0_GamesInCompetitiveProgramming.html"
+             id="nav-blog0_GamesInCompetitiveProgramming"
+             class="active"
+             aria-current="page"
+             title="Games in Competitive Programming: Demystifying Alice and Bob">
+            <span class="nav-icon">📄</span>
+            <span>Games in Competitive Programming: Demystifying Alice and Bob</span>
+            <span class="nav-num">01</span>
+          </a>
+        </li>
+        
+      </ul>
+
+      
+      <div class="sidebar-divider"></div>
+      <p class="sidebar-section-label">Filter by Tag</p>
+      <div class="sidebar-tags" id="sidebar-tag-filter">
+        
+        <span class="tag tag-filter" data-tag="algorithms" tabindex="0" role="button" aria-pressed="false">algorithms</span>
+        
+        <span class="tag tag-filter" data-tag="codeforces" tabindex="0" role="button" aria-pressed="false">codeforces</span>
+        
+        <span class="tag tag-filter" data-tag="competitive-programming" tabindex="0" role="button" aria-pressed="false">competitive-programming</span>
+        
+        <span class="tag tag-filter" data-tag="game-theory" tabindex="0" role="button" aria-pressed="false">game-theory</span>
+        
+      </div>
+      
+
+    </aside>
+
+    <!-- ── Main ─────────────────────────────────────────────── -->
+    <main class="main-content" id="main-content" role="main">
+      
+
+<article id="blog-post-blog0_GamesInCompetitiveProgramming" aria-labelledby="post-title">
+
+  <!-- Post Header -->
+  <header class="post-header animate-in">
+    <h1 id="post-title">Games in Competitive Programming: Demystifying Alice and Bob</h1>
+
+    <div class="post-meta">
+      
+      <span class="post-meta-item author">
+        <span class="icon">✍</span> CP Club VJTI
+      </span>
+      
+      
+      <span class="post-meta-item">
+        <span class="icon">📅</span> 2026-07-26
+      </span>
+      
+      
+      <span class="post-meta-item">
+        <span class="icon">⏱</span> 8 min read
+      </span>
+      
+    </div>
+
+    
+    <div class="post-tags">
+      
+      <a href="../?tag=game-theory" class="tag" aria-label="Filter by tag: game-theory">game-theory</a>
+      
+      <a href="../?tag=codeforces" class="tag" aria-label="Filter by tag: codeforces">codeforces</a>
+      
+      <a href="../?tag=competitive-programming" class="tag" aria-label="Filter by tag: competitive-programming">competitive-programming</a>
+      
+      <a href="../?tag=algorithms" class="tag" aria-label="Filter by tag: algorithms">algorithms</a>
+      
+    </div>
+    
+  </header>
+
+  <!-- Post Body -->
+  <div class="post-body animate-in" id="post-body">
+    <p>If you had asked 10-year-old me what I thought about Alice and Bob, frustration would definitely not be among my top thoughts. I mean, <em>Alice in Wonderland</em> and <em>Bob the Builder</em> were pretty cool! 🤩</p>
+<p>And yet now, every time they put a Div. 2 C problem featuring Alice and Bob, I just internally dread a little 😨. But after much practice, I&rsquo;ve come to realize that most of the time, these questions are actually quite fun to score on.</p>
+<p>Usually, the solution code is surprisingly concise or simple, often requiring no complex external data structures 😮. That is exactly what I wish to demonstrate in this blog post: <strong>questions based on games in Competitive Programming are not necessarily evil.</strong></p>
+<hr />
+<h2 id="what-is-a-game-problem-in-cp">What is a &ldquo;Game&rdquo; Problem in CP?<a class="toc-link" href="#what-is-a-game-problem-in-cp" title="Permanent link">&para;</a></h2>
+<p>Aside from our favorite individuals Alice and Bob appearing, games questions usually involve a <strong>two-player perspective</strong> where each player takes turns making certain &ldquo;moves&rdquo;. The player who cannot make a valid move on their turn loses (normal play convention). </p>
+<p>In other variations, players work towards opposite objectives—for example, one player tries to minimize a certain value while the other attempts to maximize it.</p>
+<p>These moves typically consist of operations on arrays, strings, or single integers under strict rules. Below are four common strategies and paradigms you can use to approach these problem statements.</p>
+<hr />
+<h3 id="1-simulation">1. Simulation<a class="toc-link" href="#1-simulation" title="Permanent link">&para;</a></h3>
+<p>Often, the game involves a small, bounded number of total moves. For instance, if an element is deleted from an array of size $N$ at every turn, at most $N$ moves can occur.</p>
+<p>Let:<br />
+- $X$ = Maximum possible number of moves in the game.<br />
+- $Y$ = Operations required to compute/select an individual optimal move.</p>
+<p>If the sum of $(X \times Y)$ over all test cases is well under $\sim 10^7$ (for a standard 1-second time limit), we can simply simulate the game directly—making the most optimal choice for the active player at each turn.</p>
+<h4 id="example-scenario">Example Scenario:<a class="toc-link" href="#example-scenario" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>Alice and Bob have an array of $N$ integers ($1 \le N \le 10^5$, $1 \le A_i \le 10^9$). On each turn, a player picks one integer, adds it to their total score, and removes it from the array. Both players want to maximize their score, and Alice goes first. Determine final scores.</p>
+</blockquote>
+<p>Since one element is removed each turn, there are at most $N$ turns. To maximize their score greedily, each player should always choose the largest available element. While finding the maximum in an unsorted array takes $O(N)$ time, we can preprocess by sorting the array in $O(N \log N)$ time and popping elements from the end:<br />
+- 1st largest $\rightarrow$ Alice<br />
+- 2nd largest $\rightarrow$ Bob<br />
+- 3rd largest $\rightarrow$ Alice &hellip; and so on.</p>
+<hr />
+<h3 id="2-quick-games">2. Quick Games<a class="toc-link" href="#2-quick-games" title="Permanent link">&para;</a></h3>
+<p>Sometimes games end in just 1 or 2 moves. Or perhaps Alice has no valid moves right at the start, leading to an immediate win for Bob!</p>
+<p>Identifying such patterns requires dry-running small test cases on paper. If you notice that no game ever progresses past 1 or 2 turns regardless of input size, you&rsquo;re dealing with a <strong>Quick Game</strong>.</p>
+<p>General resolution flow:<br />
+1. Check if Alice has a valid move at $T=0$. If no $\rightarrow$ <strong>Bob wins</strong>.<br />
+2. Check if Alice can make a move that leaves Bob with zero valid moves at $T=1$. If yes $\rightarrow$ <strong>Alice wins</strong>, else <strong>Bob wins</strong>.</p>
+<h4 id="example-problem-sorting-games">Example Problem: Sorting Games<a class="toc-link" href="#example-problem-sorting-games" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>Alice and Bob play on a binary string $S$ of length $N \le 10^6$. On a player&rsquo;s turn, if $S$ is not sorted, they choose a non-increasing subsequence of indices $1 \le i_1 \le i_2 \le \dots \le i_k \le N$ (where $S_{i_1} \ge S_{i_2} \ge \dots \ge S_{i_k}$) and reverse it. The first player unable to move loses.</p>
+<p><em>Problem reference:</em> <a href="https://codeforces.com/problemset/problem/2190/A">CF 2190 A - Sorting Games</a></p>
+</blockquote>
+<p>Let&rsquo;s test some cases:<br />
+- $S = \text{&ldquo;000&rdquo;}$: Already sorted. Alice has no moves. $\rightarrow$ <strong>Bob wins</strong>.<br />
+- $S = \text{&ldquo;100&rdquo;}$: Alice selects indices ${1, 3}$ ($S_1=1, S_3=0$). Reversing yields $\text{&ldquo;001&rdquo;}$. $S$ is now sorted, Bob has no moves. $\rightarrow$ <strong>Alice wins</strong>.<br />
+- $S = \text{&ldquo;100101&rdquo;}$: Alice selects indices ${1, 5}$ ($S_1=1, S_5=0$). Reversing yields $\text{&ldquo;000111&rdquo;}$. Sorted! $\rightarrow$ <strong>Alice wins</strong>.</p>
+<p>Notice the pattern: if the string is initially unsorted, <strong>Alice can always sort the entire string in a single move!</strong></p>
+<p><strong>How to construct Alice&rsquo;s move?</strong><br />
+Let $Z$ be the total count of <code>0</code>s in $S$. In a sorted string, the first $Z$ characters must all be <code>0</code>s. <br />
+If the current first $Z$ characters contain $k$ ones, then there must also be exactly $k$ zeros in the remaining $(N - Z)$ characters. By selecting those $k$ ones and $k$ zeros as her non-increasing subsequence and reversing them, the string becomes completely sorted in 1 turn! Fuiyohh! 💡</p>
+<hr />
+<h3 id="3-winning-and-losing-states">3. Winning and Losing States<a class="toc-link" href="#3-winning-and-losing-states" title="Permanent link">&para;</a></h3>
+<p>In finite combinatorial games:<br />
+- A <strong>Losing State</strong> is one from which <em>every</em> valid move leads to a Winning State for the opponent.<br />
+- A <strong>Winning State</strong> is one from which <em>at least one</em> valid move exists that hands the opponent a Losing State.</p>
+<p>The game reduces to identifying whether the initial state is a Winning or Losing state for Alice.</p>
+<h4 id="example-scenario_1">Example Scenario:<a class="toc-link" href="#example-scenario_1" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>Alice and Bob are in an $N$-floor building (floors $0$ to $N-1$). The elevator can move at most $K$ floors down per turn ($1 \le \text{step} \le K$). Starting at floor $N-1$, players alternate moving down. The player who lands on floor $0$ wins. ($2 \le N, K \le 10^9$).</p>
+</blockquote>
+<ul>
+<li>Floor $0$: <strong>Losing State</strong> (game already ended/lost for active player).</li>
+<li>Floors $1$ to $K$: <strong>Winning States</strong> (active player can move directly to floor $0$).</li>
+<li>Floor $K + 1$: <strong>Losing State</strong> (any valid move lands on a floor in $[1, K]$, handing the opponent a winning state!).</li>
+<li>Floors $K + 2$ to $2K + 1$: <strong>Winning States</strong> (active player can force opponent to floor $K + 1$).</li>
+</ul>
+<p>Pattern recognition shows that any floor $X$ where $X \pmod{K + 1} == 0$ is a <strong>Losing State</strong>. Thus, if $(N - 1) \pmod{K + 1} == 0$, Bob wins; otherwise, Alice wins!</p>
+<hr />
+<h3 id="4-response-moves">4. Response Moves<a class="toc-link" href="#4-response-moves" title="Permanent link">&para;</a></h3>
+<p>In some games, one player (say, Bob) can only win by precisely mirroring or responding to every single move made by Alice.</p>
+<h4 id="example-problem-removals-game">Example Problem: Removals Game<a class="toc-link" href="#example-problem-removals-game" title="Permanent link">&para;</a></h4>
+<blockquote>
+<p>Alice and Bob each have a permutation of integers $1 \dots N$. In each turn of $N-1$ rounds, Alice deletes an element from either end of her permutation, then Bob deletes an element from either end of his permutation. At the end, 1 element remains in each sequence. If both remaining elements are identical, Bob wins; otherwise Alice wins.</p>
+<p><em>Problem reference:</em> <a href="https://codeforces.com/problemset/problem/2002/B">CF 2002 B - Removals Game</a></p>
+</blockquote>
+<p>Simulating this yields $O(2^N)$ possibilities—far too slow for $N \le 3 \times 10^5$.</p>
+<p>Instead, observe Bob&rsquo;s winning condition: Bob must ensure that at every step, the set of remaining elements in both permutations remains identical. If Alice ever deletes an element that Bob cannot match from his endpoints, Alice can isolate that difference and win.</p>
+<p>For Bob to successfully mirror Alice&rsquo;s moves from the very first turn, the endpoints of their permutations must match.<br />
+- <strong>Case 1:</strong> $A[1] == B[1]$ and $A[N] == B[N]$. If Alice deletes $A[1]$, Bob deletes $B[1]$. The game recursively reduces to matching sub-arrays, requiring $A == B$ overall.<br />
+- <strong>Case 2:</strong> $A[1] == B[N]$ and $A[N] == B[1]$. If Alice deletes $A[1]$, Bob deletes $B[N]$. The game recursively requires $A == \text{reverse}(B)$.</p>
+<p>Thus, <strong>Bob wins if and only if $A == B$ or $A == \text{reverse}(B)$</strong>. Otherwise, <strong>Alice wins</strong>.</p>
+<hr />
+<h2 id="practice-problems">Practice Problems<a class="toc-link" href="#practice-problems" title="Permanent link">&para;</a></h2>
+<p>Here is a curated collection of Codeforces game problems to test your understanding, ranging from entry-level to advanced:</p>
+<ol>
+<li><a href="https://codeforces.com/problemset/problem/959/A">CF 959 A - Mahmoud and Ehab and the even-odd game</a></li>
+<li><a href="https://codeforces.com/problemset/problem/1373/B">CF 1373 B - 01 Game</a></li>
+<li><a href="https://codeforces.com/problemset/problem/1842/A">CF 1842 A - Tenzing and Tsondu</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2055/A">CF 2055 A - Two Frogs</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2060/C">CF 2060 C - Game of Mathletes</a></li>
+<li><a href="https://codeforces.com/problemset/problem/1931/E">CF 1931 E - Anna and the Valentine&rsquo;s Day Gift</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2002/B">CF 2002 B - Removals Game</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2123/D">CF 2123 D - Binary String Battle</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2190/A">CF 2190 A - Sorting Games</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2006/A">CF 2006 A - Iris and Game on the Tree</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2171/C2">CF 2171 C2 - Renako Amaori and XOR Game (hard version)</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2236/D">CF 2236 D - Brand New Tatar TV Show</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2245/E">CF 2245 E - Tom and Jerry</a></li>
+</ol>
+<hr />
+<p>With that, I conclude this post! I hope this guide helps you overcome your fear of Alice and Bob on Codeforces. 🥳 If you have any questions or thoughts, feel free to drop a comment below!</p>
+  </div>
+
+  <!-- Post Navigation -->
+  <nav class="post-nav animate-in" aria-label="Post navigation">
+    
+    <div></div>
+    
+
+    
+  </nav>
+
+</article>
+
+
+
+      <footer class="footer" role="contentinfo">
+        <span>© 2026 CP Club VJTI &nbsp;·&nbsp; Built with ❤️ &amp; Python</span>
+        <span>
+          <a href="../" aria-label="Home">Home</a>
+          &nbsp;·&nbsp;
+          <a href="https://github.com/CP-Club-VJTI" target="_blank" rel="noopener" aria-label="GitHub">GitHub ↗</a>
+        </span>
+      </footer>
+    </main>
+
+  </div><!-- /layout -->
+
+  <!-- Scripts -->
+  <script src="../static/search.js"></script>
+
+  
+
+</body>
+</html>

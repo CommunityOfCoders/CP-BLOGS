@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Home | CP Club VJTI</title>
+  <meta name="description" content="Welcome to CP Club VJTI — competitive programming blogs, tutorials, and algorithm guides." />
+  <meta name="keywords" content="competitive programming, algorithms, data structures, VJTI, CP Club" />
+  <meta name="author" content="CP Club VJTI" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="CP Club VJTI Blog" />
+  <meta property="og:description" content="Competitive programming blogs, tutorials, and algorithm guides from CP Club VJTI." />
+  <meta property="og:type" content="website" />
+
+  <!-- Site base for JS (handles GitHub Pages subdirectory) -->
+  <meta name="site-base" content="." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="./static/style.css" />
+
+  <!-- Theme: apply early to prevent flash -->
+  <script src="./static/theme.js"></script>
+
+  
+</head>
+<body>
+
+  <!-- Reading Progress (shown on blog posts) -->
+  
+
+  <!-- ── Navbar ──────────────────────────────────────────────── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+
+    <!-- Hamburger (mobile) -->
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle sidebar" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Logo -->
+    <a href="./" class="navbar-logo" id="navbar-logo" aria-label="CP Club VJTI Home">
+      <img src="./static/assets/cp_club_vjti_logo.jpg" alt="CP Club VJTI Logo" height="40" />
+    </a>
+
+    <div class="navbar-spacer"></div>
+
+    <!-- Search -->
+    <div class="navbar-search" role="search">
+      <span class="search-icon" aria-hidden="true">🔍</span>
+      <input
+        type="search"
+        id="search-input"
+        placeholder="Search blogs…"
+        aria-label="Search blogs"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <div class="search-results" id="search-results" role="listbox" aria-label="Search results"></div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button
+      class="theme-toggle"
+      id="theme-toggle-btn"
+      onclick="toggleTheme()"
+      aria-label="Switch theme"
+    >
+      <span>🌙</span><span class="toggle-label">Dark</span>
+    </button>
+
+  </nav>
+
+  <!-- ── Layout ─────────────────────────────────────────────── -->
+  <div class="layout">
+
+    <!-- ── Sidebar ──────────────────────────────────────────── -->
+    <aside class="sidebar" id="sidebar" role="complementary" aria-label="Blog navigation">
+
+      <p class="sidebar-section-label">Navigation</p>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="./" id="nav-home"
+             class="active"
+             aria-current="page">
+            <span class="nav-icon">🏠</span> Home
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-divider"></div>
+      <p class="sidebar-section-label">All Blogs</p>
+
+      <ul class="sidebar-nav" id="sidebar-blog-nav">
+        
+        <li>
+          <a href="./blogs/blog0_GamesInCompetitiveProgramming.html"
+             id="nav-blog0_GamesInCompetitiveProgramming"
+             
+             aria-current="false"
+             title="Games in Competitive Programming: Demystifying Alice and Bob">
+            <span class="nav-icon">📄</span>
+            <span>Games in Competitive Programming: Demystifying Alice and Bob</span>
+            <span class="nav-num">01</span>
+          </a>
+        </li>
+        
+      </ul>
+
+      
+      <div class="sidebar-divider"></div>
+      <p class="sidebar-section-label">Filter by Tag</p>
+      <div class="sidebar-tags" id="sidebar-tag-filter">
+        
+        <span class="tag tag-filter" data-tag="algorithms" tabindex="0" role="button" aria-pressed="false">algorithms</span>
+        
+        <span class="tag tag-filter" data-tag="codeforces" tabindex="0" role="button" aria-pressed="false">codeforces</span>
+        
+        <span class="tag tag-filter" data-tag="competitive-programming" tabindex="0" role="button" aria-pressed="false">competitive-programming</span>
+        
+        <span class="tag tag-filter" data-tag="game-theory" tabindex="0" role="button" aria-pressed="false">game-theory</span>
+        
+      </div>
+      
+
+    </aside>
+
+    <!-- ── Main ─────────────────────────────────────────────── -->
+    <main class="main-content" id="main-content" role="main">
+      
+
+<!-- Home hero: rendered from home_page.md -->
+<section class="home-hero animate-in" aria-labelledby="home-heading">
+  <div class="home-hero-content">
+    <div class="home-body" id="home-heading">
+      <h1>Welcome to CP Club VJTI 🚀</h1>
+<p>CP Club VJTI is the competitive programming community at Veermata Jijabai Technological Institute, Mumbai.<br />
+We are passionate about algorithms, problem-solving, and nurturing the next generation of competitive programmers.</p>
+<h2>What We Do</h2>
+<ul>
+<li>🧠 <strong>Weekly practice sessions</strong> : curated problem sets from Codeforces, AtCoder, and LeetCode</li>
+<li>📝 <strong>In-depth blogs</strong> : tutorials on algorithms, data structures, and contest strategies</li>
+<li>🏆 <strong>Contest training</strong> : preparation for ICPC regionals and national olympiads</li>
+<li>👥 <strong>Community discussions</strong> : collaborate, debug, and grow together</li>
+</ul>
+<h2>Latest Topics</h2>
+<p>From graph theory to dynamic programming, segment trees to number theory : our blogs cover a wide spectrum of competitive programming concepts, written by students who&rsquo;ve been in the trenches.</p>
+<blockquote>
+<p><em>&ldquo;The only way to get better at competitive programming is to write more code, debug more bugs, and read more editorials.&rdquo;</em></p>
+</blockquote>
+<h2>Join Us</h2>
+<p>Whether you&rsquo;re a beginner picking up your first language or an experienced coder aiming for ICPC, CP Club VJTI has a place for you.</p>
+<p>Browse our blogs using the navigation on the left, or use the <strong>search bar</strong> to find topics you care about.</p>
+<p>Happy coding! 💻</p>
+    </div>
+  </div>
+</section>
+
+<!-- Blog listing -->
+<section aria-labelledby="blogs-heading">
+  <h2 class="section-title" id="blogs-heading">
+    <span>📚</span> Latest Blogs
+  </h2>
+
+  
+  <div class="blogs-grid" id="blogs-grid" role="list">
+    
+    <a
+      href="./blogs/blog0_GamesInCompetitiveProgramming.html"
+      class="blog-card animate-in"
+      id="blog-card-blog0_GamesInCompetitiveProgramming"
+      data-tags="game-theory,codeforces,competitive-programming,algorithms"
+      role="listitem"
+      aria-label="Games in Competitive Programming: Demystifying Alice and Bob"
+    >
+      <div class="blog-card-num">
+        
+        
+          BLOG0
+        
+      </div>
+      <div class="blog-card-title">Games in Competitive Programming: Demystifying Alice and Bob</div>
+      
+      <div class="blog-card-excerpt">If you had asked 10-year-old me what I thought about Alice and Bob, frustration would definitely not be among my top thoughts. I mean, Alice in Wonderland and…</div>
+      
+      <div class="blog-card-meta">
+        
+        <span class="blog-card-date">📅 2026-07-26</span>
+        
+        
+        <span class="blog-card-author">✍ CP Club VJTI</span>
+        
+        
+        <div class="blog-card-tags">
+          
+          <span class="tag">game-theory</span>
+          
+          <span class="tag">codeforces</span>
+          
+          <span class="tag">competitive-programming</span>
+          
+        </div>
+        
+      </div>
+    </a>
+    
+  </div>
+
+  
+
+</section>
+
+
+
+      <footer class="footer" role="contentinfo">
+        <span>© 2026 CP Club VJTI &nbsp;·&nbsp; Built with ❤️ &amp; Python</span>
+        <span>
+          <a href="./" aria-label="Home">Home</a>
+          &nbsp;·&nbsp;
+          <a href="https://github.com/CP-Club-VJTI" target="_blank" rel="noopener" aria-label="GitHub">GitHub ↗</a>
+        </span>
+      </footer>
+    </main>
+
+  </div><!-- /layout -->
+
+  <!-- Scripts -->
+  <script src="./static/search.js"></script>
+
+  
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.initTagFilter?.();
+  });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+{% block description %}Welcome to CP Club VJTI — competitive programming blogs, tutorials, and algorithm guides.{% endblock %}
+
+{% block content %}
+
+<!-- Home hero: rendered from home_page.md -->
+<section class="home-hero animate-in" aria-labelledby="home-heading">
+  <div class="home-hero-content">
+    <div class="home-body" id="home-heading">
+      {{ home_content | safe }}
+    </div>
+  </div>
+</section>
+
+<!-- Blog listing -->
+<section aria-labelledby="blogs-heading">
+  <h2 class="section-title" id="blogs-heading">
+    <span>📚</span> Latest Blogs
+  </h2>
+
+  {% if all_blogs %}
+  <div class="blogs-grid" id="blogs-grid" role="list">
+    {% for blog in all_blogs %}
+    <a
+      href="{{ site_base }}/blogs/{{ blog.slug }}.html"
+      class="blog-card animate-in"
+      id="blog-card-{{ blog.slug }}"
+      data-tags="{{ blog.tags | join(',') }}"
+      role="listitem"
+      aria-label="{{ blog.title }}"
+    >
+      <div class="blog-card-num">
+        {% set parts = blog.slug.split('_') %}
+        {% if parts[0] | regex_match('^blog\d+$') %}
+          {{ parts[0] | upper }}
+        {% else %}
+          BLOG
+        {% endif %}
+      </div>
+      <div class="blog-card-title">{{ blog.title }}</div>
+      {% if blog.description %}
+      <div class="blog-card-excerpt">{{ blog.description }}</div>
+      {% elif blog.excerpt %}
+      <div class="blog-card-excerpt">{{ blog.excerpt }}</div>
+      {% endif %}
+      <div class="blog-card-meta">
+        {% if blog.date %}
+        <span class="blog-card-date">📅 {{ blog.date }}</span>
+        {% endif %}
+        {% if blog.author %}
+        <span class="blog-card-author">✍ {{ blog.author }}</span>
+        {% endif %}
+        {% if blog.tags %}
+        <div class="blog-card-tags">
+          {% for tag in blog.tags[:3] %}
+          <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+
+  {% else %}
+  <div class="no-results animate-in">
+    <div class="icon">📭</div>
+    <p>No blogs yet. Add <code>.md</code> files to the <code>blogs/</code> folder!</p>
+  </div>
+  {% endif %}
+
+</section>
+
+{% endblock %}
+
+{% block scripts_extra %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.initTagFilter?.();
+  });
+</script>
+{% endblock %}

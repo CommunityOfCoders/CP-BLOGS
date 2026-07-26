@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>{% block title %}CP Club VJTI{% endblock %} | CP Club VJTI</title>
+  <meta name="description" content="{% block description %}Competitive programming blogs, tutorials, and algorithm guides from CP Club VJTI.{% endblock %}" />
+  <meta name="keywords" content="competitive programming, algorithms, data structures, VJTI, CP Club{% block keywords %}{% endblock %}" />
+  <meta name="author" content="CP Club VJTI" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{% block og_title %}CP Club VJTI Blog{% endblock %}" />
+  <meta property="og:description" content="{% block og_description %}Competitive programming blogs, tutorials, and algorithm guides from CP Club VJTI.{% endblock %}" />
+  <meta property="og:type" content="website" />
+
+  <!-- Site base for JS (handles GitHub Pages subdirectory) -->
+  <meta name="site-base" content="{{ site_base }}" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="{{ site_base }}/static/style.css" />
+
+  <!-- Theme: apply early to prevent flash -->
+  <script src="{{ site_base }}/static/theme.js"></script>
+
+  {% block head_extra %}{% endblock %}
+</head>
+<body>
+
+  <!-- Reading Progress (shown on blog posts) -->
+  {% block progress_bar %}{% endblock %}
+
+  <!-- ── Navbar ──────────────────────────────────────────────── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+
+    <!-- Hamburger (mobile) -->
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle sidebar" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Logo -->
+    <a href="{{ site_base }}/" class="navbar-logo" id="navbar-logo" aria-label="CP Club VJTI Home">
+      <img src="{{ site_base }}/static/assets/cp_club_vjti_logo.jpg" alt="CP Club VJTI Logo" height="40" />
+    </a>
+
+    <div class="navbar-spacer"></div>
+
+    <!-- Search -->
+    <div class="navbar-search" role="search">
+      <span class="search-icon" aria-hidden="true">🔍</span>
+      <input
+        type="search"
+        id="search-input"
+        placeholder="Search blogs…"
+        aria-label="Search blogs"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <div class="search-results" id="search-results" role="listbox" aria-label="Search results"></div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button
+      class="theme-toggle"
+      id="theme-toggle-btn"
+      onclick="toggleTheme()"
+      aria-label="Switch theme"
+    >
+      <span>🌙</span><span class="toggle-label">Dark</span>
+    </button>
+
+  </nav>
+
+  <!-- ── Layout ─────────────────────────────────────────────── -->
+  <div class="layout">
+
+    <!-- ── Sidebar ──────────────────────────────────────────── -->
+    <aside class="sidebar" id="sidebar" role="complementary" aria-label="Blog navigation">
+
+      <p class="sidebar-section-label">Navigation</p>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="{{ site_base }}/" id="nav-home"
+             {% if active_page == 'home' %}class="active"{% endif %}
+             aria-current="{% if active_page == 'home' %}page{% else %}false{% endif %}">
+            <span class="nav-icon">🏠</span> Home
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-divider"></div>
+      <p class="sidebar-section-label">All Blogs</p>
+
+      <ul class="sidebar-nav" id="sidebar-blog-nav">
+        {% for blog in all_blogs %}
+        <li>
+          <a href="{{ site_base }}/blogs/{{ blog.slug }}.html"
+             id="nav-{{ blog.slug }}"
+             {% if active_slug == blog.slug %}class="active"{% endif %}
+             aria-current="{% if active_slug == blog.slug %}page{% else %}false{% endif %}"
+             title="{{ blog.title }}">
+            <span class="nav-icon">📄</span>
+            <span>{{ blog.title }}</span>
+            <span class="nav-num">{{ "%02d"|format(loop.index) }}</span>
+          </a>
+        </li>
+        {% else %}
+        <li style="padding: 10px 20px; color: var(--text-muted); font-size: 0.8rem;">No blogs yet.</li>
+        {% endfor %}
+      </ul>
+
+      {% if all_tags %}
+      <div class="sidebar-divider"></div>
+      <p class="sidebar-section-label">Filter by Tag</p>
+      <div class="sidebar-tags" id="sidebar-tag-filter">
+        {% for tag in all_tags %}
+        <span class="tag tag-filter" data-tag="{{ tag }}" tabindex="0" role="button" aria-pressed="false">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+    </aside>
+
+    <!-- ── Main ─────────────────────────────────────────────── -->
+    <main class="main-content" id="main-content" role="main">
+      {% block content %}{% endblock %}
+
+      <footer class="footer" role="contentinfo">
+        <span>© {{ year }} CP Club VJTI &nbsp;·&nbsp; Built with ❤️ &amp; Python</span>
+        <span>
+          <a href="{{ site_base }}/" aria-label="Home">Home</a>
+          &nbsp;·&nbsp;
+          <a href="https://github.com/CP-Club-VJTI" target="_blank" rel="noopener" aria-label="GitHub">GitHub ↗</a>
+        </span>
+      </footer>
+    </main>
+
+  </div><!-- /layout -->
+
+  <!-- Scripts -->
+  <script src="{{ site_base }}/static/search.js"></script>
+
+  {% block scripts_extra %}{% endblock %}
+
+</body>
+</html>

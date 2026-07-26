@@ -1,0 +1,58 @@
+name: Deploy Blog to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:  # Allow manual trigger from GitHub UI
+
+permissions:
+  contents: write   # Need write to commit docs/ back to main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    name: Build & Deploy
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: 📦 Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: 🔍 Detect GitHub Pages base URL
+        id: base-url
+        run: |
+          REPO="${{ github.repository }}"
+          REPO_NAME="${REPO#*/}"
+          OWNER="${REPO%/*}"
+          # If repo name matches <owner>.github.io, serve from root
+          if [ "$REPO_NAME" = "$OWNER.github.io" ]; then
+            echo "base_url=" >> $GITHUB_OUTPUT
+          else
+            echo "base_url=/$REPO_NAME" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 🔨 Build static site
+        run: python build.py --base-url "${{ steps.base-url.outputs.base_url }}"
+
+      - name: 🚀 Commit and push docs/
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/
+          # Only commit if there are changes
+          if git diff --cached --quiet; then
+            echo "No changes to docs/. Skipping commit."
+          else
+            git commit -m "🤖 Auto-build: update docs/ [skip ci]"
+            git push
+          fi
