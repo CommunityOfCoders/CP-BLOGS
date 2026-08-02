@@ -13,5 +13,20 @@
     "description": "",
     "excerpt": "If you had asked 10-year-old me what I thought about Alice and Bob, frustration would definitely not be among my top thoughts. I mean, Alice in Wonderland and…",
     "url": "blogs/blog0_GamesInCompetitiveProgramming.html"
+  },
+  {
+    "slug": "blog1_dp_1_competitive_programming",
+    "title": "Dynamic Programming 1: Never Calculate Anything Twice",
+    "date": "2026-08-02",
+    "author": "CP Club VJTI",
+    "tags": [
+      "dynamic-programming",
+      "dp",
+      "codeforces",
+      "competitive-programming"
+    ],
+    "description": "",
+    "excerpt": "Dynamic Programming is a method to solve problems by combining sub-problems… blah blah blah. DP is one of those topics I have heard everyone struggle with,…",
+    "url": "blogs/blog1_dp_1_competitive_programming.html"
   }
 ]

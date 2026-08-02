@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Dynamic Programming 1: Never Calculate Anything Twice | CP Club VJTI</title>
+  <meta name="description" content="Dynamic Programming is a method to solve problems by combining sub-problems… blah blah blah. DP is one of those topics I have heard everyone struggle with,…" />
+  <meta name="keywords" content="competitive programming, algorithms, data structures, VJTI, CP Club, dynamic-programming, dp, codeforces, competitive-programming" />
+  <meta name="author" content="CP Club VJTI" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dynamic Programming 1: Never Calculate Anything Twice | CP Club VJTI" />
+  <meta property="og:description" content="Dynamic Programming is a method to solve problems by combining sub-problems… blah blah blah. DP is one of those topics I have heard everyone struggle with,…" />
+  <meta property="og:type" content="website" />
+
+  <!-- Site base for JS (handles GitHub Pages subdirectory) -->
+  <meta name="site-base" content=".." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../static/style.css" />
+
+  <!-- Theme: apply early to prevent flash -->
+  <script src="../static/theme.js"></script>
+
+  
+
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+</head>
+<body>
+
+  <!-- Reading Progress (shown on blog posts) -->
+  
+<div class="reading-progress" id="reading-progress" role="progressbar" aria-label="Reading progress"></div>
+
+
+  <!-- ── Navbar ──────────────────────────────────────────────── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+
+    <!-- Hamburger (mobile) -->
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle sidebar" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Logo -->
+    <a href="../" class="navbar-logo" id="navbar-logo" aria-label="CP Club VJTI Home">
+      <img src="../static/assets/cp_club_vjti_logo.jpg" alt="CP Club VJTI Logo" height="40" />
+    </a>
+
+    <div class="navbar-spacer"></div>
+
+    <!-- Search -->
+    <div class="navbar-search" role="search">
+      <span class="search-icon" aria-hidden="true">🔍</span>
+      <input
+        type="search"
+        id="search-input"
+        placeholder="Search blogs…"
+        aria-label="Search blogs"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <div class="search-results" id="search-results" role="listbox" aria-label="Search results"></div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button
+      class="theme-toggle"
+      id="theme-toggle-btn"
+      onclick="toggleTheme()"
+      aria-label="Switch theme"
+    >
+      <span>🌙</span><span class="toggle-label">Dark</span>
+    </button>
+
+  </nav>
+
+  <!-- ── Layout ─────────────────────────────────────────────── -->
+  <div class="layout">
+
+    <!-- ── Sidebar ──────────────────────────────────────────── -->
+    <aside class="sidebar" id="sidebar" role="complementary" aria-label="Blog navigation">
+
+      <p class="sidebar-section-label">Navigation</p>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="../" id="nav-home"
+             
+             aria-current="false">
+            <span class="nav-icon">🏠</span> Home
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-divider"></div>
+      <p class="sidebar-section-label">All Blogs</p>
+
+      <ul class="sidebar-nav" id="sidebar-blog-nav">
+        
+        <li>
+          <a href="../blogs/blog0_GamesInCompetitiveProgramming.html"
+             id="nav-blog0_GamesInCompetitiveProgramming"
+             
+             aria-current="false"
+             title="Games in Competitive Programming: Demystifying Alice and Bob">
+            <span class="nav-icon">📄</span>
+            <span>Games in Competitive Programming: Demystifying Alice and Bob</span>
+            <span class="nav-num">01</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="../blogs/blog1_dp_1_competitive_programming.html"
+             id="nav-blog1_dp_1_competitive_programming"
+             class="active"
+             aria-current="page"
+             title="Dynamic Programming 1: Never Calculate Anything Twice">
+            <span class="nav-icon">📄</span>
+            <span>Dynamic Programming 1: Never Calculate Anything Twice</span>
+            <span class="nav-num">02</span>
+          </a>
+        </li>
+        
+      </ul>
+
+      
+      <div class="sidebar-divider"></div>
+      <p class="sidebar-section-label">Filter by Tag</p>
+      <div class="sidebar-tags" id="sidebar-tag-filter">
+        
+        <span class="tag tag-filter" data-tag="algorithms" tabindex="0" role="button" aria-pressed="false">algorithms</span>
+        
+        <span class="tag tag-filter" data-tag="codeforces" tabindex="0" role="button" aria-pressed="false">codeforces</span>
+        
+        <span class="tag tag-filter" data-tag="competitive-programming" tabindex="0" role="button" aria-pressed="false">competitive-programming</span>
+        
+        <span class="tag tag-filter" data-tag="dp" tabindex="0" role="button" aria-pressed="false">dp</span>
+        
+        <span class="tag tag-filter" data-tag="dynamic-programming" tabindex="0" role="button" aria-pressed="false">dynamic-programming</span>
+        
+        <span class="tag tag-filter" data-tag="game-theory" tabindex="0" role="button" aria-pressed="false">game-theory</span>
+        
+      </div>
+      
+
+    </aside>
+
+    <!-- ── Main ─────────────────────────────────────────────── -->
+    <main class="main-content" id="main-content" role="main">
+      
+
+<article id="blog-post-blog1_dp_1_competitive_programming" aria-labelledby="post-title">
+
+  <!-- Post Header -->
+  <header class="post-header animate-in">
+    <h1 id="post-title">Dynamic Programming 1: Never Calculate Anything Twice</h1>
+
+    <div class="post-meta">
+      
+      <span class="post-meta-item author">
+        <span class="icon">✍</span> CP Club VJTI
+      </span>
+      
+      
+      <span class="post-meta-item">
+        <span class="icon">📅</span> 2026-08-02
+      </span>
+      
+      
+      <span class="post-meta-item">
+        <span class="icon">⏱</span> 10 min read
+      </span>
+      
+    </div>
+
+    
+    <div class="post-tags">
+      
+      <a href="../?tag=dynamic-programming" class="tag" aria-label="Filter by tag: dynamic-programming">dynamic-programming</a>
+      
+      <a href="../?tag=dp" class="tag" aria-label="Filter by tag: dp">dp</a>
+      
+      <a href="../?tag=codeforces" class="tag" aria-label="Filter by tag: codeforces">codeforces</a>
+      
+      <a href="../?tag=competitive-programming" class="tag" aria-label="Filter by tag: competitive-programming">competitive-programming</a>
+      
+    </div>
+    
+  </header>
+
+  <!-- Post Body -->
+  <div class="post-body animate-in" id="post-body">
+    <p>Dynamic Programming is a method to solve problems by combining sub-problems… blah blah blah.</p>
+<p>DP is one of those topics I have heard everyone struggle with, from beginners to experts. It’s also one of the topics that can literally span every rating range from 800 to 3000+! 🤣</p>
+<p>So, with that said, I believe that DP should have only one rule:</p>
+<p><strong>Never calculate anything twice.</strong></p>
+<p>With that, let’s go over some common ways DP shows up in problems.</p>
+<hr />
+<h2 id="1-look-back-look-ahead">1. Look Back / Look Ahead<a class="toc-link" href="#1-look-back-look-ahead" title="Permanent link">&para;</a></h2>
+<p><strong>Idea:</strong><br />
+* If it’s trivial like <code>dp[0]</code> or <code>dp[N]</code>, return a value in $O(1)$.<br />
+* Fetch the values of adjacent indices that are just ahead ($i+1$, $i+2$, &hellip;) or just behind ($i-1$, $i-2$) and add some variable or constant to it in $O(1)$.</p>
+<p>Thus, if we process the indices in a specific order, for each index we can calculate the value in $O(1)$. Making the overall calculation be $O(N)$, where $N$ is the size of the input array.</p>
+<h3 id="example-1-fibonacci">Example 1: Fibonacci<a class="toc-link" href="#example-1-fibonacci" title="Permanent link">&para;</a></h3>
+<p>The classic Fibonacci problem: $f(0) = 0$, $f(1) = 1$, while for all $n \ge 2$, $f(n) = f(n-1) + f(n-2)$.<br />
+The solution to this is trivial. Just create an array of size $N + 1$, set <code>a[0] = 0</code>, <code>a[1] = 1</code>, then run a loop from $i = 2$ to $i = N$, setting <code>a[i] = a[i-1] + a[i-2]</code>.</p>
+<h3 id="example-2-stick-cutting">Example 2: Stick Cutting<a class="toc-link" href="#example-2-stick-cutting" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Consider you have a very long stick of dimension $1 \times N$. At each step, you can cut off a piece of size $1 \times 1$, $1 \times 2$, or $1 \times 3$ from the end. How many different ways can you completely cut the stick? Two arrangements are considered different if the number of cuts in each is different or if the $i$-th cut in one had a different size from the $i$-th cut in the other. Since the answer may be very large, output it modulo $10^9 + 7$.</p>
+</blockquote>
+<p><img alt="Three possible arrangements for a 1x6 stick" src="../static/assets/dp_img.png" /></p>
+<p>Here let us define <code>dp[i]</code> as the number of possible arrangements with the first $i$ units of the stick not touched. It is trivial to see that we want <code>dp[0]</code>, i.e., the entire stick is processed. It is also trivial to see that <code>dp[N] = 1</code>, as there is a single possibility (doing nothing when length is 0). </p>
+<p>Now if we want to calculate for <code>dp[i]</code>:<br />
+* We can process sticks till ahead of $i + 1$ units, then cut a $1 \times 1$ unit.<br />
+* Same for $i + 2$ and $i + 3$.</p>
+<p>Thus:<br />
+* If $i &gt; N$, <code>dp[i] = 0</code><br />
+* If $i == N$, <code>dp[i] = 1</code><br />
+* Else <code>dp[i] = (dp[i+1] + dp[i+2] + dp[i+3]) \pmod{10^9 + 7}</code></p>
+<p>We can see that there is no over-counting happening here. Suppose you say that to go from $i + 3$ to $i$, we can also cut a $1 \times 2$ first and then a $1 \times 1$. But that is already covered in going from $i + 1$ to $i$. So our formula stands correct!</p>
+<p><strong>How to identify such a pattern:</strong><br />
+* Value of input array is usually between $10^5$ to $10^6$.<br />
+* We want <code>dp[0]</code> / <code>dp[N]</code> and <code>dp[N]</code> / <code>dp[0]</code> is fixed per testcase.<br />
+* Write small test cases to figure out possible relations.</p>
+<hr />
+<h2 id="2-knapsack-variants">2. Knapsack Variants<a class="toc-link" href="#2-knapsack-variants" title="Permanent link">&para;</a></h2>
+<p>The Knapsack problem is a standard DP problem that can be defined as:<br />
+* You have a &ldquo;bag&rdquo; of size $W$.<br />
+* You have &ldquo;items&rdquo;, each with a respective weight $w_i$, and optionally a value $v_i$.<br />
+* You can either take an item or not take it.<br />
+* Sum of all taken items should be $\le W$.<br />
+* Find the maximum sum of values under this constraint / find the number of ways to make a sum of weights / find if achieving a sum of weights is possible.</p>
+<p>For simplification, we deal with 2 types of knapsack:</p>
+<h3 id="a-finite-frequency-of-items">A. Finite frequency of items<a class="toc-link" href="#a-finite-frequency-of-items" title="Permanent link">&para;</a></h3>
+<p>Here each item can be used 1 or more times, but only finitely. Let&rsquo;s first consider the case where each item has a weight and a value, all the weights are unique, and we have to find the maximum sum of values obtainable.</p>
+<pre class="highlight"><code class="language-python">def knapsack(items: list[tuple[int]], W: int) -&gt; int:
+    # initialise with zeroes
+    dp = (W + 1) * [0]
+    for w, v in items:
+        # iterate in [w, W] in reverse
+        for i in reversed(range(w, W + 1)):
+            dp[i] = max(dp[i], dp[i-w] + v)
+    # make sure to return max value, not dp[-1]
+    return max(dp)
+</code></pre>
+
+<p>Now if we have an item $(w_i, v_i)$ that has some frequency $f_i$, then repeatedly running the inner loop for the same item can be unnecessary. We can make an optimization here (Binary Lifting). Let’s take an example:<br />
+Consider $w_i = 3$, $v_i = 5$, $f_i = 10$.<br />
+So I can take the item once for weight 3 and value 5, or twice for weight 6 and value 10, or even 7 times for weight 21 and value 35!</p>
+<p>Instead of 10 items, we can group them:<br />
+* $w_{i1} = 3$, $v_{i1} = 5$ (frequency 1)<br />
+* $w_{i2} = 6$, $v_{i2} = 10$ (frequency 2)<br />
+* $w_{i3} = 12$, $v_{i3} = 20$ (frequency 4)<br />
+* $w_{i4} = 9$, $v_{i4} = 15$ (frequency 3 - the remainder)</p>
+<p>The sum of all weights = $3 + 6 + 12 + 9 = 30 = 3 \times 10$.<br />
+Now if we individually do 4 iterations with these weights, we can cover all the possibilities that are possible by 10 iterations of the original item!<br />
+This is because any $k \le 10$ can be made with a combination of these 4 weights.<br />
+* $k = 7 \rightarrow 1 + 2 + 4 = 7$<br />
+* $k = 8 \rightarrow 1 + 4 + 3 = 8$<br />
+* $k = 3 \rightarrow 1 + 2 = 3$</p>
+<p>The pattern is quite simple: we can use powers of 2 to build any frequency, and then add an extra buffer frequency as needed.</p>
+<pre class="highlight"><code class="language-python">def knapsack(items: list[tuple[int]], W: int) -&gt; int:
+    # initialise with zeroes
+    dp = (W + 1) * [0]
+    for w, v, f in items:
+        factor = 1
+        while f &gt; 0:
+            multiplier = min(factor, f)
+            w_, v_ = multiplier * w, multiplier * v
+            # iterate in [w_, W] in reverse
+            for i in reversed(range(w_, W + 1)):
+                dp[i] = max(dp[i-w_] + v_, dp[i])
+            f -= multiplier  # Corrected line
+            factor *= 2
+    return max(dp)
+</code></pre>
+
+<h3 id="b-infinite-supply">B. Infinite supply<a class="toc-link" href="#b-infinite-supply" title="Permanent link">&para;</a></h3>
+<p>Consider you have an unlimited supply of coins of certain denominations (coins of 2, 5, 10, etc). Find out the number of ways you can make a given amount.<br />
+This is a classic Leetcode Problem (518. Coin Change II). For this, there is just one change to our initial logic: <strong>Reverse the inner loop!</strong></p>
+<p><em>Proof of correctness:</em> Consider if I want to add a coin of denomination $k$ to an amount $x$ to make it $y$. If I process $y$ after $x$, I must have ensured that I have used the maximum possible amount of $k$ type coins. For $x = k$, this is trivial as you can only use a single coin to get that amount. By induction, it gets proven true for all $x &gt; k$.</p>
+<pre class="highlight"><code class="language-python">def change(self, amount: int, coins: List[int]) -&gt; int:
+    dp = (amount + 1) * [0]
+    # not taking anything is a single possibility
+    dp[0] = 1
+    for c in coins:
+        # range is reverse of our finite case
+        for i in range(c, amount + 1):
+            dp[i] += dp[i-c]
+    return dp[amount]
+</code></pre>
+
+<p><em>(BTW, a more detailed tutorial on CP algorithms for Knapsack variants can be found here: <a href="https://cp-algorithms.com/dynamic_programming/knapsack.html">cp-algorithms.com/dynamic_programming/knapsack.html</a>)</em></p>
+<p><strong>How to identify such a pattern:</strong><br />
+* Value of input array is usually between $10^3$ to $5 \times 10^3$.<br />
+* You have to maximize some value obtained from a subset of the input under constraints.<br />
+* &ldquo;Take — not take&rdquo; variants generally appear.</p>
+<hr />
+<h2 id="3-sub-sequence-dp">3. Sub-sequence DP<a class="toc-link" href="#3-sub-sequence-dp" title="Permanent link">&para;</a></h2>
+<p>Consider this problem:</p>
+<blockquote>
+<p>Given an array of $N$ integers, find the maximum sum of a subsequence where the adjacent elements are coprime. More formally, we have an array $A$ of $N$ integers. Consider a set of indices $1 \le i_1 &lt; i_2 &lt; \dots &lt; i_k \le N$, where $1 \le k \le N$, such that for all $j$ in $[1, k)$, $\gcd(A[i_j], A[i_{j+1}]) = 1$. Find the maximal sum of any such set.</p>
+</blockquote>
+<p>The idea for this is that we define <code>dp[i]</code> as the maximal sum of any sub-sequence that fulfills the condition and its last index is $i$. If we want to take the $i$-th element, we can choose a sub-sequence ending at some $j &lt; i$, where $\gcd(A[j], A[i]) = 1$. Thus for each $i$ from $1$ to $N$, we check for all $j &lt; i$, and if the condition is satisfied, we set <code>dp[i] = max(dp[i], dp[j] + A[i])</code>. And <code>dp[i]</code> has a default value of $A[i]$, i.e., only choosing that element (if no valid predecessor exists).</p>
+<p>The more general version of this problem that usually appears is:<br />
+<em>Find the maximum value (sum, product, etc.) over all sub-sequences of an array satisfying some condition $X$, and checking whether adding an element to the sub-sequence keeps it valid depends on the last element of the original sub-sequence.</em></p>
+<p><strong>General algorithm for this ($O(N^2)$ time complexity):</strong><br />
+1. Iterate from $i = 1$ to $i = N$, where $N$ is the length of the array.<br />
+2. For each $i$, let <code>dp[i]</code> = value of taking just the $i$-th element.<br />
+3. Iterate for all $j &lt; i$, and check whether adding the $i$-th element after the $j$-th element forms a valid sub-sequence. If yes, update the value of <code>dp[i]</code>.<br />
+4. Return the maximum of <code>dp[i]</code> over all $i$.</p>
+<p><strong>Another problem:</strong></p>
+<blockquote>
+<p>Count all non-empty sub-sequences of an array of integers that are strictly increasing.</p>
+</blockquote>
+<p>Here, it is trivial to see that any two sub-sequences that end at two different indices $i$ and $j$ ($i \neq j$) are different. So if we just found <code>dp[i]</code> = number of sub-sequences with the last index as $i$, and sum over $1 \le i \le N$, we get the required answer.</p>
+<p>The solution algorithm ($O(N^2)$) is something like:<br />
+1. Iterate from $i = 1$ to $i = N$. Initialise <code>dp[i] = 1</code> (single element sub-sequence).<br />
+2. For each $j = 1$ to $j = i - 1$, add <code>dp[j]</code> to <code>dp[i]</code> if $A[i] &gt; A[j]$.<br />
+3. Return sum of all <code>dp</code> array.</p>
+<p><strong>How to identify such a pattern:</strong><br />
+* Value of input array is usually between $10^3$ to $5 \times 10^3$. Sometimes harder versions which may use concepts from range queries have higher constraints.<br />
+* Optimal sub-sequence under some conditions.<br />
+* Sometimes it is related to counting all sub-sequences that satisfy a condition.<br />
+* Constraints allow for $O(N^2)$ approaches.</p>
+<hr />
+<h2 id="practice-problems">Practice Problems<a class="toc-link" href="#practice-problems" title="Permanent link">&para;</a></h2>
+<p>Here are some awesome DP problems you can practice on Codeforces!</p>
+<ol>
+<li><a href="https://codeforces.com/problemset/problem/2031/A">CF 2031 A - Penchick and Modern Monument</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2126/B">CF 2126 B - No Casino in the Mountains</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2178/B">CF 2178 B - Impost or Sus</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2225/C">CF 2225 C - Red-Black Pairs</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2064/C">CF 2064 C - Remove the Ends</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2229/C2">CF 2229 C2 - We Be Flipping (Hard Version)</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2233/C">CF 2233 C - Cost of a Bracket Sequence</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2242/D">CF 2242 D - Two Digit Strings</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2037/E">CF 2037 E - Kachina’s Favourite Binary String</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2230/D">CF 2230 D - Good Schedule</a></li>
+</ol>
+<hr />
+<p>That’s all for now! DP is a much, much vast topic, so I have to cover more of it soon, but till then keep coding!</p>
+  </div>
+
+  <!-- Post Navigation -->
+  <nav class="post-nav animate-in" aria-label="Post navigation">
+    
+    <a href="../blogs/blog0_GamesInCompetitiveProgramming.html" class="post-nav-link prev" id="nav-prev-post">
+      <span class="post-nav-label">← Previous</span>
+      <span class="post-nav-title">Games in Competitive Programming: Demystifying Alice and Bob</span>
+    </a>
+    
+
+    
+  </nav>
+
+</article>
+
+
+
+      <footer class="footer" role="contentinfo">
+        <span>© 2026 CP Club VJTI &nbsp;·&nbsp; Built with ❤️ &amp; Python</span>
+        <span>
+          <a href="../" aria-label="Home">Home</a>
+          &nbsp;·&nbsp;
+          <a href="https://github.com/CP-Club-VJTI" target="_blank" rel="noopener" aria-label="GitHub">GitHub ↗</a>
+        </span>
+      </footer>
+    </main>
+
+  </div><!-- /layout -->
+
+  <!-- Scripts -->
+  <script src="../static/search.js"></script>
+
+  
+
+</body>
+</html>
