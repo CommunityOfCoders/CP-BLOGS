@@ -232,15 +232,15 @@
 <p><strong>Never calculate anything twice.</strong></p>
 <p>With that, let’s go over some common ways DP shows up in problems.</p>
 <hr />
-<h2 id="1-look-back-look-ahead">1. Look Back / Look Ahead<a class="toc-link" href="#1-look-back-look-ahead" title="Permanent link">&para;</a></h2>
+<h2 id="1-look-back-look-ahead">1. Look Back / Look Ahead<a class="toc-link" href="#1-look-back-look-ahead" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h2>
 <p><strong>Idea:</strong><br />
 * If it’s trivial like <code>dp[0]</code> or <code>dp[N]</code>, return a value in $O(1)$.<br />
 * Fetch the values of adjacent indices that are just ahead ($i+1$, $i+2$, &hellip;) or just behind ($i-1$, $i-2$) and add some variable or constant to it in $O(1)$.</p>
 <p>Thus, if we process the indices in a specific order, for each index we can calculate the value in $O(1)$. Making the overall calculation be $O(N)$, where $N$ is the size of the input array.</p>
-<h3 id="example-1-fibonacci">Example 1: Fibonacci<a class="toc-link" href="#example-1-fibonacci" title="Permanent link">&para;</a></h3>
+<h3 id="example-1-fibonacci">Example 1: Fibonacci<a class="toc-link" href="#example-1-fibonacci" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h3>
 <p>The classic Fibonacci problem: $f(0) = 0$, $f(1) = 1$, while for all $n \ge 2$, $f(n) = f(n-1) + f(n-2)$.<br />
 The solution to this is trivial. Just create an array of size $N + 1$, set <code>a[0] = 0</code>, <code>a[1] = 1</code>, then run a loop from $i = 2$ to $i = N$, setting <code>a[i] = a[i-1] + a[i-2]</code>.</p>
-<h3 id="example-2-stick-cutting">Example 2: Stick Cutting<a class="toc-link" href="#example-2-stick-cutting" title="Permanent link">&para;</a></h3>
+<h3 id="example-2-stick-cutting">Example 2: Stick Cutting<a class="toc-link" href="#example-2-stick-cutting" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h3>
 <blockquote>
 <p>Consider you have a very long stick of dimension $1 \times N$. At each step, you can cut off a piece of size $1 \times 1$, $1 \times 2$, or $1 \times 3$ from the end. How many different ways can you completely cut the stick? Two arrangements are considered different if the number of cuts in each is different or if the $i$-th cut in one had a different size from the $i$-th cut in the other. Since the answer may be very large, output it modulo $10^9 + 7$.</p>
 </blockquote>
@@ -259,7 +259,7 @@ The solution to this is trivial. Just create an array of size $N + 1$, set <code
 * We want <code>dp[0]</code> / <code>dp[N]</code> and <code>dp[N]</code> / <code>dp[0]</code> is fixed per testcase.<br />
 * Write small test cases to figure out possible relations.</p>
 <hr />
-<h2 id="2-knapsack-variants">2. Knapsack Variants<a class="toc-link" href="#2-knapsack-variants" title="Permanent link">&para;</a></h2>
+<h2 id="2-knapsack-variants">2. Knapsack Variants<a class="toc-link" href="#2-knapsack-variants" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h2>
 <p>The Knapsack problem is a standard DP problem that can be defined as:<br />
 * You have a &ldquo;bag&rdquo; of size $W$.<br />
 * You have &ldquo;items&rdquo;, each with a respective weight $w_i$, and optionally a value $v_i$.<br />
@@ -267,7 +267,7 @@ The solution to this is trivial. Just create an array of size $N + 1$, set <code
 * Sum of all taken items should be $\le W$.<br />
 * Find the maximum sum of values under this constraint / find the number of ways to make a sum of weights / find if achieving a sum of weights is possible.</p>
 <p>For simplification, we deal with 2 types of knapsack:</p>
-<h3 id="a-finite-frequency-of-items">A. Finite frequency of items<a class="toc-link" href="#a-finite-frequency-of-items" title="Permanent link">&para;</a></h3>
+<h3 id="a-finite-frequency-of-items">A. Finite frequency of items<a class="toc-link" href="#a-finite-frequency-of-items" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h3>
 <p>Here each item can be used 1 or more times, but only finitely. Let&rsquo;s first consider the case where each item has a weight and a value, all the weights are unique, and we have to find the maximum sum of values obtainable.</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">knapsack</span><span class="p">(</span><span class="n">items</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">W</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="c1"># initialise with zeroes</span>
@@ -311,7 +311,7 @@ This is because any $k \le 10$ can be made with a combination of these 4 weights
     <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span>
 </code></pre></div>
 
-<h3 id="b-infinite-supply">B. Infinite supply<a class="toc-link" href="#b-infinite-supply" title="Permanent link">&para;</a></h3>
+<h3 id="b-infinite-supply">B. Infinite supply<a class="toc-link" href="#b-infinite-supply" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h3>
 <p>Consider you have an unlimited supply of coins of certain denominations (coins of 2, 5, 10, etc). Find out the number of ways you can make a given amount.<br />
 This is a classic Leetcode Problem (518. Coin Change II). For this, there is just one change to our initial logic: <strong>Reverse the inner loop!</strong></p>
 <p><em>Proof of correctness:</em> Consider if I want to add a coin of denomination $k$ to an amount $x$ to make it $y$. If I process $y$ after $x$, I must have ensured that I have used the maximum possible amount of $k$ type coins. For $x = k$, this is trivial as you can only use a single coin to get that amount. By induction, it gets proven true for all $x &gt; k$.</p>
@@ -326,15 +326,15 @@ This is a classic Leetcode Problem (518. Coin Change II). For this, there is jus
     <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">amount</span><span class="p">]</span>
 </code></pre></div>
 
-<p><em>(BTW, a more detailed tutorial on CP algorithms for Knapsack variants can be found here: <a href="https://cp-algorithms.com/dynamic_programming/knapsack.html">cp-algorithms.com/dynamic_programming/knapsack.html</a>)</em></p>
+<p><em>(BTW, a more detailed tutorial on CP algorithms for Knapsack variants can be found here: <a href="https://cp-algorithms.com/dynamic_programming/knapsack.html" target="_blank" rel="noopener noreferrer">cp-algorithms.com/dynamic_programming/knapsack.html</a>)</em></p>
 <p><strong>How to identify such a pattern:</strong><br />
 * Value of input array is usually between $10^3$ to $5 \times 10^3$.<br />
 * You have to maximize some value obtained from a subset of the input under constraints.<br />
 * &ldquo;Take — not take&rdquo; variants generally appear.</p>
-<p><a href="https://onlinegdb.com/cMZO0j-Xu">Link to C++ codes for knapsack</a><br />
-<a href="../static/code_files/knapsack.cpp">Local file: </a></p>
+<p><a href="https://onlinegdb.com/cMZO0j-Xu" target="_blank" rel="noopener noreferrer">Link to C++ codes for knapsack</a><br />
+<a href="../static/code_files/knapsack.cpp" target="_blank" rel="noopener noreferrer">Local file: </a></p>
 <hr />
-<h2 id="3-sub-sequence-dp">3. Sub-sequence DP<a class="toc-link" href="#3-sub-sequence-dp" title="Permanent link">&para;</a></h2>
+<h2 id="3-sub-sequence-dp">3. Sub-sequence DP<a class="toc-link" href="#3-sub-sequence-dp" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h2>
 <p>Consider this problem:</p>
 <blockquote>
 <p>Given an array of $N$ integers, find the maximum sum of a subsequence where the adjacent elements are coprime. More formally, we have an array $A$ of $N$ integers. Consider a set of indices $1 \le i_1 &lt; i_2 &lt; \dots &lt; i_k \le N$, where $1 \le k \le N$, such that for all $j$ in $[1, k)$, $\gcd(A[i_j], A[i_{j+1}]) = 1$. Find the maximal sum of any such set.</p>
@@ -362,19 +362,19 @@ This is a classic Leetcode Problem (518. Coin Change II). For this, there is jus
 * Sometimes it is related to counting all sub-sequences that satisfy a condition.<br />
 * Constraints allow for $O(N^2)$ approaches.</p>
 <hr />
-<h2 id="practice-problems">Practice Problems<a class="toc-link" href="#practice-problems" title="Permanent link">&para;</a></h2>
+<h2 id="practice-problems">Practice Problems<a class="toc-link" href="#practice-problems" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h2>
 <p>Here are some awesome DP problems you can practice on Codeforces!</p>
 <ol>
-<li><a href="https://codeforces.com/problemset/problem/2031/A">CF 2031 A - Penchick and Modern Monument</a></li>
-<li><a href="https://codeforces.com/problemset/problem/2126/B">CF 2126 B - No Casino in the Mountains</a></li>
-<li><a href="https://codeforces.com/problemset/problem/2178/B">CF 2178 B - Impost or Sus</a></li>
-<li><a href="https://codeforces.com/problemset/problem/2225/C">CF 2225 C - Red-Black Pairs</a></li>
-<li><a href="https://codeforces.com/problemset/problem/2064/C">CF 2064 C - Remove the Ends</a></li>
-<li><a href="https://codeforces.com/problemset/problem/2229/C2">CF 2229 C2 - We Be Flipping (Hard Version)</a></li>
-<li><a href="https://codeforces.com/problemset/problem/2233/C">CF 2233 C - Cost of a Bracket Sequence</a></li>
-<li><a href="https://codeforces.com/problemset/problem/2242/D">CF 2242 D - Two Digit Strings</a></li>
-<li><a href="https://codeforces.com/problemset/problem/2037/E">CF 2037 E - Kachina’s Favourite Binary String</a></li>
-<li><a href="https://codeforces.com/problemset/problem/2230/D">CF 2230 D - Good Schedule</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2031/A" target="_blank" rel="noopener noreferrer">CF 2031 A - Penchick and Modern Monument</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2126/B" target="_blank" rel="noopener noreferrer">CF 2126 B - No Casino in the Mountains</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2178/B" target="_blank" rel="noopener noreferrer">CF 2178 B - Impost or Sus</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2225/C" target="_blank" rel="noopener noreferrer">CF 2225 C - Red-Black Pairs</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2064/C" target="_blank" rel="noopener noreferrer">CF 2064 C - Remove the Ends</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2229/C2" target="_blank" rel="noopener noreferrer">CF 2229 C2 - We Be Flipping (Hard Version)</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2233/C" target="_blank" rel="noopener noreferrer">CF 2233 C - Cost of a Bracket Sequence</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2242/D" target="_blank" rel="noopener noreferrer">CF 2242 D - Two Digit Strings</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2037/E" target="_blank" rel="noopener noreferrer">CF 2037 E - Kachina’s Favourite Binary String</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2230/D" target="_blank" rel="noopener noreferrer">CF 2230 D - Good Schedule</a></li>
 </ol>
 <hr />
 <p>That’s all for now! DP is a much, much vast topic, so I have to cover more of it soon, but till then keep coding!</p>

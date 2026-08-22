@@ -231,7 +231,7 @@
     <p><img alt="Ooo numberss" src="../static/assets/number_theory_cover.jpg" /></p>
 <p>Math in competitive programming is one of the most critical ways of testing one’s arithmetic and logic-building skills. A lot of the time, math in Competitive Programming is really just a straightforward formula. But obviously, if it were stated directly, the code would be very easy. Instead, the most difficult part is converting the problem from a random storyline into a proper system of equations with defined variables and functions.</p>
 <p>Below are some of the common mathematical problems that are twisted by wannabe authors on Codeforces:</p>
-<h2 id="linear-equations">Linear Equations<a class="toc-link" href="#linear-equations" title="Permanent link">&para;</a></h2>
+<h2 id="linear-equations">Linear Equations<a class="toc-link" href="#linear-equations" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h2>
 <p>These equations are of the form:</p>
 <p>$$ax + by = c$$</p>
 <p>Where $a$, $b$, and $c$ are given integers, and $x$ and $y$ can be some arbitrary integers (if a solution exists). Sometimes, you have to find whether or not a solution exists, other times you have to find non-negative integer solutions, and sometimes you have to give an example. Take a problem like this:</p>
@@ -297,11 +297,11 @@ The rest of the algorithm is mentioned below in Python.</p>
 <span class="n">solve</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">41</span><span class="p">)</span>  <span class="c1"># Output: 3 * 2 + 7 * 5 = 41</span>
 </code></pre></div>
 
-<h3 id="how-to-identify-such-patterns">How to identify such patterns<a class="toc-link" href="#how-to-identify-such-patterns" title="Permanent link">&para;</a></h3>
+<h3 id="how-to-identify-such-patterns">How to identify such patterns<a class="toc-link" href="#how-to-identify-such-patterns" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h3>
 <p>Most problems won&rsquo;t directly tell you what $A$, $B$, and $N$ are, but spin a whole story to distract you. If it is usually a problem with 2 or 3 input values, where 2 of them you can &ldquo;add&rdquo; or &ldquo;subtract&rdquo; and the 3rd one is to be &ldquo;equaled&rdquo;, then check whether you can form any equations whose solution is the necessary answer.</p>
 <p>Constraints on $A$, $B$, and $N$ may vary, with some of the easy problems having all values under 100 or 1000, which keeps the equations the same but allows for more brute-force methods. However, if $A$, $B$, and $N$ are close to $10^9$, then the above algorithm is likely the intended solution.</p>
 <hr />
-<h2 id="spf-sieve-and-inclusion-exclusion-principle">SPF Sieve and Inclusion-Exclusion Principle<a class="toc-link" href="#spf-sieve-and-inclusion-exclusion-principle" title="Permanent link">&para;</a></h2>
+<h2 id="spf-sieve-and-inclusion-exclusion-principle">SPF Sieve and Inclusion-Exclusion Principle<a class="toc-link" href="#spf-sieve-and-inclusion-exclusion-principle" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h2>
 <p>Here’s a fun puzzle: What is the time complexity of the below function?</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">:</span><span class="nb">int</span><span class="p">):</span>
   <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
@@ -403,14 +403,14 @@ The rest of the algorithm is mentioned below in Python.</p>
 <span class="c1"># [13, 1, 5]</span>
 </code></pre></div>
 
-<h3 id="how-to-identify-the-pattern">How to identify the pattern:<a class="toc-link" href="#how-to-identify-the-pattern" title="Permanent link">&para;</a></h3>
+<h3 id="how-to-identify-the-pattern">How to identify the pattern:<a class="toc-link" href="#how-to-identify-the-pattern" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h3>
 <ul>
 <li>Usually involves GCD or factorization.</li>
 <li>Constraints for array elements may be $5 \times 10^4$ to $2 \times 10^5$ for 2 seconds, or $10^6$ for 3 to 4 seconds.</li>
 <li>Asks for either range queries or the number of ordered pairs satisfying some property.</li>
 </ul>
 <hr />
-<h2 id="constructive-proofs">Constructive Proofs<a class="toc-link" href="#constructive-proofs" title="Permanent link">&para;</a></h2>
+<h2 id="constructive-proofs">Constructive Proofs<a class="toc-link" href="#constructive-proofs" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h2>
 <p>There are many questions of some form: Construct an array of $N$ integers satisfying condition $X$. Sometimes the trick is to build a solution for a small $N$ like 2 or 3, and then every larger $N$ is constructed from it or from a similar pattern.</p>
 <p>For example:</p>
 <blockquote>
@@ -425,14 +425,14 @@ For $n = 7$: 1 3 6 4 2 7 5</p>
 The first element is $1 \bmod 3$. Next, all elements are $0 \bmod 3$. Then it alternates between $1 \bmod 3$ and $2 \bmod 3$. So if we just make the array in modulo 3, we have:<br />
 1 0 0 0 &hellip; 0 1 2 1 2 &hellip; 2 1 2</p>
 <p>It is now easier to prove, as the prefix sum is always either 1 or 2 modulo 3. So this is a valid construction!</p>
-<h3 id="how-to-identify-a-pattern">How to identify a pattern:<a class="toc-link" href="#how-to-identify-a-pattern" title="Permanent link">&para;</a></h3>
+<h3 id="how-to-identify-a-pattern">How to identify a pattern:<a class="toc-link" href="#how-to-identify-a-pattern" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h3>
 <ul>
 <li>You have to construct a permutation, rearrange an array, or evaluate some value from a permutation.</li>
 <li>If you can solve for an array of $n - 1$ or $n - 2$, you can solve for a larger value. Some base cases can reveal a pattern (solve for small examples with a brute-force algorithm; up to $n = 10$, even exponential works).</li>
 <li>Constraints are usually linear, close to $10^5$.</li>
 </ul>
 <hr />
-<h2 id="modular-arithmetic">Modular Arithmetic<a class="toc-link" href="#modular-arithmetic" title="Permanent link">&para;</a></h2>
+<h2 id="modular-arithmetic">Modular Arithmetic<a class="toc-link" href="#modular-arithmetic" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h2>
 <p>This topic is often more of a sub-problem rather than a unique problem on its own. Usually, you have to calculate some value, but since it can be too large, you evaluate it under a modulo, like $10^9 + 7$ or $998244353$. Below are some of the most common calculation functions for this:</p>
 <div class="highlight"><pre><span></span><code><span class="n">MOD</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1e9</span> <span class="o">+</span> <span class="mi">7</span><span class="p">)</span>
 
@@ -480,7 +480,7 @@ The first element is $1 \bmod 3$. Next, all elements are $0 \bmod 3$. Then it al
 </blockquote>
 <p>Let $k$ be the number of cuts we make. So there will be $k + 1$ sections. Let their sizes be $x_0, x_1, x_2, \dots x_k$.</p>
 <p>We know, $x_0 + x_1 + x_2 \dots + x_k = N$. This is exactly the beggar&rsquo;s formula (stars and bars), with the solution being $\binom{n+k}{k}$. Using the <code>nCk</code> and <code>add</code> functions in the above code, this is straightforward!</p>
-<h3 id="how-to-identify-such-a-concept">How to identify such a concept:<a class="toc-link" href="#how-to-identify-such-a-concept" title="Permanent link">&para;</a></h3>
+<h3 id="how-to-identify-such-a-concept">How to identify such a concept:<a class="toc-link" href="#how-to-identify-such-a-concept" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h3>
 <ul>
 <li>It is explicitly mentioned that modulo should be used.</li>
 <li>Usually, only the <code>add</code> or <code>mul</code> function is enough.</li>
@@ -488,7 +488,7 @@ The first element is $1 \bmod 3$. Next, all elements are $0 \bmod 3$. Then it al
 <li>If counting is explicitly mentioned, pre-processing factorials + the <code>nCk</code> function is needed.</li>
 </ul>
 <hr />
-<h2 id="pigeonhole-principle">Pigeonhole Principle<a class="toc-link" href="#pigeonhole-principle" title="Permanent link">&para;</a></h2>
+<h2 id="pigeonhole-principle">Pigeonhole Principle<a class="toc-link" href="#pigeonhole-principle" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h2>
 <p>This principle basically states: &ldquo;If there are $N$ pigeons and $N - 1$ holes, at least one hole has 2 or more pigeons.&rdquo;<br />
 This principle is most useful when you need to prove that after a certain number of elements, 2 elements fall into the same &ldquo;class&rdquo;. Consider this:</p>
 <blockquote>
@@ -496,14 +496,14 @@ This principle is most useful when you need to prove that after a certain number
 </blockquote>
 <p>Here we can apply the Pigeonhole Principle repeatedly. First, since we have $N$ integers, under modulo $(N - 1)$, there are at least 2 integers with the same value, as modulo $N - 1$ has $N - 1$ &ldquo;holes&rdquo; but we have $N$ &ldquo;pigeons&rdquo;.<br />
 So we keep those 2 numbers as the last 2. We can apply the same process for the remaining $N - 2$ numbers, and so on.</p>
-<h3 id="how-to-identify-such-a-concept_1">How to identify such a concept:<a class="toc-link" href="#how-to-identify-such-a-concept_1" title="Permanent link">&para;</a></h3>
+<h3 id="how-to-identify-such-a-concept_1">How to identify such a concept:<a class="toc-link" href="#how-to-identify-such-a-concept_1" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h3>
 <ul>
 <li>Usually involves constructing/rearranging an array to satisfy some property (typically involving modulo).</li>
 <li>It is guaranteed that if the answer exists, it can be found quickly enough. (Try dry-running a few cases to see if the number of steps to find an answer is bounded by some known variable like $N$).</li>
 <li>Constraints may be quadratic (~$5 \times 10^3$) or linear (~$10^5$) depending on the number of &ldquo;holes&rdquo; and how fast they can be counted and used.</li>
 </ul>
 <hr />
-<h2 id="common-formulae">Common Formulae<a class="toc-link" href="#common-formulae" title="Permanent link">&para;</a></h2>
+<h2 id="common-formulae">Common Formulae<a class="toc-link" href="#common-formulae" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h2>
 <p>$$\sum_{1 \le i \le n} i = n(n+1)/2$$</p>
 <p>$$\sum_{1 \le i \le n} i^2 = n(n+1)(2n+1)/6$$</p>
 <p>$$\sum_{1 \le i \le n} i^3 = (n(n+1)/2)^2$$</p>
@@ -512,20 +512,20 @@ So we keep those 2 numbers as the last 2. We can apply the same process for the 
 <p>$${}^nC_0 = {}^nC_n = 1$$</p>
 <p>$${}^nC_k = {}^{n-1}C_{k-1} + {}^{n-1}C_k \forall k \in [1, n)$$</p>
 <p>$$Beggars\ formula : {}^{n+r-1}C_n$$</p>
-<p><a href="https://onlinegdb.com/fNfJZQG2v">Link to C++ code covering all python snippets above</a><br />
-<a href="../static/code_files/number_theory.cpp">Local file: </a></p>
-<h2 id="practice-problems">Practice Problems<a class="toc-link" href="#practice-problems" title="Permanent link">&para;</a></h2>
+<p><a href="https://onlinegdb.com/fNfJZQG2v" target="_blank" rel="noopener noreferrer">Link to C++ code covering all python snippets above</a><br />
+<a href="../static/code_files/number_theory.cpp" target="_blank" rel="noopener noreferrer">Local file: </a></p>
+<h2 id="practice-problems">Practice Problems<a class="toc-link" href="#practice-problems" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h2>
 <ul>
-<li><a href="https://codeforces.com/problemset/problem/2225/A">2225 A. A Number Between Two Others</a></li>
-<li><a href="https://codeforces.com/problemset/problem/2208/A">2208 A. Bingo Candies</a></li>
-<li><a href="https://codeforces.com/problemset/problem/633/A">633 A. Ebony And Ivory</a></li>
-<li><a href="https://codeforces.com/problemset/problem/1201/B">1201 B. Zero Array</a></li>
-<li><a href="https://codeforces.com/problemset/problem/2244/C">2244 C. Stepan And Permutation</a></li>
-<li><a href="https://codeforces.com/problemset/problem/1349/A">1349 A. Orac And LCM</a></li>
-<li><a href="https://codeforces.com/problemset/problem/1798/D">1798 D. Shocking Arrangement</a></li>
-<li><a href="https://codeforces.com/problemset/problem/1907/E">1907 E. Good Triples</a></li>
-<li><a href="https://codeforces.com/problemset/problem/1795/D">1795 D. Triangle Coloring</a></li>
-<li><a href="https://codeforces.com/problemset/problem/1994/D">1994 D. Funny Game</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2225/A" target="_blank" rel="noopener noreferrer">2225 A. A Number Between Two Others</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2208/A" target="_blank" rel="noopener noreferrer">2208 A. Bingo Candies</a></li>
+<li><a href="https://codeforces.com/problemset/problem/633/A" target="_blank" rel="noopener noreferrer">633 A. Ebony And Ivory</a></li>
+<li><a href="https://codeforces.com/problemset/problem/1201/B" target="_blank" rel="noopener noreferrer">1201 B. Zero Array</a></li>
+<li><a href="https://codeforces.com/problemset/problem/2244/C" target="_blank" rel="noopener noreferrer">2244 C. Stepan And Permutation</a></li>
+<li><a href="https://codeforces.com/problemset/problem/1349/A" target="_blank" rel="noopener noreferrer">1349 A. Orac And LCM</a></li>
+<li><a href="https://codeforces.com/problemset/problem/1798/D" target="_blank" rel="noopener noreferrer">1798 D. Shocking Arrangement</a></li>
+<li><a href="https://codeforces.com/problemset/problem/1907/E" target="_blank" rel="noopener noreferrer">1907 E. Good Triples</a></li>
+<li><a href="https://codeforces.com/problemset/problem/1795/D" target="_blank" rel="noopener noreferrer">1795 D. Triangle Coloring</a></li>
+<li><a href="https://codeforces.com/problemset/problem/1994/D" target="_blank" rel="noopener noreferrer">1994 D. Funny Game</a></li>
 </ul>
   </div>
 

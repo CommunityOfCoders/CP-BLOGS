@@ -107,6 +107,19 @@ def make_excerpt(body_html: str, max_chars: int = 160) -> str:
     return cut + "…"
 
 
+def add_target_blank(html: str) -> str:
+    """Make markdown-generated links open in a new tab."""
+    def repl(match: re.Match) -> str:
+        tag = match.group(0)
+        if ' target="' not in tag:
+            tag = tag[:-1] + ' target="_blank">'
+        if ' rel="' not in tag:
+            tag = tag[:-1] + ' rel="noopener noreferrer">'
+        return tag
+
+    return re.sub(r'<a\b[^>]*href="[^"]*"[^>]*>', repl, html)
+
+
 def format_date(raw) -> str:
     """Normalize date to YYYY-MM-DD string."""
     if not raw:
@@ -143,7 +156,7 @@ def collect_blogs() -> list[dict]:
         meta, body = parse_frontmatter(text)
 
         md_converter.reset()
-        html_body = md_converter.convert(body)
+        html_body = add_target_blank(md_converter.convert(body))
 
         slug = slugify(md_file.name)
 
@@ -183,7 +196,7 @@ def render_home(env, all_blogs, all_tags, site_base, year) -> str:
         text = home_md_path.read_text(encoding="utf-8")
         _, body = parse_frontmatter(text)
         md = markdown.Markdown(extensions=["fenced_code", "tables", "nl2br", "smarty"])
-        home_content = md.convert(body)
+        home_content = add_target_blank(md.convert(body))
     
     tmpl = env.get_template("index.html")
     return tmpl.render(
