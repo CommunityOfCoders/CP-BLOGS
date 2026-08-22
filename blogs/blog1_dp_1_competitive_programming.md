@@ -190,7 +190,7 @@ Here are some awesome DP problems you can practice on Codeforces!
 2. [CF 2126 B - No Casino in the Mountains](https://codeforces.com/problemset/problem/2126/B)
 3. [CF 2178 B - Impost or Sus](https://codeforces.com/problemset/problem/2178/B)
 4. [CF 2225 C - Red-Black Pairs](https://codeforces.com/problemset/problem/2225/C)
-5. [CF 2064 C - Remove the Ends](https://codeforces.com/problemset/problem/2064/C)
+5. [CF 2064 C - Remove the Ends](https://codeforces.com/problemset/problem/2064/C) : [Solution Link](https://codeforces.com/contest/2064/submission/388011605)
 6. [CF 2229 C2 - We Be Flipping (Hard Version)](https://codeforces.com/problemset/problem/2229/C2)
 7. [CF 2233 C - Cost of a Bracket Sequence](https://codeforces.com/problemset/problem/2233/C)
 8. [CF 2242 D - Two Digit Strings](https://codeforces.com/problemset/problem/2242/D)
