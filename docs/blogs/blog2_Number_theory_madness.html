@@ -16,7 +16,7 @@
   <meta property="og:type" content="website" />
 
   <!-- Site base for JS (handles GitHub Pages subdirectory) -->
-  <meta name="site-base" content=".." />
+  <meta name="site-base" content="/CP-BLOGS" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,10 +24,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="../static/style.css" />
+  <link rel="stylesheet" href="/CP-BLOGS/static/style.css" />
 
   <!-- Theme: apply early to prevent flash -->
-  <script src="../static/theme.js"></script>
+  <script src="/CP-BLOGS/static/theme.js"></script>
 
   
 
@@ -63,8 +63,8 @@
     </button>
 
     <!-- Logo -->
-    <a href="../" class="navbar-logo" id="navbar-logo" aria-label="CP Club VJTI Home">
-      <img src="../static/assets/cp_club_vjti_logo.jpg" alt="CP Club VJTI Logo" height="40" />
+    <a href="/CP-BLOGS/" class="navbar-logo" id="navbar-logo" aria-label="CP Club VJTI Home">
+      <img src="/CP-BLOGS/static/assets/cp_club_vjti_logo.jpg" alt="CP Club VJTI Logo" height="40" />
     </a>
 
     <div class="navbar-spacer"></div>
@@ -104,7 +104,7 @@
       <p class="sidebar-section-label">Navigation</p>
       <ul class="sidebar-nav">
         <li>
-          <a href="../" id="nav-home"
+          <a href="/CP-BLOGS/" id="nav-home"
              
              aria-current="false">
             <span class="nav-icon">🏠</span> Home
@@ -118,7 +118,7 @@
       <ul class="sidebar-nav" id="sidebar-blog-nav">
         
         <li>
-          <a href="../blogs/blog0_GamesInCompetitiveProgramming.html"
+          <a href="/CP-BLOGS/blogs/blog0_GamesInCompetitiveProgramming.html"
              id="nav-blog0_GamesInCompetitiveProgramming"
              
              aria-current="false"
@@ -130,7 +130,7 @@
         </li>
         
         <li>
-          <a href="../blogs/blog1_dp_1_competitive_programming.html"
+          <a href="/CP-BLOGS/blogs/blog1_dp_1_competitive_programming.html"
              id="nav-blog1_dp_1_competitive_programming"
              
              aria-current="false"
@@ -142,7 +142,7 @@
         </li>
         
         <li>
-          <a href="../blogs/blog2_Number_theory_madness.html"
+          <a href="/CP-BLOGS/blogs/blog2_Number_theory_madness.html"
              id="nav-blog2_Number_theory_madness"
              class="active"
              aria-current="page"
@@ -212,15 +212,15 @@
     
     <div class="post-tags">
       
-      <a href="../?tag=math" class="tag" aria-label="Filter by tag: math">math</a>
+      <a href="/CP-BLOGS/?tag=math" class="tag" aria-label="Filter by tag: math">math</a>
       
-      <a href="../?tag=number-theory" class="tag" aria-label="Filter by tag: number-theory">number-theory</a>
+      <a href="/CP-BLOGS/?tag=number-theory" class="tag" aria-label="Filter by tag: number-theory">number-theory</a>
       
-      <a href="../?tag=codeforces" class="tag" aria-label="Filter by tag: codeforces">codeforces</a>
+      <a href="/CP-BLOGS/?tag=codeforces" class="tag" aria-label="Filter by tag: codeforces">codeforces</a>
       
-      <a href="../?tag=competitive-programming" class="tag" aria-label="Filter by tag: competitive-programming">competitive-programming</a>
+      <a href="/CP-BLOGS/?tag=competitive-programming" class="tag" aria-label="Filter by tag: competitive-programming">competitive-programming</a>
       
-      <a href="../?tag=algorithms" class="tag" aria-label="Filter by tag: algorithms">algorithms</a>
+      <a href="/CP-BLOGS/?tag=algorithms" class="tag" aria-label="Filter by tag: algorithms">algorithms</a>
       
     </div>
     
@@ -249,53 +249,53 @@
 <p>Here we are again trying to solve $Ax + By = N$. But this time, $x \ge 0$ and $y \ge 0$ are compulsory.</p>
 <p>The first condition is still necessary, i.e., $N \bmod \gcd(A, B) = 0$. Let $\gcd(A, B) = g$. <br />
 The rest of the algorithm is mentioned below in Python.</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">extended_gcd</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;Returns (g, x, y) such that a*x + b*y = g = gcd(a, b).&quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="n">a</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span>
-    <span class="n">g</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">extended_gcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">)</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">y1</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">-</span> <span class="p">(</span><span class="n">a</span> <span class="o">//</span> <span class="n">b</span><span class="p">)</span> <span class="o">*</span> <span class="n">y1</span>
-    <span class="k">return</span> <span class="n">g</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span>
+<pre class="highlight"><code class="language-python">def extended_gcd(a: int, b: int) -&gt; tuple[int, int, int]:
+    &quot;&quot;&quot;Returns (g, x, y) such that a*x + b*y = g = gcd(a, b).&quot;&quot;&quot;
+    if b == 0:
+        return a, 1, 0
+    g, x1, y1 = extended_gcd(b, a % b)
+    x = y1
+    y = x1 - (a // b) * y1
+    return g, x, y
 
-<span class="k">def</span><span class="w"> </span><span class="nf">solve</span><span class="p">(</span><span class="n">A</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">B</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">N</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
-    <span class="n">g</span><span class="p">,</span> <span class="n">s1</span><span class="p">,</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">extended_gcd</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">B</span><span class="p">)</span>
+def solve(A: int, B: int, N: int):
+    g, s1, s2 = extended_gcd(A, B)
 
-    <span class="k">if</span> <span class="n">N</span> <span class="o">%</span> <span class="n">g</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No integer solutions possible.&quot;</span><span class="p">)</span>
-        <span class="k">return</span>
+    if N % g != 0:
+        print(&quot;No integer solutions possible.&quot;)
+        return
 
-    <span class="c1"># Scale base solution to target N</span>
-    <span class="n">factor</span> <span class="o">=</span> <span class="n">N</span> <span class="o">//</span> <span class="n">g</span>
-    <span class="n">s1_</span> <span class="o">=</span> <span class="n">s1</span> <span class="o">*</span> <span class="n">factor</span>
-    <span class="n">s2_</span> <span class="o">=</span> <span class="n">s2</span> <span class="o">*</span> <span class="n">factor</span>
+    # Scale base solution to target N
+    factor = N // g
+    s1_ = s1 * factor
+    s2_ = s2 * factor
 
-    <span class="n">step_a</span> <span class="o">=</span> <span class="n">A</span> <span class="o">//</span> <span class="n">g</span>
-    <span class="n">step_b</span> <span class="o">=</span> <span class="n">B</span> <span class="o">//</span> <span class="n">g</span>
+    step_a = A // g
+    step_b = B // g
 
-    <span class="c1"># We need:</span>
-    <span class="c1"># x = s1_ + k * step_b &gt;= 0  =&gt;  k &gt;= ceil(-s1_ / step_b)</span>
-    <span class="c1"># y = s2_ - k * step_a &gt;= 0  =&gt;  k &lt;= floor(s2_ / step_a)</span>
-    <span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
-    <span class="n">min_k</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="o">-</span><span class="n">s1_</span> <span class="o">/</span> <span class="n">step_b</span><span class="p">)</span>
-    <span class="n">max_k</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">s2_</span> <span class="o">/</span> <span class="n">step_a</span><span class="p">)</span>
+    # We need:
+    # x = s1_ + k * step_b &gt;= 0  =&gt;  k &gt;= ceil(-s1_ / step_b)
+    # y = s2_ - k * step_a &gt;= 0  =&gt;  k &lt;= floor(s2_ / step_a)
+    import math
+    min_k = math.ceil(-s1_ / step_b)
+    max_k = math.floor(s2_ / step_a)
 
-    <span class="k">if</span> <span class="n">min_k</span> <span class="o">&gt;</span> <span class="n">max_k</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;No non-negative integer solutions.&quot;</span><span class="p">)</span>
-        <span class="k">return</span>
+    if min_k &gt; max_k:
+        print(&quot;No non-negative integer solutions.&quot;)
+        return
 
-    <span class="c1"># Pick valid k (e.g., min_k for smallest x)</span>
-    <span class="n">k</span> <span class="o">=</span> <span class="n">min_k</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">s1_</span> <span class="o">+</span> <span class="n">k</span> <span class="o">*</span> <span class="n">step_b</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">s2_</span> <span class="o">-</span> <span class="n">k</span> <span class="o">*</span> <span class="n">step_a</span>
+    # Pick valid k (e.g., min_k for smallest x)
+    k = min_k
+    x = s1_ + k * step_b
+    y = s2_ - k * step_a
 
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">A</span><span class="si">}</span><span class="s2"> * </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="n">B</span><span class="si">}</span><span class="s2"> * </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">N</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    print(f&quot;{A} * {x} + {B} * {y} = {N}&quot;)
 
-<span class="c1"># Test calls</span>
-<span class="n">solve</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>   <span class="c1"># Output: No non-negative integer solutions.</span>
-<span class="n">solve</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>   <span class="c1"># Output: No integer solutions possible.</span>
-<span class="n">solve</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">41</span><span class="p">)</span>  <span class="c1"># Output: 3 * 2 + 7 * 5 = 41</span>
-</code></pre></div>
+# Test calls
+solve(3, 2, 1)   # Output: No non-negative integer solutions.
+solve(4, 6, 9)   # Output: No integer solutions possible.
+solve(3, 7, 41)  # Output: 3 * 2 + 7 * 5 = 41
+</code></pre>
 
 <h3 id="how-to-identify-such-patterns">How to identify such patterns<a class="toc-link" href="#how-to-identify-such-patterns" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h3>
 <p>Most problems won&rsquo;t directly tell you what $A$, $B$, and $N$ are, but spin a whole story to distract you. If it is usually a problem with 2 or 3 input values, where 2 of them you can &ldquo;add&rdquo; or &ldquo;subtract&rdquo; and the 3rd one is to be &ldquo;equaled&rdquo;, then check whether you can form any equations whose solution is the necessary answer.</p>
@@ -303,47 +303,47 @@ The rest of the algorithm is mentioned below in Python.</p>
 <hr />
 <h2 id="spf-sieve-and-inclusion-exclusion-principle">SPF Sieve and Inclusion-Exclusion Principle<a class="toc-link" href="#spf-sieve-and-inclusion-exclusion-principle" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h2>
 <p>Here’s a fun puzzle: What is the time complexity of the below function?</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">n</span><span class="p">:</span><span class="nb">int</span><span class="p">):</span>
-  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">()</span>
+<pre class="highlight"><code class="language-python">def f(n:int):
+  for i in range(1, n + 1):
+    for j in range(i, n + 1, i):
+        print(j, end=&quot; &quot;)
+    print()
 
-<span class="n">f</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="c1"># 1 2 3 </span>
-<span class="c1"># 2 </span>
-<span class="c1"># 3</span>
-</code></pre></div>
+f(3)
+# 1 2 3 
+# 2 
+# 3
+</code></pre>
 
 <p>If you thought $\mathcal{O}(N \sqrt{N})$, then that&rsquo;s fine; I did too for a long time! But it&rsquo;s actually $\mathcal{O}(N \log N)$. And if the inner loop only ran for primes, it’s actually $\mathcal{O}(N \log(\log N))$!</p>
 <p>So first let&rsquo;s look at the SPF sieve.</p>
-<div class="highlight"><pre><span></span><code><span class="n">N</span> <span class="o">=</span> <span class="mi">1000000</span>
-<span class="n">spf</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">N</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">i</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="k">while</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="p">:</span>
-  <span class="k">if</span> <span class="n">spf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-    <span class="c1"># new prime obtained, mark all its unmarked multiples</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">N</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
-      <span class="k">if</span> <span class="n">spf</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-        <span class="n">spf</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
-  <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">N</span><span class="p">:</span>
-  <span class="c1"># mark the remaining primes</span>
-  <span class="k">if</span> <span class="n">spf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-    <span class="n">spf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span>
-  <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+<pre class="highlight"><code class="language-python">N = 1000000
+spf = [-1] * (N + 1)
+i = 2
+while i * i &lt;= N:
+  if spf[i] == -1:
+    # new prime obtained, mark all its unmarked multiples
+    for j in range(i, N + 1, i):
+      if spf[j] == -1:
+        spf[j] = i
+  i += 1
+while i &lt;= N:
+  # mark the remaining primes
+  if spf[i] == -1:
+    spf[i] = i
+  i += 1
 
-<span class="k">def</span><span class="w"> </span><span class="nf">get_prime_factors</span><span class="p">(</span><span class="n">k</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-    <span class="n">factors</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">while</span> <span class="n">k</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="c1"># remove all occurrences of smallest prime factor</span>
-        <span class="n">sp</span> <span class="o">=</span> <span class="n">spf</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
-        <span class="k">while</span> <span class="n">spf</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">==</span> <span class="n">sp</span><span class="p">:</span>
-            <span class="n">k</span> <span class="o">//=</span> <span class="n">spf</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
-            <span class="n">factors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sp</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">factors</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">get_prime_factors</span><span class="p">(</span><span class="mi">676767</span><span class="p">))</span>
-</code></pre></div>
+def get_prime_factors(k:int) -&gt; list[int]:
+    factors = []
+    while k &gt; 1:
+        # remove all occurrences of smallest prime factor
+        sp = spf[k]
+        while spf[k] == sp:
+            k //= spf[k]
+            factors.append(sp)
+    return factors
+print(get_prime_factors(676767))
+</code></pre>
 
 <p>So we can obtain the prime factors of any $N$ in under $\mathcal{O}(\log N)$ time complexity, after $\mathcal{O}(N \log(\log N))$ preprocessing. Consider this problem:</p>
 <blockquote>
@@ -360,48 +360,48 @@ The rest of the algorithm is mentioned below in Python.</p>
 <li>For any query $X$, if $X \le M$, return $B[X]$, else return 0.</li>
 </ol>
 <p>Python code is as follows (assumes <code>spf</code> is built from the above code):</p>
-<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">build_all_factors</span><span class="p">(</span><span class="n">p_factors</span><span class="p">:</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-    <span class="n">all_factors</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">i</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">p_factors</span><span class="p">)</span>
-    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">:</span>
-        <span class="n">ct</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">p_factors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-        <span class="c1"># find the frequency of a certain prime</span>
-        <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="ow">and</span> <span class="n">p_factors</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">num</span><span class="p">:</span>
-            <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
-            <span class="n">ct</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="n">m</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">all_factors</span><span class="p">)</span>
-        <span class="c1"># multiply all possible divisors with a power of the current prime</span>
-        <span class="c1"># this power must not exceed the frequency of the prime</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
-            <span class="n">mul</span> <span class="o">=</span> <span class="mi">1</span>
-            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ct</span><span class="p">):</span>
-                <span class="n">mul</span> <span class="o">*=</span> <span class="n">num</span>
-                <span class="n">all_factors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">all_factors</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">mul</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">all_factors</span>
+<pre class="highlight"><code class="language-python">def build_all_factors(p_factors:list[int]) -&gt; list[int]:
+    all_factors = [1]
+    i, n = 0, len(p_factors)
+    while i &lt; n:
+        ct, num = 0, p_factors[i]
+        # find the frequency of a certain prime
+        while i &lt; n and p_factors[i] == num:
+            i += 1
+            ct += 1
+        m = len(all_factors)
+        # multiply all possible divisors with a power of the current prime
+        # this power must not exceed the frequency of the prime
+        for j in range(m):
+            mul = 1
+            for k in range(ct):
+                mul *= num
+                all_factors.append(all_factors[j]*mul)
+    return all_factors
 
-<span class="k">def</span><span class="w"> </span><span class="nf">solve</span><span class="p">(</span><span class="n">A</span><span class="p">:</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">N</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">Q</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">Q_arr</span><span class="p">:</span><span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
-    <span class="n">M</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-    <span class="n">B</span><span class="p">,</span> <span class="n">C</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">M</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">M</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">A</span><span class="p">:</span>
-        <span class="c1"># get prime factors</span>
-        <span class="n">p_factors</span> <span class="o">=</span> <span class="n">get_prime_factors</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-        <span class="c1"># build all divisors</span>
-        <span class="n">all_factors</span> <span class="o">=</span> <span class="n">build_all_factors</span><span class="p">(</span><span class="n">p_factors</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">factor</span> <span class="ow">in</span> <span class="n">all_factors</span><span class="p">:</span>
-            <span class="c1"># update B and C</span>
-            <span class="n">B</span><span class="p">[</span><span class="n">factor</span><span class="p">]</span> <span class="o">+=</span> <span class="n">C</span><span class="p">[</span><span class="n">factor</span><span class="p">]</span>
-            <span class="n">C</span><span class="p">[</span><span class="n">factor</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">M</span><span class="o">+</span><span class="mi">1</span><span class="p">)):</span>
-        <span class="c1"># Inclusion-Exclusion Loop</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">,</span> <span class="n">M</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">i</span><span class="p">):</span>
-            <span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="n">B</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
-    <span class="n">answer</span> <span class="o">=</span> <span class="p">[</span><span class="n">B</span><span class="p">[</span><span class="n">q</span><span class="p">]</span> <span class="k">if</span> <span class="n">q</span> <span class="o">&lt;=</span> <span class="n">M</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">Q_arr</span><span class="p">]</span>
-    <span class="k">return</span> <span class="n">answer</span>
+def solve(A:list[int], N:int, Q:int, Q_arr:list[int]) -&gt; list[int]:
+    M = max(A)
+    B, C = [0]*(M+1), [0]*(M+1)
+    for a in A:
+        # get prime factors
+        p_factors = get_prime_factors(a)
+        # build all divisors
+        all_factors = build_all_factors(p_factors)
+        for factor in all_factors:
+            # update B and C
+            B[factor] += C[factor]
+            C[factor] += 1
+    for i in reversed(range(1, M+1)):
+        # Inclusion-Exclusion Loop
+        for j in range(2*i, M+1, i):
+            B[i] -= B[j]
+    answer = [B[q] if q &lt;= M else 0 for q in Q_arr]
+    return answer
 
-<span class="n">answer</span> <span class="o">=</span> <span class="n">solve</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">18</span><span class="p">],</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>
-<span class="c1"># [13, 1, 5]</span>
-</code></pre></div>
+answer = solve([2, 4, 5, 1, 6, 9, 18], 7, 3, [1, 3, 2])
+print(answer)
+# [13, 1, 5]
+</code></pre>
 
 <h3 id="how-to-identify-the-pattern">How to identify the pattern:<a class="toc-link" href="#how-to-identify-the-pattern" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h3>
 <ul>
@@ -434,45 +434,45 @@ The first element is $1 \bmod 3$. Next, all elements are $0 \bmod 3$. Then it al
 <hr />
 <h2 id="modular-arithmetic">Modular Arithmetic<a class="toc-link" href="#modular-arithmetic" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h2>
 <p>This topic is often more of a sub-problem rather than a unique problem on its own. Usually, you have to calculate some value, but since it can be too large, you evaluate it under a modulo, like $10^9 + 7$ or $998244353$. Below are some of the most common calculation functions for this:</p>
-<div class="highlight"><pre><span></span><code><span class="n">MOD</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mf">1e9</span> <span class="o">+</span> <span class="mi">7</span><span class="p">)</span>
+<pre class="highlight"><code class="language-python">MOD = int(1e9 + 7)
 
-<span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="k">return</span> <span class="p">((</span><span class="n">a</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">b</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">))</span> <span class="o">%</span> <span class="n">MOD</span>
+def add(a:int, b:int) -&gt; int:
+    return ((a % MOD) + (b % MOD)) % MOD
 
-<span class="k">def</span><span class="w"> </span><span class="nf">sub</span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">add</span><span class="p">((</span><span class="n">a</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="n">b</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">)</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">,</span> <span class="n">MOD</span><span class="p">)</span>
+def sub(a:int, b:int) -&gt; int:
+    return add((a % MOD) - (b % MOD) % MOD, MOD)
 
-<span class="k">def</span><span class="w"> </span><span class="nf">mul</span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="k">return</span> <span class="p">((</span><span class="n">a</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">b</span> <span class="o">%</span> <span class="n">MOD</span><span class="p">))</span> <span class="o">%</span> <span class="n">MOD</span>
+def mul(a:int, b:int) -&gt; int:
+    return ((a % MOD) * (b % MOD)) % MOD
 
-<span class="k">def</span><span class="w"> </span><span class="nf">powmod</span><span class="p">(</span><span class="n">x</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">n</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="n">p</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="k">while</span> <span class="n">n</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">p</span> <span class="o">=</span> <span class="n">mul</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-        <span class="n">x</span> <span class="o">=</span> <span class="n">mul</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-        <span class="n">n</span> <span class="o">//=</span> <span class="mi">2</span>
-    <span class="k">return</span> <span class="n">p</span>
+def powmod(x:int, n:int) -&gt; int:
+    p = 1
+    while n &gt; 0:
+        if n % 2 == 1:
+            p = mul(p, x)
+        x = mul(x, x)
+        n //= 2
+    return p
 
-<span class="k">def</span><span class="w"> </span><span class="nf">inv</span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">powmod</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">MOD</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span>
+def inv(a:int) -&gt; int:
+    return powmod(a, MOD - 2)
 
-<span class="k">def</span><span class="w"> </span><span class="nf">div</span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="k">return</span> <span class="n">mul</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">inv</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+def div(a:int, b:int) -&gt; int:
+    return mul(a, inv(b))
 
-<span class="c1"># pre-processing</span>
-<span class="n">M</span> <span class="o">=</span> <span class="mi">100005</span>
-<span class="n">fact</span><span class="p">,</span> <span class="n">invfact</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">M</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">M</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">M</span><span class="p">):</span>
-    <span class="n">fact</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">mul</span><span class="p">(</span><span class="n">fact</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">i</span><span class="p">)</span>
-    <span class="n">invfact</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">inv</span><span class="p">(</span><span class="n">fact</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+# pre-processing
+M = 100005
+fact, invfact = [1] * M, [1] * M
+for i in range(2, M):
+    fact[i] = mul(fact[i-1], i)
+    invfact[i] = inv(fact[i])
 
-<span class="k">def</span><span class="w"> </span><span class="nf">nCk</span><span class="p">(</span><span class="n">n</span><span class="p">:</span><span class="nb">int</span><span class="p">,</span> <span class="n">k</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">k</span> <span class="o">&gt;</span> <span class="n">n</span> <span class="ow">or</span> <span class="n">n</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">0</span>
-    <span class="c1"># nCk = n! / ((n-k)! * (k!))</span>
-    <span class="k">return</span> <span class="n">mul</span><span class="p">(</span><span class="n">fact</span><span class="p">[</span><span class="n">n</span><span class="p">],</span> <span class="n">mul</span><span class="p">(</span><span class="n">invfact</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="n">k</span><span class="p">],</span> <span class="n">invfact</span><span class="p">[</span><span class="n">k</span><span class="p">]))</span>
-</code></pre></div>
+def nCk(n:int, k:int) -&gt; int:
+    if k &gt; n or n &lt; 0 or k &lt; 0:
+        return 0
+    # nCk = n! / ((n-k)! * (k!))
+    return mul(fact[n], mul(invfact[n-k], invfact[k]))
+</code></pre>
 
 <p>Consider this problem:</p>
 <blockquote>
@@ -532,7 +532,7 @@ So we keep those 2 numbers as the last 2. We can apply the same process for the 
   <!-- Post Navigation -->
   <nav class="post-nav animate-in" aria-label="Post navigation">
     
-    <a href="../blogs/blog1_dp_1_competitive_programming.html" class="post-nav-link prev" id="nav-prev-post">
+    <a href="/CP-BLOGS/blogs/blog1_dp_1_competitive_programming.html" class="post-nav-link prev" id="nav-prev-post">
       <span class="post-nav-label">← Previous</span>
       <span class="post-nav-title">Dynamic Programming 1: Never Calculate Anything Twice</span>
     </a>
@@ -548,7 +548,7 @@ So we keep those 2 numbers as the last 2. We can apply the same process for the 
       <footer class="footer" role="contentinfo">
         <span>© 2026 CP Club VJTI &nbsp;·&nbsp; Built with ❤️ &amp; Python</span>
         <span>
-          <a href="../" aria-label="Home">Home</a>
+          <a href="/CP-BLOGS/" aria-label="Home">Home</a>
           &nbsp;·&nbsp;
           <a href="https://github.com/CP-Club-VJTI" target="_blank" rel="noopener" aria-label="GitHub">GitHub ↗</a>
         </span>
@@ -558,7 +558,7 @@ So we keep those 2 numbers as the last 2. We can apply the same process for the 
   </div><!-- /layout -->
 
   <!-- Scripts -->
-  <script src="../static/search.js"></script>
+  <script src="/CP-BLOGS/static/search.js"></script>
 
   
 
