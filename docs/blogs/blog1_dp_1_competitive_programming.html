@@ -141,6 +141,18 @@
           </a>
         </li>
         
+        <li>
+          <a href="../blogs/blog2_Number_theory_madness.html"
+             id="nav-blog2_Number_theory_madness"
+             
+             aria-current="false"
+             title="Math in Competitive Programming: Identifying Patterns and Formulae">
+            <span class="nav-icon">📄</span>
+            <span>Math in Competitive Programming: Identifying Patterns and Formulae</span>
+            <span class="nav-num">03</span>
+          </a>
+        </li>
+        
       </ul>
 
       
@@ -159,6 +171,10 @@
         <span class="tag tag-filter" data-tag="dynamic-programming" tabindex="0" role="button" aria-pressed="false">dynamic-programming</span>
         
         <span class="tag tag-filter" data-tag="game-theory" tabindex="0" role="button" aria-pressed="false">game-theory</span>
+        
+        <span class="tag tag-filter" data-tag="math" tabindex="0" role="button" aria-pressed="false">math</span>
+        
+        <span class="tag tag-filter" data-tag="number-theory" tabindex="0" role="button" aria-pressed="false">number-theory</span>
         
       </div>
       
@@ -253,16 +269,16 @@ The solution to this is trivial. Just create an array of size $N + 1$, set <code
 <p>For simplification, we deal with 2 types of knapsack:</p>
 <h3 id="a-finite-frequency-of-items">A. Finite frequency of items<a class="toc-link" href="#a-finite-frequency-of-items" title="Permanent link">&para;</a></h3>
 <p>Here each item can be used 1 or more times, but only finitely. Let&rsquo;s first consider the case where each item has a weight and a value, all the weights are unique, and we have to find the maximum sum of values obtainable.</p>
-<pre class="highlight"><code class="language-python">def knapsack(items: list[tuple[int]], W: int) -&gt; int:
-    # initialise with zeroes
-    dp = (W + 1) * [0]
-    for w, v in items:
-        # iterate in [w, W] in reverse
-        for i in reversed(range(w, W + 1)):
-            dp[i] = max(dp[i], dp[i-w] + v)
-    # make sure to return max value, not dp[-1]
-    return max(dp)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">knapsack</span><span class="p">(</span><span class="n">items</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">W</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="c1"># initialise with zeroes</span>
+    <span class="n">dp</span> <span class="o">=</span> <span class="p">(</span><span class="n">W</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+        <span class="c1"># iterate in [w, W] in reverse</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">W</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)):</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="n">w</span><span class="p">]</span> <span class="o">+</span> <span class="n">v</span><span class="p">)</span>
+    <span class="c1"># make sure to return max value, not dp[-1]</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span>
+</code></pre></div>
 
 <p>Now if we have an item $(w_i, v_i)$ that has some frequency $f_i$, then repeatedly running the inner loop for the same item can be unnecessary. We can make an optimization here (Binary Lifting). Let’s take an example:<br />
 Consider $w_i = 3$, $v_i = 5$, $f_i = 10$.<br />
@@ -279,42 +295,44 @@ This is because any $k \le 10$ can be made with a combination of these 4 weights
 * $k = 8 \rightarrow 1 + 4 + 3 = 8$<br />
 * $k = 3 \rightarrow 1 + 2 = 3$</p>
 <p>The pattern is quite simple: we can use powers of 2 to build any frequency, and then add an extra buffer frequency as needed.</p>
-<pre class="highlight"><code class="language-python">def knapsack(items: list[tuple[int]], W: int) -&gt; int:
-    # initialise with zeroes
-    dp = (W + 1) * [0]
-    for w, v, f in items:
-        factor = 1
-        while f &gt; 0:
-            multiplier = min(factor, f)
-            w_, v_ = multiplier * w, multiplier * v
-            # iterate in [w_, W] in reverse
-            for i in reversed(range(w_, W + 1)):
-                dp[i] = max(dp[i-w_] + v_, dp[i])
-            f -= multiplier  # Corrected line
-            factor *= 2
-    return max(dp)
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">knapsack</span><span class="p">(</span><span class="n">items</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">]],</span> <span class="n">W</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="c1"># initialise with zeroes</span>
+    <span class="n">dp</span> <span class="o">=</span> <span class="p">(</span><span class="n">W</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">w</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+        <span class="n">factor</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="k">while</span> <span class="n">f</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">multiplier</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">factor</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+            <span class="n">w_</span><span class="p">,</span> <span class="n">v_</span> <span class="o">=</span> <span class="n">multiplier</span> <span class="o">*</span> <span class="n">w</span><span class="p">,</span> <span class="n">multiplier</span> <span class="o">*</span> <span class="n">v</span>
+            <span class="c1"># iterate in [w_, W] in reverse</span>
+            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">w_</span><span class="p">,</span> <span class="n">W</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)):</span>
+                <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="n">w_</span><span class="p">]</span> <span class="o">+</span> <span class="n">v_</span><span class="p">,</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">f</span> <span class="o">-=</span> <span class="n">multiplier</span>  <span class="c1"># Corrected line</span>
+            <span class="n">factor</span> <span class="o">*=</span> <span class="mi">2</span>
+    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="n">dp</span><span class="p">)</span>
+</code></pre></div>
 
 <h3 id="b-infinite-supply">B. Infinite supply<a class="toc-link" href="#b-infinite-supply" title="Permanent link">&para;</a></h3>
 <p>Consider you have an unlimited supply of coins of certain denominations (coins of 2, 5, 10, etc). Find out the number of ways you can make a given amount.<br />
 This is a classic Leetcode Problem (518. Coin Change II). For this, there is just one change to our initial logic: <strong>Reverse the inner loop!</strong></p>
 <p><em>Proof of correctness:</em> Consider if I want to add a coin of denomination $k$ to an amount $x$ to make it $y$. If I process $y$ after $x$, I must have ensured that I have used the maximum possible amount of $k$ type coins. For $x = k$, this is trivial as you can only use a single coin to get that amount. By induction, it gets proven true for all $x &gt; k$.</p>
-<pre class="highlight"><code class="language-python">def change(self, amount: int, coins: List[int]) -&gt; int:
-    dp = (amount + 1) * [0]
-    # not taking anything is a single possibility
-    dp[0] = 1
-    for c in coins:
-        # range is reverse of our finite case
-        for i in range(c, amount + 1):
-            dp[i] += dp[i-c]
-    return dp[amount]
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">change</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">amount</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">coins</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+    <span class="n">dp</span> <span class="o">=</span> <span class="p">(</span><span class="n">amount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="c1"># not taking anything is a single possibility</span>
+    <span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">coins</span><span class="p">:</span>
+        <span class="c1"># range is reverse of our finite case</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">amount</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="n">c</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">dp</span><span class="p">[</span><span class="n">amount</span><span class="p">]</span>
+</code></pre></div>
 
 <p><em>(BTW, a more detailed tutorial on CP algorithms for Knapsack variants can be found here: <a href="https://cp-algorithms.com/dynamic_programming/knapsack.html">cp-algorithms.com/dynamic_programming/knapsack.html</a>)</em></p>
 <p><strong>How to identify such a pattern:</strong><br />
 * Value of input array is usually between $10^3$ to $5 \times 10^3$.<br />
 * You have to maximize some value obtained from a subset of the input under constraints.<br />
 * &ldquo;Take — not take&rdquo; variants generally appear.</p>
+<p><a href="https://onlinegdb.com/cMZO0j-Xu">Link to C++ codes for knapsack</a><br />
+<a href="../static/code_files/knapsack.cpp">Local file: </a></p>
 <hr />
 <h2 id="3-sub-sequence-dp">3. Sub-sequence DP<a class="toc-link" href="#3-sub-sequence-dp" title="Permanent link">&para;</a></h2>
 <p>Consider this problem:</p>
@@ -371,6 +389,11 @@ This is a classic Leetcode Problem (518. Coin Change II). For this, there is jus
     </a>
     
 
+    
+    <a href="../blogs/blog2_Number_theory_madness.html" class="post-nav-link next" id="nav-next-post">
+      <span class="post-nav-label">Next →</span>
+      <span class="post-nav-title">Math in Competitive Programming: Identifying Patterns and Formulae</span>
+    </a>
     
   </nav>
 

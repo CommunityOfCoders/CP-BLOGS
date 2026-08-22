@@ -143,6 +143,9 @@ def change(self, amount: int, coins: List[int]) -> int:
 * You have to maximize some value obtained from a subset of the input under constraints.
 * "Take — not take" variants generally appear.
 
+[Link to C++ codes for knapsack](https://onlinegdb.com/cMZO0j-Xu)
+[Local file: ](../static/code_files/knapsack.cpp)
+
 ---
 
 ## 3. Sub-sequence DP

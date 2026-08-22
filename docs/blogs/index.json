@@ -28,5 +28,21 @@
     "description": "",
     "excerpt": "Dynamic Programming is a method to solve problems by combining sub-problems… blah blah blah. DP is one of those topics I have heard everyone struggle with,…",
     "url": "blogs/blog1_dp_1_competitive_programming.html"
+  },
+  {
+    "slug": "blog2_Number_theory_madness",
+    "title": "Math in Competitive Programming: Identifying Patterns and Formulae",
+    "date": "2026-08-22",
+    "author": "CP Club VJTI",
+    "tags": [
+      "math",
+      "number-theory",
+      "codeforces",
+      "competitive-programming",
+      "algorithms"
+    ],
+    "description": "",
+    "excerpt": "Math in competitive programming is one of the most critical ways of testing one’s arithmetic and logic-building skills. A lot of the time, math in Competitive…",
+    "url": "blogs/blog2_Number_theory_madness.html"
   }
 ]
