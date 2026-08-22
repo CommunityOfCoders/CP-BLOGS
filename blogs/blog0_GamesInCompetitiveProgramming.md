@@ -119,7 +119,7 @@ Thus, **Bob wins if and only if $A == B$ or $A == \text{reverse}(B)$**. Otherwis
 Here is a curated collection of Codeforces game problems to test your understanding, ranging from entry-level to advanced:
 
 1. [CF 959 A - Mahmoud and Ehab and the even-odd game](https://codeforces.com/problemset/problem/959/A)  : [Solution Link](https://codeforces.com/contest/959/submission/387968974)
-2. [CF 1373 B - 01 Game](https://codeforces.com/problemset/problem/1373/B)
+2. [CF 1373 B - 01 Game](https://codeforces.com/problemset/problem/1373/B)[Solution Link](https://codeforces.com/contest/1373/submission/387997365)
 3. [CF 1842 A - Tenzing and Tsondu](https://codeforces.com/problemset/problem/1842/A)
 4. [CF 2055 A - Two Frogs](https://codeforces.com/problemset/problem/2055/A)
 5. [CF 2060 C - Game of Mathletes](https://codeforces.com/problemset/problem/2060/C)
