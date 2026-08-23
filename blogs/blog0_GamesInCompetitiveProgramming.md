@@ -121,7 +121,7 @@ Here is a curated collection of Codeforces game problems to test your understand
 1. [CF 959 A - Mahmoud and Ehab and the even-odd game](https://codeforces.com/problemset/problem/959/A)  : [Solution Link](https://codeforces.com/contest/959/submission/387968974)
 2. [CF 1373 B - 01 Game](https://codeforces.com/problemset/problem/1373/B)[Solution Link](https://codeforces.com/contest/1373/submission/387997365)
 3. [CF 1842 A - Tenzing and Tsondu](https://codeforces.com/problemset/problem/1842/A)
-4. [CF 2055 A - Two Frogs](https://codeforces.com/problemset/problem/2055/A)
+4. [CF 2055 A - Two Frogs](https://codeforces.com/problemset/problem/2055/A) : [Solution Link](https://codeforces.com/problemset/submission/2055/388124208)
 5. [CF 2060 C - Game of Mathletes](https://codeforces.com/problemset/problem/2060/C)
 6. [CF 1931 E - Anna and the Valentine's Day Gift](https://codeforces.com/problemset/problem/1931/E)
 7. [CF 2002 B - Removals Game](https://codeforces.com/problemset/problem/2002/B)
