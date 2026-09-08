@@ -44,5 +44,22 @@
     "description": "",
     "excerpt": "Math in competitive programming is one of the most critical ways of testing one’s arithmetic and logic-building skills. A lot of the time, math in Competitive…",
     "url": "blogs/blog2_Number_theory_madness.html"
+  },
+  {
+    "slug": "blog3_Trees_in_Competitive_Programming",
+    "title": "Trees in Competitive Programming: A Complete From-Scratch Tutorial To Essentials",
+    "date": "2026-09-08",
+    "author": "CP Club VJTI",
+    "tags": [
+      "trees",
+      "graph-theory",
+      "dfs",
+      "binary-lifting",
+      "codeforces",
+      "algorithms"
+    ],
+    "description": "",
+    "excerpt": "Trees are pretty cool. But many people simply skip questions when they see a tree mentioned. I’ve heard people say: &ldquo;It feels complex.&rdquo; &ldquo;I…",
+    "url": "blogs/blog3_Trees_in_Competitive_Programming.html"
   }
 ]
