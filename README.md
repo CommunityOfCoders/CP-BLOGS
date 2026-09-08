@@ -1,14 +1,14 @@
 # CP Club VJTI Blog
 
-A static blog website template hosted on GitHub Pages. Drop Markdown files into `blogs/` and they automatically become beautifully rendered pages.
+A competitive programming blog for CP Club VJTI, featuring tutorial-style posts, problem-solving write-ups, and curated practice links. The site is built from Markdown files in `blogs/` and published through GitHub Pages.
 
 ## ✨ Features
 
-- 🖤 Premium dark/light theme toggle
-- 🔍 Client-side fuzzy search across all blogs
+- 🖤 Dark/light theme toggle
+- 🔍 Client-side search across all blogs
 - 🏷️ Tag filtering
 - 📖 Reading progress bar on each post
-- 📱 Fully responsive with sidebar navigation
+- 📱 Responsive layout with sidebar navigation
 - ⚡ Auto-deploy via GitHub Actions on every push to `main`
 
 ---
@@ -25,9 +25,9 @@ pip install -r requirements.txt
 
 Replace the placeholder at `static/assets/logo_placeholder.svg` with your actual logo image.
 
-### 3. Write blogs
+### 3. Write or update posts
 
-Create markdown files in the `blogs/` folder using the naming convention:
+Create or edit markdown files in the `blogs/` folder using the naming convention:
 
 ```
 blogs/blog1_YourBlogTitle.md
@@ -52,7 +52,7 @@ Start writing content here...
 
 ### 4. Edit the homepage
 
-Edit `blogs/home_page.md` to customize the landing page content.
+Edit `blogs/home_page.md` to customize the landing page content for CP Club VJTI.
 
 ### 5. Build locally
 
@@ -77,6 +77,15 @@ Open `docs/index.html` in a browser to preview.
 
 After the first push, GitHub Actions will auto-build and your site will be live at:
 `https://<username>.github.io/<repo-name>/`
+
+## 🧭 Content Rules
+
+The repository also follows the contribution process in `CONTRIBUTING.md`:
+
+- Only CP Club members should contribute for now.
+- For problem-solution posts, the only required change is adding the solution link next to the problem link in the relevant markdown file.
+- Keep problem code clean and short, and avoid adding extra template sections.
+- Open a PR after committing and mention the related issue.
 
 ---
 
