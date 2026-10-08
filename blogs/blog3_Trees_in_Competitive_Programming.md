@@ -424,9 +424,9 @@ That’s all for the intro! Much of the remaining advanced section heavily borro
 
 ## Practice Problems
 
-* [1843 C. Sum in Binary Tree](https://codeforces.com/problemset/problem/1843/C)
-* [1057 A. Bmail Computer Network](https://codeforces.com/problemset/problem/1057/A)
-* [522 A. Reposts](https://codeforces.com/problemset/problem/522/A)
+* [1843 C. Sum in Binary Tree](https://codeforces.com/problemset/problem/1843/C)[solution](https://codeforces.com/problemset/submission/1843/390835379)
+* [1057 A. Bmail Computer Network](https://codeforces.com/problemset/problem/1057/A)[solution](https://codeforces.com/problemset/submission/1057/390836950)
+* [522 A. Reposts](https://codeforces.com/problemset/problem/522/A)[solution](https://codeforces.com/problemset/submission/522/390842073)
 * [2257 C. Spying on the Beaver](https://codeforces.com/problemset/problem/2257/C)
 * [1905 B. Beginner's Zelda](https://codeforces.com/problemset/problem/1905/B)
 * [982 C. Cut 'em all!](https://codeforces.com/problemset/problem/982/C)
