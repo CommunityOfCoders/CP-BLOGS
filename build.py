@@ -14,6 +14,7 @@ Output: docs/ directory ready to be served by GitHub Pages.
 """
 
 import argparse
+import html
 import json
 import math
 import os
@@ -120,6 +121,30 @@ def add_target_blank(html: str) -> str:
     return re.sub(r'<a\b[^>]*href="[^"]*"[^>]*>', repl, html)
 
 
+DISPLAY_MATH_RE = re.compile(r"\$\$(.+?)\$\$", re.DOTALL)
+
+
+def protect_display_math(text: str) -> tuple[str, list[str]]:
+    """Shield $$...$$ blocks from Markdown extensions such as nl2br."""
+    blocks: list[str] = []
+
+    def replace(match: re.Match) -> str:
+        token = f"MATHBLOCKPLACEHOLDER{len(blocks)}"
+        # Escape for HTML now; the browser decodes it back to TeX before MathJax runs.
+        blocks.append(html.escape(match.group(0), quote=False))
+        return f"\n\n{token}\n\n"
+
+    return DISPLAY_MATH_RE.sub(replace, text), blocks
+
+
+def restore_display_math(html_body: str, blocks: list[str]) -> str:
+    """Replace protected math placeholders after Markdown conversion."""
+    for index, block in enumerate(blocks):
+        token = f"MATHBLOCKPLACEHOLDER{index}"
+        html_body = html_body.replace(f"<p>{token}</p>", block)
+    return html_body
+
+
 def format_date(raw) -> str:
     """Normalize date to YYYY-MM-DD string."""
     if not raw:
@@ -155,8 +180,10 @@ def collect_blogs() -> list[dict]:
         text = md_file.read_text(encoding="utf-8")
         meta, body = parse_frontmatter(text)
 
+        protected_body, math_blocks = protect_display_math(body)
         md_converter.reset()
-        html_body = add_target_blank(md_converter.convert(body))
+        html_body = md_converter.convert(protected_body)
+        html_body = add_target_blank(restore_display_math(html_body, math_blocks))
 
         slug = slugify(md_file.name)
 

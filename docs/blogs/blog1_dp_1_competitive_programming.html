@@ -16,7 +16,7 @@
   <meta property="og:type" content="website" />
 
   <!-- Site base for JS (handles GitHub Pages subdirectory) -->
-  <meta name="site-base" content="/CP-BLOGS" />
+  <meta name="site-base" content=".." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,10 +24,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="/CP-BLOGS/static/style.css" />
+  <link rel="stylesheet" href="../static/style.css" />
 
   <!-- Theme: apply early to prevent flash -->
-  <script src="/CP-BLOGS/static/theme.js"></script>
+  <script src="../static/theme.js"></script>
 
   
 
@@ -63,8 +63,8 @@
     </button>
 
     <!-- Logo -->
-    <a href="/CP-BLOGS/" class="navbar-logo" id="navbar-logo" aria-label="CP Club VJTI Home">
-      <img src="/CP-BLOGS/static/assets/cp_club_vjti_logo.jpg" alt="CP Club VJTI Logo" height="40" />
+    <a href="../" class="navbar-logo" id="navbar-logo" aria-label="CP Club VJTI Home">
+      <img src="../static/assets/cp_club_vjti_logo.jpg" alt="CP Club VJTI Logo" height="40" />
     </a>
 
     <div class="navbar-spacer"></div>
@@ -104,7 +104,7 @@
       <p class="sidebar-section-label">Navigation</p>
       <ul class="sidebar-nav">
         <li>
-          <a href="/CP-BLOGS/" id="nav-home"
+          <a href="../" id="nav-home"
              
              aria-current="false">
             <span class="nav-icon">🏠</span> Home
@@ -118,7 +118,7 @@
       <ul class="sidebar-nav" id="sidebar-blog-nav">
         
         <li>
-          <a href="/CP-BLOGS/blogs/blog0_GamesInCompetitiveProgramming.html"
+          <a href="../blogs/blog0_GamesInCompetitiveProgramming.html"
              id="nav-blog0_GamesInCompetitiveProgramming"
              
              aria-current="false"
@@ -130,7 +130,7 @@
         </li>
         
         <li>
-          <a href="/CP-BLOGS/blogs/blog1_dp_1_competitive_programming.html"
+          <a href="../blogs/blog1_dp_1_competitive_programming.html"
              id="nav-blog1_dp_1_competitive_programming"
              class="active"
              aria-current="page"
@@ -142,7 +142,7 @@
         </li>
         
         <li>
-          <a href="/CP-BLOGS/blogs/blog2_Number_theory_madness.html"
+          <a href="../blogs/blog2_Number_theory_madness.html"
              id="nav-blog2_Number_theory_madness"
              
              aria-current="false"
@@ -154,7 +154,7 @@
         </li>
         
         <li>
-          <a href="/CP-BLOGS/blogs/blog3_Trees_in_Competitive_Programming.html"
+          <a href="../blogs/blog3_Trees_in_Competitive_Programming.html"
              id="nav-blog3_Trees_in_Competitive_Programming"
              
              aria-current="false"
@@ -162,6 +162,18 @@
             <span class="nav-icon">📄</span>
             <span>Trees in Competitive Programming: A Complete From-Scratch Tutorial To Essentials</span>
             <span class="nav-num">04</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="../blogs/blog4_Range_Query_Beginner_Guide.html"
+             id="nav-blog4_Range_Query_Beginner_Guide"
+             
+             aria-current="false"
+             title="Range Query Beginner Guide: From Prefix Sums to Segment Trees">
+            <span class="nav-icon">📄</span>
+            <span>Range Query Beginner Guide: From Prefix Sums to Segment Trees</span>
+            <span class="nav-num">05</span>
           </a>
         </li>
         
@@ -180,11 +192,15 @@
         
         <span class="tag tag-filter" data-tag="competitive-programming" tabindex="0" role="button" aria-pressed="false">competitive-programming</span>
         
+        <span class="tag tag-filter" data-tag="data-structures" tabindex="0" role="button" aria-pressed="false">data-structures</span>
+        
         <span class="tag tag-filter" data-tag="dfs" tabindex="0" role="button" aria-pressed="false">dfs</span>
         
         <span class="tag tag-filter" data-tag="dp" tabindex="0" role="button" aria-pressed="false">dp</span>
         
         <span class="tag tag-filter" data-tag="dynamic-programming" tabindex="0" role="button" aria-pressed="false">dynamic-programming</span>
+        
+        <span class="tag tag-filter" data-tag="fenwick-tree" tabindex="0" role="button" aria-pressed="false">fenwick-tree</span>
         
         <span class="tag tag-filter" data-tag="game-theory" tabindex="0" role="button" aria-pressed="false">game-theory</span>
         
@@ -192,7 +208,15 @@
         
         <span class="tag tag-filter" data-tag="math" tabindex="0" role="button" aria-pressed="false">math</span>
         
+        <span class="tag tag-filter" data-tag="mos-algorithm" tabindex="0" role="button" aria-pressed="false">mos-algorithm</span>
+        
         <span class="tag tag-filter" data-tag="number-theory" tabindex="0" role="button" aria-pressed="false">number-theory</span>
+        
+        <span class="tag tag-filter" data-tag="range-queries" tabindex="0" role="button" aria-pressed="false">range-queries</span>
+        
+        <span class="tag tag-filter" data-tag="segment-tree" tabindex="0" role="button" aria-pressed="false">segment-tree</span>
+        
+        <span class="tag tag-filter" data-tag="sparse-table" tabindex="0" role="button" aria-pressed="false">sparse-table</span>
         
         <span class="tag tag-filter" data-tag="trees" tabindex="0" role="button" aria-pressed="false">trees</span>
         
@@ -232,13 +256,13 @@
     
     <div class="post-tags">
       
-      <a href="/CP-BLOGS/?tag=dynamic-programming" class="tag" aria-label="Filter by tag: dynamic-programming">dynamic-programming</a>
+      <a href="../?tag=dynamic-programming" class="tag" aria-label="Filter by tag: dynamic-programming">dynamic-programming</a>
       
-      <a href="/CP-BLOGS/?tag=dp" class="tag" aria-label="Filter by tag: dp">dp</a>
+      <a href="../?tag=dp" class="tag" aria-label="Filter by tag: dp">dp</a>
       
-      <a href="/CP-BLOGS/?tag=codeforces" class="tag" aria-label="Filter by tag: codeforces">codeforces</a>
+      <a href="../?tag=codeforces" class="tag" aria-label="Filter by tag: codeforces">codeforces</a>
       
-      <a href="/CP-BLOGS/?tag=competitive-programming" class="tag" aria-label="Filter by tag: competitive-programming">competitive-programming</a>
+      <a href="../?tag=competitive-programming" class="tag" aria-label="Filter by tag: competitive-programming">competitive-programming</a>
       
     </div>
     
@@ -403,14 +427,14 @@ This is a classic Leetcode Problem (518. Coin Change II). For this, there is jus
   <!-- Post Navigation -->
   <nav class="post-nav animate-in" aria-label="Post navigation">
     
-    <a href="/CP-BLOGS/blogs/blog0_GamesInCompetitiveProgramming.html" class="post-nav-link prev" id="nav-prev-post">
+    <a href="../blogs/blog0_GamesInCompetitiveProgramming.html" class="post-nav-link prev" id="nav-prev-post">
       <span class="post-nav-label">← Previous</span>
       <span class="post-nav-title">Games in Competitive Programming: Demystifying Alice and Bob</span>
     </a>
     
 
     
-    <a href="/CP-BLOGS/blogs/blog2_Number_theory_madness.html" class="post-nav-link next" id="nav-next-post">
+    <a href="../blogs/blog2_Number_theory_madness.html" class="post-nav-link next" id="nav-next-post">
       <span class="post-nav-label">Next →</span>
       <span class="post-nav-title">Math in Competitive Programming: Identifying Patterns and Formulae</span>
     </a>
@@ -424,7 +448,7 @@ This is a classic Leetcode Problem (518. Coin Change II). For this, there is jus
       <footer class="footer" role="contentinfo">
         <span>© 2026 CP Club VJTI &nbsp;·&nbsp; Built with ❤️ &amp; Python</span>
         <span>
-          <a href="/CP-BLOGS/" aria-label="Home">Home</a>
+          <a href="../" aria-label="Home">Home</a>
           &nbsp;·&nbsp;
           <a href="https://github.com/CP-Club-VJTI" target="_blank" rel="noopener" aria-label="GitHub">GitHub ↗</a>
         </span>
@@ -434,7 +458,7 @@ This is a classic Leetcode Problem (518. Coin Change II). For this, there is jus
   </div><!-- /layout -->
 
   <!-- Scripts -->
-  <script src="/CP-BLOGS/static/search.js"></script>
+  <script src="../static/search.js"></script>
 
   
 

@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Range Query Beginner Guide: From Prefix Sums to Segment Trees | CP Club VJTI</title>
+  <meta name="description" content="Introduction&amp;para; Welcome to the guide! If you are going to survive competitive programming, you need to master Range Queries. Brute-forcing a solution with…" />
+  <meta name="keywords" content="competitive programming, algorithms, data structures, VJTI, CP Club, range-queries, data-structures, segment-tree, fenwick-tree, sparse-table, mos-algorithm, codeforces, algorithms" />
+  <meta name="author" content="CP Club VJTI" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Range Query Beginner Guide: From Prefix Sums to Segment Trees | CP Club VJTI" />
+  <meta property="og:description" content="Introduction&amp;para; Welcome to the guide! If you are going to survive competitive programming, you need to master Range Queries. Brute-forcing a solution with…" />
+  <meta property="og:type" content="website" />
+
+  <!-- Site base for JS (handles GitHub Pages subdirectory) -->
+  <meta name="site-base" content=".." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../static/style.css" />
+
+  <!-- Theme: apply early to prevent flash -->
+  <script src="../static/theme.js"></script>
+
+  
+
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+</head>
+<body>
+
+  <!-- Reading Progress (shown on blog posts) -->
+  
+<div class="reading-progress" id="reading-progress" role="progressbar" aria-label="Reading progress"></div>
+
+
+  <!-- ── Navbar ──────────────────────────────────────────────── -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+
+    <!-- Hamburger (mobile) -->
+    <button class="hamburger" id="hamburger-btn" aria-label="Toggle sidebar" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Logo -->
+    <a href="../" class="navbar-logo" id="navbar-logo" aria-label="CP Club VJTI Home">
+      <img src="../static/assets/cp_club_vjti_logo.jpg" alt="CP Club VJTI Logo" height="40" />
+    </a>
+
+    <div class="navbar-spacer"></div>
+
+    <!-- Search -->
+    <div class="navbar-search" role="search">
+      <span class="search-icon" aria-hidden="true">🔍</span>
+      <input
+        type="search"
+        id="search-input"
+        placeholder="Search blogs…"
+        aria-label="Search blogs"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <div class="search-results" id="search-results" role="listbox" aria-label="Search results"></div>
+    </div>
+
+    <!-- Theme Toggle -->
+    <button
+      class="theme-toggle"
+      id="theme-toggle-btn"
+      onclick="toggleTheme()"
+      aria-label="Switch theme"
+    >
+      <span>🌙</span><span class="toggle-label">Dark</span>
+    </button>
+
+  </nav>
+
+  <!-- ── Layout ─────────────────────────────────────────────── -->
+  <div class="layout">
+
+    <!-- ── Sidebar ──────────────────────────────────────────── -->
+    <aside class="sidebar" id="sidebar" role="complementary" aria-label="Blog navigation">
+
+      <p class="sidebar-section-label">Navigation</p>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="../" id="nav-home"
+             
+             aria-current="false">
+            <span class="nav-icon">🏠</span> Home
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-divider"></div>
+      <p class="sidebar-section-label">All Blogs</p>
+
+      <ul class="sidebar-nav" id="sidebar-blog-nav">
+        
+        <li>
+          <a href="../blogs/blog0_GamesInCompetitiveProgramming.html"
+             id="nav-blog0_GamesInCompetitiveProgramming"
+             
+             aria-current="false"
+             title="Games in Competitive Programming: Demystifying Alice and Bob">
+            <span class="nav-icon">📄</span>
+            <span>Games in Competitive Programming: Demystifying Alice and Bob</span>
+            <span class="nav-num">01</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="../blogs/blog1_dp_1_competitive_programming.html"
+             id="nav-blog1_dp_1_competitive_programming"
+             
+             aria-current="false"
+             title="Dynamic Programming 1: Never Calculate Anything Twice">
+            <span class="nav-icon">📄</span>
+            <span>Dynamic Programming 1: Never Calculate Anything Twice</span>
+            <span class="nav-num">02</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="../blogs/blog2_Number_theory_madness.html"
+             id="nav-blog2_Number_theory_madness"
+             
+             aria-current="false"
+             title="Math in Competitive Programming: Identifying Patterns and Formulae">
+            <span class="nav-icon">📄</span>
+            <span>Math in Competitive Programming: Identifying Patterns and Formulae</span>
+            <span class="nav-num">03</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="../blogs/blog3_Trees_in_Competitive_Programming.html"
+             id="nav-blog3_Trees_in_Competitive_Programming"
+             
+             aria-current="false"
+             title="Trees in Competitive Programming: A Complete From-Scratch Tutorial To Essentials">
+            <span class="nav-icon">📄</span>
+            <span>Trees in Competitive Programming: A Complete From-Scratch Tutorial To Essentials</span>
+            <span class="nav-num">04</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="../blogs/blog4_Range_Query_Beginner_Guide.html"
+             id="nav-blog4_Range_Query_Beginner_Guide"
+             class="active"
+             aria-current="page"
+             title="Range Query Beginner Guide: From Prefix Sums to Segment Trees">
+            <span class="nav-icon">📄</span>
+            <span>Range Query Beginner Guide: From Prefix Sums to Segment Trees</span>
+            <span class="nav-num">05</span>
+          </a>
+        </li>
+        
+      </ul>
+
+      
+      <div class="sidebar-divider"></div>
+      <p class="sidebar-section-label">Filter by Tag</p>
+      <div class="sidebar-tags" id="sidebar-tag-filter">
+        
+        <span class="tag tag-filter" data-tag="algorithms" tabindex="0" role="button" aria-pressed="false">algorithms</span>
+        
+        <span class="tag tag-filter" data-tag="binary-lifting" tabindex="0" role="button" aria-pressed="false">binary-lifting</span>
+        
+        <span class="tag tag-filter" data-tag="codeforces" tabindex="0" role="button" aria-pressed="false">codeforces</span>
+        
+        <span class="tag tag-filter" data-tag="competitive-programming" tabindex="0" role="button" aria-pressed="false">competitive-programming</span>
+        
+        <span class="tag tag-filter" data-tag="data-structures" tabindex="0" role="button" aria-pressed="false">data-structures</span>
+        
+        <span class="tag tag-filter" data-tag="dfs" tabindex="0" role="button" aria-pressed="false">dfs</span>
+        
+        <span class="tag tag-filter" data-tag="dp" tabindex="0" role="button" aria-pressed="false">dp</span>
+        
+        <span class="tag tag-filter" data-tag="dynamic-programming" tabindex="0" role="button" aria-pressed="false">dynamic-programming</span>
+        
+        <span class="tag tag-filter" data-tag="fenwick-tree" tabindex="0" role="button" aria-pressed="false">fenwick-tree</span>
+        
+        <span class="tag tag-filter" data-tag="game-theory" tabindex="0" role="button" aria-pressed="false">game-theory</span>
+        
+        <span class="tag tag-filter" data-tag="graph-theory" tabindex="0" role="button" aria-pressed="false">graph-theory</span>
+        
+        <span class="tag tag-filter" data-tag="math" tabindex="0" role="button" aria-pressed="false">math</span>
+        
+        <span class="tag tag-filter" data-tag="mos-algorithm" tabindex="0" role="button" aria-pressed="false">mos-algorithm</span>
+        
+        <span class="tag tag-filter" data-tag="number-theory" tabindex="0" role="button" aria-pressed="false">number-theory</span>
+        
+        <span class="tag tag-filter" data-tag="range-queries" tabindex="0" role="button" aria-pressed="false">range-queries</span>
+        
+        <span class="tag tag-filter" data-tag="segment-tree" tabindex="0" role="button" aria-pressed="false">segment-tree</span>
+        
+        <span class="tag tag-filter" data-tag="sparse-table" tabindex="0" role="button" aria-pressed="false">sparse-table</span>
+        
+        <span class="tag tag-filter" data-tag="trees" tabindex="0" role="button" aria-pressed="false">trees</span>
+        
+      </div>
+      
+
+    </aside>
+
+    <!-- ── Main ─────────────────────────────────────────────── -->
+    <main class="main-content" id="main-content" role="main">
+      
+
+<article id="blog-post-blog4_Range_Query_Beginner_Guide" aria-labelledby="post-title">
+
+  <!-- Post Header -->
+  <header class="post-header animate-in">
+    <h1 id="post-title">Range Query Beginner Guide: From Prefix Sums to Segment Trees</h1>
+
+    <div class="post-meta">
+      
+      <span class="post-meta-item author">
+        <span class="icon">✍</span> CP Club VJTI
+      </span>
+      
+      
+      <span class="post-meta-item">
+        <span class="icon">📅</span> 2026-09-20
+      </span>
+      
+      
+      <span class="post-meta-item">
+        <span class="icon">⏱</span> 20 min read
+      </span>
+      
+    </div>
+
+    
+    <div class="post-tags">
+      
+      <a href="../?tag=range-queries" class="tag" aria-label="Filter by tag: range-queries">range-queries</a>
+      
+      <a href="../?tag=data-structures" class="tag" aria-label="Filter by tag: data-structures">data-structures</a>
+      
+      <a href="../?tag=segment-tree" class="tag" aria-label="Filter by tag: segment-tree">segment-tree</a>
+      
+      <a href="../?tag=fenwick-tree" class="tag" aria-label="Filter by tag: fenwick-tree">fenwick-tree</a>
+      
+      <a href="../?tag=sparse-table" class="tag" aria-label="Filter by tag: sparse-table">sparse-table</a>
+      
+      <a href="../?tag=mos-algorithm" class="tag" aria-label="Filter by tag: mos-algorithm">mos-algorithm</a>
+      
+      <a href="../?tag=codeforces" class="tag" aria-label="Filter by tag: codeforces">codeforces</a>
+      
+      <a href="../?tag=algorithms" class="tag" aria-label="Filter by tag: algorithms">algorithms</a>
+      
+    </div>
+    
+  </header>
+
+  <!-- Post Body -->
+  <div class="post-body animate-in" id="post-body">
+    <h2 id="introduction">Introduction<a class="toc-link" href="#introduction" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h2>
+<p>Welcome to the guide! If you are going to survive competitive programming, you need to master Range Queries. Brute-forcing a solution with nested loops might work for arrays of size $1,000$, but when $N$ and $Q$ (the number of queries) scale to $10^5$ or $10^6$, an $\mathcal{O}(N \times Q)$ approach will hit a Time Limit Exceeded (TLE) verdict before you can even blink.</p>
+<p>This guide is your survival manual. We will cover everything from the humble Prefix Sum to the almighty Segment Tree.</p>
+<p>In competitive programming, you are frequently handed a massive array and asked to perform operations on specific contiguous sub-segments, or “ranges,” of that array.</p>
+<p>Imagine you are given an array of $200,000$ integers and asked $100,000$ times to find the minimum value between index $L$ and index $R$. If you scan the array from $L$ to $R$ every single time, your code will perform tens of billions of operations. Most online judges cap your operations at roughly $10^8$ per second.</p>
+<p>Range query data structures and algorithms allow us to preprocess the array once, so that answering each subsequent query takes logarithmic time, $\mathcal{O}(\log N)$, or even constant time, $\mathcal{O}(1)$. Some algorithms also allow us to update the array on the fly without having to rebuild everything from scratch.</p>
+<hr />
+<h2 id="the-core-vocabulary-definitions">The Core Vocabulary (Definitions)<a class="toc-link" href="#the-core-vocabulary-definitions" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h2>
+<p>Before building data structures, you must master the terminology. We categorize algorithms based on how the underlying data changes and the mathematical properties of the query function.</p>
+<h3 id="query-and-update-types">Query and Update Types:<a class="toc-link" href="#query-and-update-types" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h3>
+<ul>
+<li><strong>Range Query:</strong> Asking a question about a subarray from index $L$ to $R$ (e.g., “What is the sum of elements from index 3 to 10?”).</li>
+<li><strong>Point Update:</strong> Modifying a single element in the array at index $i$ (e.g., “Change the value at index 5 to 100”).</li>
+<li><strong>Range Update:</strong> Modifying a contiguous block of elements from index $L$ to $R$ (e.g., “Add 10 to all elements from index 2 to 8”).</li>
+<li><strong>Offline vs. Online:</strong> “Online” means you must process queries one by one as they arrive (often intermixed with updates). “Offline” means you are given all queries upfront and can reorder them to calculate answers faster.</li>
+</ul>
+<h3 id="mathematical-properties">Mathematical Properties:<a class="toc-link" href="#mathematical-properties" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h3>
+<ul>
+<li><strong>Identity Element:</strong> A value that leaves other elements unchanged under a function. For addition, identity is $0$ ($x + 0 = x$). For multiplication, it is $1$. For bitwise XOR, it is $0$. For maximum, it is $-\infty$.</li>
+<li><strong>Invertible Function:</strong> An operation where every action can be “undone.” Addition is invertible (subtract to undo). XOR is invertible (XOR again to undo). Maximum and Minimum are not invertible: if the maximum of a range is 10, removing the 10 does not tell you the new maximum without inspecting other numbers.</li>
+<li><strong>Idempotent Function:</strong> A function where applying it to the same element multiple times yields the same result: $f(x, x) = x$. Examples: Minimum, Maximum, GCD. (Addition is not idempotent because $x + x \neq x$).</li>
+<li><strong>Associativity:</strong> Grouping does not matter: $f(a, f(b, c)) = f(f(a, b), c)$. Almost all range query structures rely on this (Sum, Min, Max, GCD, XOR).</li>
+<li><strong>Commutativity:</strong> Order does not matter: $f(a, b) = f(b, a)$. Matrix multiplication is associative but not commutative, meaning left-to-right order must be preserved!</li>
+</ul>
+<hr />
+<h2 id="prefix-sums">Prefix Sums<a class="toc-link" href="#prefix-sums" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h2>
+<p><strong>Formal Definition:</strong> You are given an array of $N$ elements. You must answer queries that aggregate, over a function $f$, the elements in range $[L, R]$, where $1 \le L \le R \le N$. The array is static (no updates).</p>
+<p><strong>Solution:</strong> For array $a_1, a_2, \dots, a_n$, we want $f(a_L, a_{L+1}, \dots, a_R)$.<br />
+Instead of looping from $L$ to $R$ every query, precalculate a new array <code>pref</code>, where <code>pref[i]</code> stores the aggregate from index $1$ to $i$. We define <code>pref[0]</code> = identity (for sum, identity is $0$).<br />
+When queried for range $[L, R]$, combine the aggregate up to $R$ and undo the prefix up to $L - 1$ using the inverse operation: $f(\text{pref}[R], \text{inverse}(\text{pref}[L-1]))$.</p>
+$$
+\begin{align*}
+\text{Precomputation:} \quad &amp;\text{pref}[i] = f(a_1, a_2, \dots, a_i) \quad \text{with} \quad \text{pref}[0] = e \quad (\text{identity}) \\
+\text{Query}(L, R): \quad &amp;\text{Ans} = f\Big(\text{pref}[R], \, \text{inverse}\big(\text{pref}[L-1]\big)\Big) \\
+\text{Sum Example:} \quad &amp;\sum_{i=L}^{R} a_i = \text{pref}[R] - \text{pref}[L-1]
+\end{align*}
+$$
+<ul>
+<li><strong>Query type:</strong> Static Range Queries (Offline or Online)</li>
+<li><strong>Functions supported:</strong> Associative and strictly Invertible (Sum, XOR, Product modulo a prime)</li>
+<li><strong>Preprocessing Complexity:</strong> $\mathcal{O}(N)$</li>
+<li><strong>Space Complexity:</strong> $\mathcal{O}(N)$</li>
+<li><strong>Query Complexity:</strong> $\mathcal{O}(1)$</li>
+</ul>
+<pre class="highlight"><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+// operation: addition
+int f(int a, int b){
+    return a + b;
+}
+// inverse: negation
+int inverse(int x){
+    return - x;
+}
+void preproc(std::vector&lt;int&gt;&amp;nums, std::vector&lt;int&gt; &amp;pref, int I) // input array, prefix sum array, identity value
+{
+    int n = nums.size();
+    pref.resize(n+1, I);
+    // O(N) preproc
+    for(int i = 1; i &lt;= n; i++)
+    {
+        pref[i] = f(pref[i - 1], nums[i - 1]);
+    }
+}
+
+int query(int L, int R, std::vector&lt;int&gt; &amp;pref)
+{
+    // O(1) query
+    // 1 based indexing
+    return f(pref[R], inverse(pref[L - 1]));
+}
+
+int main()
+{
+    std::vector&lt;int&gt; nums={1,2,3,4,5}, pref;
+    preproc(nums, pref,0);
+    std::cout&lt;&lt;query(2,4,pref)&lt;&lt;std::endl; // 9
+    return 0;
+}
+</code></pre>
+
+<p><strong>Practice:</strong></p>
+<ul>
+<li><a href="https://cses.fi/problemset/task/1646" target="_blank" rel="noopener noreferrer">CSES: Static Range Sum Queries</a></li>
+<li><a href="https://usaco.org/index.php?page=viewproblem2&amp;cpid=595" target="_blank" rel="noopener noreferrer">USACO Silver: Subsequences Summing to Sevens</a></li>
+</ul>
+<hr />
+<h2 id="difference-array">Difference Array<a class="toc-link" href="#difference-array" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h2>
+<p><strong>Formal Definition:</strong> You start with an array of $N$ elements initialized to $0$. You must perform multiple Range Updates (e.g., adding value $V$ to all elements in range $[L, R]$). After all updates are processed, output the final state of the array.</p>
+<p><strong>Solution:</strong> A Difference Array is the exact inverse of a Prefix Sum. The difference array <code>diff</code> stores changes between consecutive elements: <code>diff[i] = a[i] - a[i-1]</code>.<br />
+To add $V$ to range $[L, R]$, make two $\mathcal{O}(1)$ point updates:</p>
+<ol>
+<li><code>diff[L] += V</code></li>
+<li><code>diff[R + 1] -= V</code></li>
+</ol>
+<p>After processing all update queries, reconstruct the array by computing the Prefix Sum of <code>diff</code>. The $+V$ at index $L$ cascades forward, and the $-V$ at index $R + 1$ cancels it out for all indices beyond $R$.</p>
+$$
+\begin{align*}
+\text{Definition:} \quad &amp;\text{diff}[i] = a[i] - a[i-1] \\
+\text{Range Update } [L, R] + V: \quad &amp;\begin{cases} 
+\text{diff}[L] \leftarrow \text{diff}[L] + V \\ 
+\text{diff}[R+1] \leftarrow \text{diff}[R+1] - V 
+\end{cases} \\
+\text{Array Reconstruction:} \quad &amp;a[i] = \sum_{j=1}^{i} \text{diff}[j]
+\end{align*}
+$$
+<ul>
+<li><strong>Query type:</strong> Offline Range Updates with a single final evaluation</li>
+<li><strong>Functions supported:</strong> Associative and Invertible (Sum, XOR)</li>
+<li><strong>Preprocessing Complexity:</strong> $\mathcal{O}(1)$ per update</li>
+<li><strong>Space Complexity:</strong> $\mathcal{O}(N)$</li>
+<li><strong>Final Evaluation Complexity:</strong> $\mathcal{O}(N)$</li>
+</ul>
+<pre class="highlight"><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+// operation: addition
+int f(int a, int b){
+    return a + b;
+}
+// inverse: negation
+int inverse(int x){
+    return - x;
+}
+void preproc(std::vector&lt;int&gt;&amp;nums, std::vector&lt;int&gt; &amp;diff, int I) // input array, difference array, identity value
+{
+    int n = nums.size();
+    diff.resize(n+1, I);
+    // O(N) preproc
+    diff[0] = nums[0];
+    for(int i = 1; i &lt; n; i++)
+    {
+        diff[i] = f(nums[i], inverse(nums[i - 1]));
+    }
+    // n+1 th value is buffer, just to avoid indexing error in [L,N] updates.
+}
+
+void query(int L, int R, std::vector&lt;int&gt; &amp;diff, int change)
+{
+    // O(1) query
+    // L, R in 1 based indexing, hence we use L - 1 and R for updates 
+    diff[L - 1] = f(diff[L - 1], change);
+    diff[R] = f(diff[R], inverse(change));
+}
+
+void reconstruct(std::vector&lt;int&gt;&amp;nums, std::vector&lt;int&gt; &amp;diff)
+{
+    int n = nums.size();
+    nums[0] = diff[0];
+    for(int i = 1;i&lt;n;i++){
+        nums[i] = f(nums[i-1], diff[i]);
+    }
+}
+
+int main()
+{
+    std::vector&lt;int&gt; nums={1,2,3,4,5}, diff;
+    preproc(nums, diff,0);
+    query(1, 3, diff, 2);
+    query(2, 5, diff, -3);
+    reconstruct(nums, diff);
+    for(auto&amp;e:nums)std::cout&lt;&lt;e&lt;&lt;&quot; &quot;;
+    std::cout&lt;&lt;std::endl;
+    // 3 1 2 1 2
+    return 0;
+}
+</code></pre>
+
+<p><strong>Practice:</strong></p>
+<ul>
+<li><a href="https://codeforces.com/problemset/problem/816/B" target="_blank" rel="noopener noreferrer">Codeforces 816 B. Karen and Coffee</a></li>
+<li><a href="https://usaco.org/index.php?page=viewproblem2&amp;cpid=919" target="_blank" rel="noopener noreferrer">USACO Silver: Painting the Barn</a></li>
+</ul>
+<hr />
+<h2 id="sparse-table">Sparse Table<a class="toc-link" href="#sparse-table" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h2>
+<p><strong>Formal Definition:</strong> You are given a static array of $N$ elements. Process Range Queries for an idempotent function (Min, Max, GCD) on range $[L, R]$. No updates are allowed.</p>
+<p><strong>Solution:</strong> Prefix sums fail for Min/Max because those operations are not invertible. A Sparse Table precomputes answers for all intervals whose lengths are powers of 2 ($1, 2, 4, 8, \dots$).<br />
+Table entry <code>ST[i][j]</code> stores the aggregate for the range starting at index $i$ with length $2^j$. Build the table bottom-up in $\mathcal{O}(N \log N)$ time using smaller powers of 2.<br />
+To query range $[L, R]$, find the largest power of 2 that fits inside the range: $k = \lfloor \log_2(R - L + 1) \rfloor$. Because idempotent functions satisfy $f(x, x) = x$, overlapping regions do not alter the answer. Evaluate two overlapping blocks of length $2^k$: one starting at $L$, the other ending at $R$.</p>
+$$
+\begin{align*}
+\text{Precomputation:} \quad &amp;ST[i][j] = f\Big(ST[i][j-1], \; ST[i + 2^{j-1}][j-1]\Big) \\
+\text{Range Query } [L, R]: \quad &amp;k = \lfloor \log_2(R - L + 1) \rfloor \\
+\text{Result:} \quad &amp;\text{Ans} = f\Big(ST[L][k], \; ST[R - 2^k + 1][k]\Big)
+\end{align*}
+$$
+<ul>
+<li><strong>Query type:</strong> Static Range Queries</li>
+<li><strong>Functions supported:</strong> Associative and Idempotent (Min, Max, GCD, Bitwise OR/AND)</li>
+<li><strong>Preprocessing Complexity:</strong> $\mathcal{O}(N \log N)$</li>
+<li><strong>Space Complexity:</strong> $\mathcal{O}(N \log N)$</li>
+<li><strong>Query Complexity:</strong> $\mathcal{O}(1)$</li>
+</ul>
+<pre class="highlight"><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;cmath&gt;
+// operation: max
+int f(int a, int b){
+    return std::max(a,b);
+}
+
+void preproc(std::vector&lt;int&gt;&amp;nums, std::vector&lt;std::vector&lt;int&gt;&gt; &amp;st) // input array, sparse table
+{
+    int n = nums.size();
+    int maxLog = std::log2(n);
+    st.resize(n, std::vector&lt;int&gt;(maxLog + 1));
+    // O(N log N) preproc
+    // Base case
+    for(int i = 0; i &lt; n; i++)st[i][0]=nums[i];
+
+    for(int j = 1; j&lt;=maxLog;j++)
+    {
+        for(int i = 0; i + (1&lt;&lt;j) - 1 &lt; n; i++)
+        {
+            // Construct next power of 2 score from previous powers of 2
+            st[i][j] = f(st[i][j-1], st[i+(1&lt;&lt;(j-1))][j-1]);
+        }
+    }
+}
+
+int query(int L, int R, std::vector&lt;std::vector&lt;int&gt;&gt; &amp;st)
+{
+    // O(1) query
+    // L, R in 1 based indexing, hence we decrement them for updates 
+    L--, R--;
+    int len = R - L + 1;
+    int lg = std::log2(len);
+    return f(st[L][lg], st[R - (1&lt;&lt;lg) + 1][lg]);
+}
+
+int main()
+{
+    std::vector&lt;int&gt; nums={1,8,13,34,5};
+    std::vector&lt;std::vector&lt;int&gt;&gt; st;
+    preproc(nums,st);
+    std::cout&lt;&lt;query(1,4,st)&lt;&lt;std::endl; // 34
+    std::cout&lt;&lt;query(2,3,st)&lt;&lt;std::endl; // 13
+    std::cout&lt;&lt;query(5,5,st)&lt;&lt;std::endl; // 5
+    return 0;
+}
+</code></pre>
+
+<p><strong>Practice:</strong></p>
+<ul>
+<li><a href="https://cses.fi/problemset/task/1647" target="_blank" rel="noopener noreferrer">CSES: Static Range Minimum Queries</a></li>
+<li><a href="https://codeforces.com/problemset/problem/5/C" target="_blank" rel="noopener noreferrer">Codeforces 5C. Longest Regular Bracket Sequence</a></li>
+<li><a href="https://codeforces.com/contest/2050/problem/F" target="_blank" rel="noopener noreferrer">Codeforces 2050 F. Maximum modulo equality</a></li>
+</ul>
+<hr />
+<h2 id="square-root-decomposition-order-independent-queries-mos-algorithm">Square Root Decomposition (Order-Independent Queries / Mo’s Algorithm)<a class="toc-link" href="#square-root-decomposition-order-independent-queries-mos-algorithm" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h2>
+<p><strong>Formal Definition:</strong> You have an array of $N$ elements and $Q$ range queries $[L, R]$. The query operation is complex (e.g., counting distinct elements), but updating the answer when inserting or deleting a single element from a range is fast. Queries are known upfront (Offline).</p>
+<p><strong>Solution:</strong> Mo’s Algorithm reorders queries to minimize overall pointer movement across the array. Divide the array into blocks of size approximately $\sqrt{N}$. Maintain active pointers <code>curr_L</code> and <code>curr_R</code>. Move them step-by-step to match each query&rsquo;s $L$ and $R$, calling <code>add(element)</code> or <code>remove(element)</code> along the way. Across all queries, total movement of $R$ is bounded by $\mathcal{O}(Q \sqrt{N})$, and $L$ movement is bounded by $\mathcal{O}(Q \sqrt{N})$.</p>
+$$\begin{align*} \text{Block Size:} \quad &amp;B = \lfloor \sqrt{N} \rfloor \\ \text{Comparator:} \quad &amp;\text{Query } A &lt; \text{Query } B \iff  \begin{cases}  \frac{A.L}{B} &lt; \frac{B.L}{B} \\  \frac{A.L}{B} = \frac{B.L}{B} \;\land\; \\ ((A.R &lt; B.R \;\land\; \frac{A.L}{B} \% 2 == 0) \\ \vee (A.R &gt; B.R \;\land\; \frac{A.L}{B} \% 2 == 1)) \end{cases} \\ \text{Complexity:} \quad &amp;\mathcal{O}\big((N + Q)\sqrt{N}\big) \end{align*}$$
+<ul>
+<li><strong>Query type:</strong> Offline Range Queries</li>
+<li><strong>Functions supported:</strong> Any query state maintained via single-element insertions/deletions (Distinct elements, mode frequency)</li>
+<li><strong>Preprocessing Complexity:</strong> $\mathcal{O}(Q \log Q)$ (for sorting queries)</li>
+<li><strong>Space Complexity:</strong> $\mathcal{O}(N + Q)$</li>
+<li><strong>Query Complexity:</strong> $\mathcal{O}((N + Q) \sqrt{N})$ total for all queries</li>
+</ul>
+<pre class="highlight"><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;tuple&gt;
+#include &lt;algorithm&gt;
+#include &lt;cmath&gt;
+#include &lt;map&gt;
+
+void add(int i, std::vector&lt;int&gt;&amp;nums, std::vector&lt;int&gt;&amp;mp, int &amp;ct){
+    mp[nums[i]]++;
+    if(mp[nums[i]]==1)ct++;
+}
+void remove(int i, std::vector&lt;int&gt;&amp;nums, std::vector&lt;int&gt;&amp;mp, int &amp;ct){
+    mp[nums[i]]--;
+    if(mp[nums[i]]==0)ct--;
+}
+
+void coordinate_compress(std::vector&lt;int&gt;&amp;nums){
+    int n = nums.size();
+    std::vector&lt;int&gt;tmp = nums;
+    std::sort(tmp.begin(),tmp.end());
+    std::map&lt;int,int&gt;mp;
+    int ptr = 1;
+    for(int i = 0; i&lt;n;i++){
+        if(!mp.contains(tmp[i]))mp[tmp[i]]=ptr++;
+    }
+    for(auto&amp;e:nums)e=mp[e];
+}
+
+std::vector&lt;int&gt; Mo(std::vector&lt;int&gt; nums, std::vector&lt;std::pair&lt;int,int&gt;&gt; &amp;queries) 
+{
+    int n = nums.size(), q = queries.size();
+
+    coordinate_compress(nums);
+
+    int B = std::sqrt(n);
+    typedef std::tuple&lt;int,int,int&gt; trp;
+    std::vector&lt;trp&gt; Q(q);
+
+    // converting to zero indexed and storing index
+    for(int i = 0; i &lt; q; i++) {
+        Q[i] = std::make_tuple(queries[i].first - 1, queries[i].second - 1, i);
+    }
+
+    std::sort(Q.begin(), Q.end(), [&amp;B](const trp &amp;a, const trp &amp;b){
+        int lA = std::get&lt;0&gt;(a), rA = std::get&lt;1&gt;(a);
+        int lB = std::get&lt;0&gt;(b), rB = std::get&lt;1&gt;(b);
+        int bA = lA / B, bB = lB / B;
+        if(bA != bB) return bA &lt; bB;
+        return (bA &amp; 1) ? rA &gt; rB : rA &lt; rB;
+    });
+
+    std::vector&lt;int&gt; result(q);
+
+    //Clean empty range initial state
+    int curr_l = 0, curr_r = -1;
+    int ct = 0;
+
+    // Max compressed rank can be at most n
+    std::vector&lt;int&gt; mp(n + 2, 0); 
+
+    for(auto&amp; qry : Q) {
+        int l = std::get&lt;0&gt;(qry), r = std::get&lt;1&gt;(qry);
+        int i = std::get&lt;2&gt;(qry);
+        // expand both first, then contract
+        while(curr_l &gt; l) {
+            curr_l--;
+            add(curr_l, nums, mp, ct);
+        }
+        while(curr_r &lt; r) {
+            curr_r++;
+            add(curr_r, nums, mp, ct);
+        }
+        while(curr_l &lt; l) {
+            remove(curr_l, nums, mp, ct);
+            curr_l++;
+        }
+        while(curr_r &gt; r) {
+            remove(curr_r, nums, mp, ct);
+            curr_r--;
+        }
+        result[i] = ct;
+    }
+    return result;
+}
+
+int main()
+{
+    std::vector&lt;int&gt; nums={1,2,3,4,1,2,2,3,3,5,4,10,3,1,2};
+    std::vector&lt;std::pair&lt;int,int&gt;&gt;queries = {{1,4}, {2,8}, {3,10}, {4,7}, {1,15}};
+    std::vector&lt;int&gt;result = Mo(nums,queries);
+    for(auto&amp;res:result)std::cout&lt;&lt;res&lt;&lt;std::endl;
+    // 4,4,5,3,6
+    return 0;
+}
+</code></pre>
+
+<p><strong>Practice:</strong></p>
+<ul>
+<li><a href="https://codeforces.com/problemset/problem/86/D" target="_blank" rel="noopener noreferrer">Codeforces 86 D. Powerful array</a></li>
+<li><a href="https://codeforces.com/problemset/problem/220/B" target="_blank" rel="noopener noreferrer">Codeforces 220 B. Little Elephant and Array</a></li>
+</ul>
+<hr />
+<h2 id="square-root-decomposition-order-dependent-queries-block-processing">Square Root Decomposition (Order-Dependent Queries / Block Processing)<a class="toc-link" href="#square-root-decomposition-order-dependent-queries-block-processing" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h2>
+<p><strong>Formal Definition:</strong> You have an array of $N$ elements. You must process online Point Updates (or Range Updates) and Range Queries for operations that are non-invertible or where order matters, making Prefix Sums unsuitable.</p>
+<p><strong>Solution:</strong> Divide the array into $S = \lceil \sqrt{N} \rceil$ contiguous blocks, each containing up to $\sqrt{N}$ elements. Maintain a summary answer for each block (e.g., block sum, block min).<br />
+For a range query $[L, R]$:</p>
+<ol>
+<li><strong>Left Partial Block:</strong> Iterate element-by-element inside $L$’s block up to its end boundary: $\mathcal{O}(\sqrt{N})$.</li>
+<li><strong>Middle Full Blocks:</strong> Aggregate precomputed block summaries directly: $\mathcal{O}(\sqrt{N})$.</li>
+<li><strong>Right Partial Block:</strong> Iterate element-by-element inside $R$’s block from its start boundary: $\mathcal{O}(\sqrt{N})$.</li>
+</ol>
+<p>For a point update at index $i$, update $a[i]$ and recompute the summary of index $i$&rsquo;s block in $\mathcal{O}(\sqrt{N})$ time.</p>
+$$
+\begin{align*}
+\text{Block Decomposition:} \quad &amp;\text{Block}[k] = f\left(a_{k \cdot B}, \, a_{k \cdot B + 1}, \, \dots, \, a_{(k+1)B - 1}\right) \\
+\text{Range Query } [L, R]: \quad &amp;\text{Ans} = f\Big( \text{partial}(L), \, \text{Block}[k_{\text{start}}+1 \dots k_{\text{end}}-1], \, \text{partial}(R) \Big) \\
+\text{Time Complexity:} \quad &amp;\mathcal{O}(\sqrt{N}) \quad \text{per query/update}
+\end{align*}
+$$
+<ul>
+<li><strong>Query type:</strong> Online Point Updates, Range Updates, Range Queries</li>
+<li><strong>Functions supported:</strong> Any Associative function (Sum, Min, Max, GCD)</li>
+<li><strong>Preprocessing Complexity:</strong> $\mathcal{O}(N)$</li>
+<li><strong>Space Complexity:</strong> $\mathcal{O}(N)$</li>
+<li><strong>Query/Update Complexity:</strong> $\mathcal{O}(\sqrt{N})$ per operation</li>
+</ul>
+<pre class="highlight"><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;numeric&gt;
+#include &lt;cmath&gt;
+
+// set elements in [L,R] to x
+void update(int L, int R, int x, int &amp;B, std::vector&lt;int&gt; &amp;nums, 
+std::vector&lt;int&gt; &amp;blocks, std::vector&lt;int&gt;&amp;lazy, std::vector&lt;int&gt;&amp;flag)
+{
+    L--,R--; // to zero index
+    while(L&lt;=R){
+        int bL = L/B;
+        if(bL * B == L){ // start of a block
+            // full block
+            if(L + B - 1 &lt;= R)
+            {
+                blocks[bL] = x;
+                flag[bL] = 1;
+                lazy[bL] = x;
+                L += B;
+            }
+            else // partial starting block
+            {
+                int val = x;
+                for(int i = L; i &lt; L + B;i++)
+                {
+                    if(flag[bL])nums[i] = lazy[bL];
+                    if(i&lt;=R)nums[i]=x;
+                    val = std::gcd(val,nums[i]);
+                }
+                if(flag[bL])
+                {
+                    flag[bL] = 0;
+                    lazy[bL] = -1;
+                }
+                blocks[bL] = val;
+                L = R + 1;
+            }
+        }
+        else{ // partial ending block / partial block
+            int val = x;
+            for(int i = bL*B; i &lt; (bL+1)*B;i++)
+            {
+                if(flag[bL])nums[i] = lazy[bL];
+                if(i &gt;= L &amp;&amp; i &lt;= R)nums[i] =x;
+                val = std::gcd(val, nums[i]);
+            }
+            blocks[bL] = val;
+            if(flag[bL])
+            {
+                flag[bL] = 0;
+                lazy[bL] = -1;
+            }
+            L = (bL+1)*B;
+        }
+    }
+}
+
+int query(int L, int R, int &amp;B, std::vector&lt;int&gt; &amp;nums, 
+std::vector&lt;int&gt; &amp;blocks, std::vector&lt;int&gt;&amp;lazy, std::vector&lt;int&gt;&amp;flag)
+{
+    L--,R--; // to zero index
+    int res = -1;
+    while(L&lt;=R){
+        int bL = L/B;
+        if(bL * B == L){ // start of a block
+            // full block
+            if(L + B - 1 &lt;= R)
+            {
+                if(res == -1)res = blocks[bL];
+                res = std::gcd(res,blocks[bL]);
+                L += B;
+            }
+            else // partial starting block
+            {
+                for(int i = L; i &lt; L + B;i++)
+                {
+                    if(flag[bL])nums[i] = lazy[bL];
+                    if(i&lt;=R)
+                    {
+                        if(res == -1)res = nums[i];
+                        res = std::gcd(res,nums[i]);
+                    }
+                }
+                if(flag[bL])
+                {
+                    flag[bL] = 0;
+                    lazy[bL] = -1;
+                }
+                L = R + 1;
+            }
+        }
+        else{ // partial ending block / partial block
+            for(int i = bL*B; i &lt; (bL+1)*B;i++)
+                {
+                    if(flag[bL])nums[i] = lazy[bL];
+                    if(i&gt;=L &amp;&amp; i&lt;=R)
+                    {
+                        if(res == -1)res = nums[i];
+                        res = std::gcd(res,nums[i]);
+                    }
+                }
+                if(flag[bL])
+                {
+                    flag[bL] = 0;
+                    lazy[bL] = -1;
+                }
+                L = (bL+1)*B;
+        }
+    }
+    return res;
+}
+
+std::vector&lt;int&gt; sqd(std::vector&lt;int&gt; &amp;nums, std::vector&lt;std::vector&lt;int&gt;&gt; &amp;queries) // input array, query array
+{
+    int n = nums.size(), q = queries.size();
+    int B = std::sqrt(n);
+    while(nums.size() % B != 0) nums.push_back(0); // make it perfectly divisible;
+    std::vector&lt;int&gt; blocks;
+    int blocksize = 0;
+    for(int i =0;i&lt;n;i++)
+    {
+        int bi = i / B;
+        if(bi == blocksize)blocks.push_back(nums[i]);
+        blocksize=blocks.size();
+        blocks[blocksize - 1] = std::gcd(blocks[blocksize - 1],nums[i]);
+    }
+    std::vector&lt;int&gt; flag(blocksize,0), lazy(blocksize,-1);
+    std::vector&lt;int&gt; result;
+    for(auto&amp;qry:queries)
+    {
+        int option = qry[0];
+        if(option == 1){
+            int L = qry[1], R = qry[2], x = qry[3];
+            update(L, R, x, B, nums, blocks, lazy, flag);
+        }
+        else
+        {
+            int L = qry[1], R = qry[2];
+            int res = query(L, R, B, nums, blocks, lazy, flag);
+            result.push_back(res);
+        }
+    }
+    return result;
+}
+
+int main()
+{
+    std::vector&lt;int&gt; nums={2,4,5,3,9, 15,5,21,35, 343};
+    std::vector&lt;std::vector&lt;int&gt;&gt;queries = {{2,1,2}, {2,4,6}, {1,3,7,6}, {2,8,10}, {2,1,10}};
+    std::vector&lt;int&gt;result = sqd(nums,queries);
+    for(auto&amp;res:result)std::cout&lt;&lt;res&lt;&lt;std::endl;
+    return 0;
+}
+</code></pre>
+
+<p><strong>Practice:</strong></p>
+<ul>
+<li><a href="https://codeforces.com/problemset/problem/433/B" target="_blank" rel="noopener noreferrer">Codeforces 433 B. Kuriyama Mirai’s Stones</a></li>
+<li><a href="https://cses.fi/problemset/task/1651" target="_blank" rel="noopener noreferrer">CSES: Range Update Queries</a></li>
+</ul>
+<hr />
+<h2 id="standard-fenwick-tree-binary-indexed-tree">Standard Fenwick Tree (Binary Indexed Tree)<a class="toc-link" href="#standard-fenwick-tree-binary-indexed-tree" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h2>
+<p><strong>Formal Definition:</strong> You have an array of $N$ elements. You need online Point Updates and Prefix/Range Queries with low overhead, minimal code, and high execution speed.</p>
+<p><strong>Solution:</strong> A Fenwick Tree (BIT) represents partial prefix sums implicitly using bitwise logic. Each index $i$ stores the aggregate of a range of length equal to its lowest set bit: $\text{LSB}(i) = i \mathbin{\&amp;} (-i)$. Index $i$ covers the range $[i - \text{LSB}(i) + 1, i]$.</p>
+<ul>
+<li><strong>Prefix Query ($1$ to $i$):</strong> Read <code>BIT[i]</code>, then clear index $i$&rsquo;s lowest set bit (<code>i -= i &amp; -i</code>). Repeat until $i = 0$.</li>
+<li><strong>Point Update at $i$:</strong> Add value $V$ to <code>BIT[i]</code>, then add index $i$&rsquo;s lowest set bit (<code>i += i &amp; -i</code>). Repeat while $i \le N$.</li>
+<li><strong>Range Query $[L, R]$:</strong> Compute <code>query(R)</code> - <code>query(L - 1)</code>.</li>
+</ul>
+$$
+\begin{align*}
+\text{Lowest Set Bit (LSB):} \quad &amp;\text{LSB}(i) = i \mathbin{\&amp;} (-i) \\
+\text{Range Covered by } BIT[i]: \quad &amp;\big[i - \text{LSB}(i) + 1, \; i\big] \\
+\text{Parent Traversal (Query):} \quad &amp;i \leftarrow i - \text{LSB}(i) \\
+\text{Next Node Traversal (Update):} \quad &amp;i \leftarrow i + \text{LSB}(i)
+\end{align*}
+$$
+<ul>
+<li><strong>Query type:</strong> Online Point Updates, Prefix/Range Queries</li>
+<li><strong>Functions supported:</strong> Associative and Invertible operations (Sum, XOR)</li>
+<li><strong>Preprocessing Complexity:</strong> $\mathcal{O}(N)$</li>
+<li><strong>Space Complexity:</strong> $\mathcal{O}(N)$</li>
+<li><strong>Query/Update Complexity:</strong> $\mathcal{O}(\log N)$ with small constant factors</li>
+</ul>
+<pre class="highlight"><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;tuple&gt;
+#include &lt;algorithm&gt;
+#include &lt;cmath&gt;
+
+class BIT{
+  public:
+  std::vector&lt;int&gt;bit;
+  int n;
+  BIT(std::vector&lt;int&gt;&amp;a)
+  {
+    n = a.size();
+    bit.resize(n, 0);
+    for(int i =1; i&lt;=n;i++)update(i,a[i-1]);
+  }
+  // add x to index i (1 based)
+  void update(int i, int x)
+  {
+      while(i &lt;= n)
+      {
+        bit[i - 1] += x;
+        i += (i &amp; -i);  
+      }
+  }
+
+  // prefix sum till ith element (1 based)
+  int query(int i)
+  {
+    int sum = 0;
+    while(i &gt; 0){
+        sum += bit[i - 1];
+        i -= (i &amp; -i);
+    }
+    return sum;
+  }
+};
+
+std::vector&lt;int&gt; process_queries(std::vector&lt;int&gt; &amp;nums, std::vector&lt;std::vector&lt;int&gt;&gt; &amp;queries) // input array, queries array
+{
+    BIT fenwick(nums);
+    std::vector&lt;int&gt; result;
+    for(auto&amp;qry:queries)
+    {
+        int option = qry[0];
+        if(option == 1){
+            int i = qry[1], x = qry[2];
+            fenwick.update(i,x);
+        }
+        else
+        {
+            int L = qry[1], R = qry[2];
+            int res = fenwick.query(R) - fenwick.query(L - 1);
+            result.push_back(res);
+        }
+    }
+    return result;
+}
+int main()
+{
+    std::vector&lt;int&gt; nums={2,4,7,3,5};
+    std::vector&lt;std::vector&lt;int&gt;&gt;queries = {{2,1,4}, {2,3,5}, {1,3,10}, {2, 4, 5}, {2,1,5}};
+    std::vector&lt;int&gt;result = process_queries(nums,queries);
+    for(auto&amp;res:result)std::cout&lt;&lt;res&lt;&lt;std::endl;
+    // 16, 15, 8, 31
+    return 0;
+}
+</code></pre>
+
+<p><strong>Practice:</strong></p>
+<ul>
+<li><a href="https://cses.fi/problemset/task/1648" target="_blank" rel="noopener noreferrer">CSES: Dynamic Range Sum Queries</a></li>
+</ul>
+<hr />
+<h2 id="standard-segment-tree">Standard Segment Tree<a class="toc-link" href="#standard-segment-tree" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h2>
+<p><strong>Formal Definition:</strong> You have an array of $N$ elements. You must perform online Point Updates, and Range Queries for arbitrary associative operations.</p>
+<p><strong>Solution:</strong> A Segment Tree is a full binary tree where the root node represents array range $[0, N - 1]$. The root’s left child represents the left half $[0, \lfloor(N-1)/2\rfloor]$, and its right child represents the right half $[\lfloor(N-1)/2\rfloor + 1, N - 1]$. Branching continues recursively down to leaf nodes representing single elements.<br />
+To process range query $[L, R]$, traverse down from root:</p>
+<ul>
+<li><strong>Total Overlap:</strong> Node range inside $[L, R]$ $\rightarrow$ return node’s value.</li>
+<li><strong>No Overlap:</strong> Node range completely outside $[L, R]$ $\rightarrow$ return identity element.</li>
+<li><strong>Partial Overlap:</strong> Recurse on left and right children, combining results with operator $f$.</li>
+</ul>
+<p>Updates traverse down a single path of depth $\mathcal{O}(\log N)$ to update the leaf, then recalculate parent values on the way back up.</p>
+$$
+\begin{align*}
+\text{Node Merger:} \quad &amp;\text{tree}[\text{node}] = f\Big(\text{tree}[2 \cdot \text{node}], \; \text{tree}[2 \cdot \text{node} + 1]\Big) \\
+\text{Base Leaf Condition:} \quad &amp;\text{tree}[\text{node}] = a[\text{start}] \quad \text{when } \text{start} = \text{end} \\
+\text{Query Combination:} \quad &amp;\text{Ans} = f\Big(\text{query}(\text{left\_child}), \; \text{query}(\text{right\_child})\Big)
+\end{align*}
+$$
+<ul>
+<li><strong>Query type:</strong> Online Point Updates, Online Range Queries</li>
+<li><strong>Functions supported:</strong> Any Associative function (Sum, Min, Max, GCD, Matrix Multiplication)</li>
+<li><strong>Preprocessing Complexity:</strong> $\mathcal{O}(N)$</li>
+<li><strong>Space Complexity:</strong> $\mathcal{O}(N)$ (Allocated as array of size $4N$)</li>
+<li><strong>Query/Update Complexity:</strong> $\mathcal{O}(\log N)$</li>
+</ul>
+<pre class="highlight"><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+#include &lt;cmath&gt;
+
+class seg
+{
+public:
+    int ZERO = 0;
+    std::vector&lt;int&gt; arr;
+    std::vector&lt;int&gt; tree;
+    int sz;
+    int operation(int a, int b)
+    {
+        return a + b;
+    }
+    int build(int i, int s, int e)
+    {
+        if (e == s)
+        {
+            return tree[i] = arr[e];
+        }
+        return tree[i] = operation(build(2 * i + 1, s, (s + e) / 2), build(2 * i + 2, 1 + ((s + e) / 2), e));
+    }
+    // sum over [qs,qe]
+    int qry(int i, int ss, int se, int qs, int qe)
+    {
+        if (ss &gt; qe || se &lt; qs || ss &gt; se || qs &gt; qe)
+            return ZERO;
+        if (ss == qs &amp;&amp; se == qe)
+            return tree[i];
+        int mid = (ss + se) / 2;
+        return operation(qry(2 * i + 1, ss, mid, qs, std::min(qe, mid)), qry(2 * i + 2, mid + 1, se, std::max(qs, mid + 1), qe));
+    }
+
+    //set index ii (zero based) to x
+    void up(int i, int x, int s, int e, int ii)
+    {
+        if (s == e)
+        {
+            arr[ii] = x;
+            tree[i] = x;
+            return;
+        }
+        int mid = (s + e) / 2;
+        if (ii &lt;= mid)
+        {
+            up(2 * i + 1, x, s, mid, ii);
+        }
+        else
+        {
+            up(2 * i + 2, x, mid + 1, e, ii);
+        }
+        tree[i] = operation(tree[2 * i + 1], tree[2 * i + 2]);
+    }
+    seg(std::vector&lt;int&gt; &amp;a, int zro = 0)
+    {
+        ZERO = zro;
+        sz = a.size();
+        for (auto &amp;e : a)
+            arr.push_back(e);
+        tree.resize(4 * sz, ZERO);
+        build(0, 0, sz - 1);
+    }
+};
+
+std::vector&lt;int&gt; process_queries(std::vector&lt;int&gt; &amp;nums, std::vector&lt;std::vector&lt;int&gt;&gt; &amp;queries) // input array, queries array
+{
+    seg segtree(nums);
+    int n = nums.size();
+    std::vector&lt;int&gt; result;
+    for(auto&amp;qry:queries)
+    {
+        int option = qry[0];
+        if(option == 1){
+            int i = qry[1], x = qry[2];
+            int newval = segtree.arr[i-1] + x;
+            segtree.up(0,newval,0,n-1,i-1);
+        }
+        else
+        {
+            int L = qry[1], R = qry[2];
+            int res = segtree.qry(0,0,n-1,L-1,R-1);
+            result.push_back(res);
+        }
+    }
+    return result;
+}
+int main()
+{
+    std::vector&lt;int&gt; nums={2,4,7,3,5};
+    std::vector&lt;std::vector&lt;int&gt;&gt;queries = {{2,1,4}, {2,3,5}, {1,3,10}, {2, 4, 5}, {2,1,5}};
+    std::vector&lt;int&gt;result = process_queries(nums,queries);
+    for(auto&amp;res:result)std::cout&lt;&lt;res&lt;&lt;std::endl;
+    // 16, 15, 8, 31
+    return 0;
+}
+</code></pre>
+
+<p><strong>Practice:</strong></p>
+<ul>
+<li><a href="https://cses.fi/problemset/task/1649" target="_blank" rel="noopener noreferrer">CSES: Dynamic Range Minimum Queries</a></li>
+<li><a href="https://codeforces.com/edu/course/2/lesson/4/1/practice/contest/273169/problem/A" target="_blank" rel="noopener noreferrer">Codeforces Edu: Segment Tree for the Minimum</a></li>
+<li><a href="https://codeforces.com/contest/1462/problem/F" target="_blank" rel="noopener noreferrer">Codeforces 1462 F. The Treasure of The Segments</a></li>
+</ul>
+<hr />
+<p>That’s all for now! Although there are even more complex scenarios and cases, for 95+% of your time dealing with range queries, the above data structures are often more than enough. All the best and hope you go past that TLE next time :D</p>
+  </div>
+
+  <!-- Post Navigation -->
+  <nav class="post-nav animate-in" aria-label="Post navigation">
+    
+    <a href="../blogs/blog3_Trees_in_Competitive_Programming.html" class="post-nav-link prev" id="nav-prev-post">
+      <span class="post-nav-label">← Previous</span>
+      <span class="post-nav-title">Trees in Competitive Programming: A Complete From-Scratch Tutorial To Essentials</span>
+    </a>
+    
+
+    
+  </nav>
+
+</article>
+
+
+
+      <footer class="footer" role="contentinfo">
+        <span>© 2026 CP Club VJTI &nbsp;·&nbsp; Built with ❤️ &amp; Python</span>
+        <span>
+          <a href="../" aria-label="Home">Home</a>
+          &nbsp;·&nbsp;
+          <a href="https://github.com/CP-Club-VJTI" target="_blank" rel="noopener" aria-label="GitHub">GitHub ↗</a>
+        </span>
+      </footer>
+    </main>
+
+  </div><!-- /layout -->
+
+  <!-- Scripts -->
+  <script src="../static/search.js"></script>
+
+  
+
+</body>
+</html>

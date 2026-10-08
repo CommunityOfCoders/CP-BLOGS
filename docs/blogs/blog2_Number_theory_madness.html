@@ -16,7 +16,7 @@
   <meta property="og:type" content="website" />
 
   <!-- Site base for JS (handles GitHub Pages subdirectory) -->
-  <meta name="site-base" content="/CP-BLOGS" />
+  <meta name="site-base" content=".." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,10 +24,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="/CP-BLOGS/static/style.css" />
+  <link rel="stylesheet" href="../static/style.css" />
 
   <!-- Theme: apply early to prevent flash -->
-  <script src="/CP-BLOGS/static/theme.js"></script>
+  <script src="../static/theme.js"></script>
 
   
 
@@ -63,8 +63,8 @@
     </button>
 
     <!-- Logo -->
-    <a href="/CP-BLOGS/" class="navbar-logo" id="navbar-logo" aria-label="CP Club VJTI Home">
-      <img src="/CP-BLOGS/static/assets/cp_club_vjti_logo.jpg" alt="CP Club VJTI Logo" height="40" />
+    <a href="../" class="navbar-logo" id="navbar-logo" aria-label="CP Club VJTI Home">
+      <img src="../static/assets/cp_club_vjti_logo.jpg" alt="CP Club VJTI Logo" height="40" />
     </a>
 
     <div class="navbar-spacer"></div>
@@ -104,7 +104,7 @@
       <p class="sidebar-section-label">Navigation</p>
       <ul class="sidebar-nav">
         <li>
-          <a href="/CP-BLOGS/" id="nav-home"
+          <a href="../" id="nav-home"
              
              aria-current="false">
             <span class="nav-icon">🏠</span> Home
@@ -118,7 +118,7 @@
       <ul class="sidebar-nav" id="sidebar-blog-nav">
         
         <li>
-          <a href="/CP-BLOGS/blogs/blog0_GamesInCompetitiveProgramming.html"
+          <a href="../blogs/blog0_GamesInCompetitiveProgramming.html"
              id="nav-blog0_GamesInCompetitiveProgramming"
              
              aria-current="false"
@@ -130,7 +130,7 @@
         </li>
         
         <li>
-          <a href="/CP-BLOGS/blogs/blog1_dp_1_competitive_programming.html"
+          <a href="../blogs/blog1_dp_1_competitive_programming.html"
              id="nav-blog1_dp_1_competitive_programming"
              
              aria-current="false"
@@ -142,7 +142,7 @@
         </li>
         
         <li>
-          <a href="/CP-BLOGS/blogs/blog2_Number_theory_madness.html"
+          <a href="../blogs/blog2_Number_theory_madness.html"
              id="nav-blog2_Number_theory_madness"
              class="active"
              aria-current="page"
@@ -154,7 +154,7 @@
         </li>
         
         <li>
-          <a href="/CP-BLOGS/blogs/blog3_Trees_in_Competitive_Programming.html"
+          <a href="../blogs/blog3_Trees_in_Competitive_Programming.html"
              id="nav-blog3_Trees_in_Competitive_Programming"
              
              aria-current="false"
@@ -162,6 +162,18 @@
             <span class="nav-icon">📄</span>
             <span>Trees in Competitive Programming: A Complete From-Scratch Tutorial To Essentials</span>
             <span class="nav-num">04</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="../blogs/blog4_Range_Query_Beginner_Guide.html"
+             id="nav-blog4_Range_Query_Beginner_Guide"
+             
+             aria-current="false"
+             title="Range Query Beginner Guide: From Prefix Sums to Segment Trees">
+            <span class="nav-icon">📄</span>
+            <span>Range Query Beginner Guide: From Prefix Sums to Segment Trees</span>
+            <span class="nav-num">05</span>
           </a>
         </li>
         
@@ -180,11 +192,15 @@
         
         <span class="tag tag-filter" data-tag="competitive-programming" tabindex="0" role="button" aria-pressed="false">competitive-programming</span>
         
+        <span class="tag tag-filter" data-tag="data-structures" tabindex="0" role="button" aria-pressed="false">data-structures</span>
+        
         <span class="tag tag-filter" data-tag="dfs" tabindex="0" role="button" aria-pressed="false">dfs</span>
         
         <span class="tag tag-filter" data-tag="dp" tabindex="0" role="button" aria-pressed="false">dp</span>
         
         <span class="tag tag-filter" data-tag="dynamic-programming" tabindex="0" role="button" aria-pressed="false">dynamic-programming</span>
+        
+        <span class="tag tag-filter" data-tag="fenwick-tree" tabindex="0" role="button" aria-pressed="false">fenwick-tree</span>
         
         <span class="tag tag-filter" data-tag="game-theory" tabindex="0" role="button" aria-pressed="false">game-theory</span>
         
@@ -192,7 +208,15 @@
         
         <span class="tag tag-filter" data-tag="math" tabindex="0" role="button" aria-pressed="false">math</span>
         
+        <span class="tag tag-filter" data-tag="mos-algorithm" tabindex="0" role="button" aria-pressed="false">mos-algorithm</span>
+        
         <span class="tag tag-filter" data-tag="number-theory" tabindex="0" role="button" aria-pressed="false">number-theory</span>
+        
+        <span class="tag tag-filter" data-tag="range-queries" tabindex="0" role="button" aria-pressed="false">range-queries</span>
+        
+        <span class="tag tag-filter" data-tag="segment-tree" tabindex="0" role="button" aria-pressed="false">segment-tree</span>
+        
+        <span class="tag tag-filter" data-tag="sparse-table" tabindex="0" role="button" aria-pressed="false">sparse-table</span>
         
         <span class="tag tag-filter" data-tag="trees" tabindex="0" role="button" aria-pressed="false">trees</span>
         
@@ -232,15 +256,15 @@
     
     <div class="post-tags">
       
-      <a href="/CP-BLOGS/?tag=math" class="tag" aria-label="Filter by tag: math">math</a>
+      <a href="../?tag=math" class="tag" aria-label="Filter by tag: math">math</a>
       
-      <a href="/CP-BLOGS/?tag=number-theory" class="tag" aria-label="Filter by tag: number-theory">number-theory</a>
+      <a href="../?tag=number-theory" class="tag" aria-label="Filter by tag: number-theory">number-theory</a>
       
-      <a href="/CP-BLOGS/?tag=codeforces" class="tag" aria-label="Filter by tag: codeforces">codeforces</a>
+      <a href="../?tag=codeforces" class="tag" aria-label="Filter by tag: codeforces">codeforces</a>
       
-      <a href="/CP-BLOGS/?tag=competitive-programming" class="tag" aria-label="Filter by tag: competitive-programming">competitive-programming</a>
+      <a href="../?tag=competitive-programming" class="tag" aria-label="Filter by tag: competitive-programming">competitive-programming</a>
       
-      <a href="/CP-BLOGS/?tag=algorithms" class="tag" aria-label="Filter by tag: algorithms">algorithms</a>
+      <a href="../?tag=algorithms" class="tag" aria-label="Filter by tag: algorithms">algorithms</a>
       
     </div>
     
@@ -253,14 +277,14 @@
 <p>Below are some of the common mathematical problems that are twisted by wannabe authors on Codeforces:</p>
 <h2 id="linear-equations">Linear Equations<a class="toc-link" href="#linear-equations" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h2>
 <p>These equations are of the form:</p>
-<p>$$ax + by = c$$</p>
+$$ax + by = c$$
 <p>Where $a$, $b$, and $c$ are given integers, and $x$ and $y$ can be some arbitrary integers (if a solution exists). Sometimes, you have to find whether or not a solution exists, other times you have to find non-negative integer solutions, and sometimes you have to give an example. Take a problem like this:</p>
 <blockquote>
 <p>You are at $X = 0$ on a coordinate line. You can take $A$ or $B$ steps forward or backward. Can you reach point $N$?</p>
 </blockquote>
 <p>So if we take $A$ steps forward, it is $X + A$, else $X - A$; similarly with $B$. Let $x$ be an integer defining the effective times you jumped using $A$, and $y$ be the integer for $B$ for the same. For example, if $x = -3$ and $y = 2$, that means the final point is $2B - 3A$. </p>
 <p>So we are simply asking the question, do integers $x$ and $y$ exist, such that:</p>
-<p>$$Ax + By = N$$</p>
+$$Ax + By = N$$
 <p>There exists a solution if and only if $N \bmod \gcd(A, B) = 0$.</p>
 <p>Now consider this problem:</p>
 <blockquote>
@@ -524,14 +548,14 @@ So we keep those 2 numbers as the last 2. We can apply the same process for the 
 </ul>
 <hr />
 <h2 id="common-formulae">Common Formulae<a class="toc-link" href="#common-formulae" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h2>
-<p>$$\sum_{1 \le i \le n} i = n(n+1)/2$$</p>
-<p>$$\sum_{1 \le i \le n} i^2 = n(n+1)(2n+1)/6$$</p>
-<p>$$\sum_{1 \le i \le n} i^3 = (n(n+1)/2)^2$$</p>
-<p>$$n! = n * (n - 1)! , 0! = 1$$</p>
-<p>$${}^nC_2 = n(n-1)/2$$</p>
-<p>$${}^nC_0 = {}^nC_n = 1$$</p>
-<p>$${}^nC_k = {}^{n-1}C_{k-1} + {}^{n-1}C_k \forall k \in [1, n)$$</p>
-<p>$$Beggars\ formula : {}^{n+r-1}C_n$$</p>
+$$\sum_{1 \le i \le n} i = n(n+1)/2$$
+$$\sum_{1 \le i \le n} i^2 = n(n+1)(2n+1)/6$$
+$$\sum_{1 \le i \le n} i^3 = (n(n+1)/2)^2$$
+$$n! = n * (n - 1)! , 0! = 1$$
+$${}^nC_2 = n(n-1)/2$$
+$${}^nC_0 = {}^nC_n = 1$$
+$${}^nC_k = {}^{n-1}C_{k-1} + {}^{n-1}C_k \forall k \in [1, n)$$
+$$Beggars\ formula : {}^{n+r-1}C_n$$
 <p><a href="https://onlinegdb.com/fNfJZQG2v" target="_blank" rel="noopener noreferrer">Link to C++ code covering all python snippets above</a><br />
 <a href="../static/code_files/number_theory.cpp" target="_blank" rel="noopener noreferrer">Local file: </a></p>
 <h2 id="practice-problems">Practice Problems<a class="toc-link" href="#practice-problems" title="Permanent link" target="_blank" rel="noopener noreferrer">&para;</a></h2>
@@ -552,14 +576,14 @@ So we keep those 2 numbers as the last 2. We can apply the same process for the 
   <!-- Post Navigation -->
   <nav class="post-nav animate-in" aria-label="Post navigation">
     
-    <a href="/CP-BLOGS/blogs/blog1_dp_1_competitive_programming.html" class="post-nav-link prev" id="nav-prev-post">
+    <a href="../blogs/blog1_dp_1_competitive_programming.html" class="post-nav-link prev" id="nav-prev-post">
       <span class="post-nav-label">← Previous</span>
       <span class="post-nav-title">Dynamic Programming 1: Never Calculate Anything Twice</span>
     </a>
     
 
     
-    <a href="/CP-BLOGS/blogs/blog3_Trees_in_Competitive_Programming.html" class="post-nav-link next" id="nav-next-post">
+    <a href="../blogs/blog3_Trees_in_Competitive_Programming.html" class="post-nav-link next" id="nav-next-post">
       <span class="post-nav-label">Next →</span>
       <span class="post-nav-title">Trees in Competitive Programming: A Complete From-Scratch Tutorial To Essentials</span>
     </a>
@@ -573,7 +597,7 @@ So we keep those 2 numbers as the last 2. We can apply the same process for the 
       <footer class="footer" role="contentinfo">
         <span>© 2026 CP Club VJTI &nbsp;·&nbsp; Built with ❤️ &amp; Python</span>
         <span>
-          <a href="/CP-BLOGS/" aria-label="Home">Home</a>
+          <a href="../" aria-label="Home">Home</a>
           &nbsp;·&nbsp;
           <a href="https://github.com/CP-Club-VJTI" target="_blank" rel="noopener" aria-label="GitHub">GitHub ↗</a>
         </span>
@@ -583,7 +607,7 @@ So we keep those 2 numbers as the last 2. We can apply the same process for the 
   </div><!-- /layout -->
 
   <!-- Scripts -->
-  <script src="/CP-BLOGS/static/search.js"></script>
+  <script src="../static/search.js"></script>
 
   
 
