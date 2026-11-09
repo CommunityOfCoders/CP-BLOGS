@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import members from "../json/members.json";
 import Link from "next/link";
@@ -106,7 +106,7 @@ const Leaderboard = () => {
     return { validHandles: [] };
   };
 
-  const fetchRatingsAndAttendance = async () => {
+  const fetchRatingsAndAttendance = useCallback(async () => {
     const handles = Object.keys(members).map(
       (member) => members[member].cf_username
     );
@@ -204,7 +204,7 @@ for(let contestId of lastFiveContests) {
       setIsProfileLoading(false);
       setIsAttendanceLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     const checkForMidnightIST = () => {
@@ -258,7 +258,7 @@ for(let contestId of lastFiveContests) {
     }
 
     return () => clearInterval(intervalId);
-  }, [sortKey]);
+  }, [sortKey, fetchRatingsAndAttendance]);
 
   if (isProfileLoading) {
     return <LeaderboardSkeleton />;
