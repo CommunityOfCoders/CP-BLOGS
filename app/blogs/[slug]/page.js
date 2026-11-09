@@ -114,10 +114,10 @@ export default async function BlogPostPage({ params }) {
               </ol>
             ),
             img: ({ src, alt }) => (
-              <div className="my-6 rounded-xl overflow-hidden border border-white/10">
+              <span className="block my-6 rounded-xl overflow-hidden border border-white/10">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={src} alt={alt || "Blog image"} className="w-full h-auto object-cover" />
-              </div>
+              </span>
             ),
             pre: ({ children }) => (
                 <pre
