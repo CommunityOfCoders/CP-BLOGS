@@ -7,6 +7,7 @@ const Footer = () => {
     const quickLinks = [
         { href: "/leaderboard", label: "Leaderboard" },
         { href: "/contest", label: "Contests" },
+        { href: "/arena", label: "Battle Arena" },
         { href: "/resources", label: "Resources" },
         { href: "/blogs", label: "Blogs" },
         { href: "/daily", label: "Daily Question" },

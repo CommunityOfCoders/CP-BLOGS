@@ -14,6 +14,7 @@ const Navbar = () => {
   const navLinks = [
     { href: "/leaderboard", label: "Leaderboard" },
     { href: "/contest", label: "Contest" },
+    { href: "/arena", label: "Battle Arena" },
     { href: "/resources", label: "Resources" },
     { href: "/blogs", label: "Blogs" },
     { href: "/daily", label: "Daily Question" },
