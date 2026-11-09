@@ -76,5 +76,86 @@
         "url": "https://codeforces.com/problemset/problem/1560/F1"
       }
     ]
+  },
+  {
+    "date": "2026-11-10",
+    "problems": [
+      {
+        "slot": 1,
+        "id": "914A",
+        "name": "Perfect Squares",
+        "rating": 900,
+        "tags": [
+          "brute force",
+          "implementation",
+          "math"
+        ],
+        "url": "https://codeforces.com/problemset/problem/914/A"
+      },
+      {
+        "slot": 2,
+        "id": "1957B",
+        "name": "A BIT of a Construction",
+        "rating": 1100,
+        "tags": [
+          "bitmasks",
+          "constructive algorithms",
+          "greedy",
+          "implementation"
+        ],
+        "url": "https://codeforces.com/problemset/problem/1957/B"
+      },
+      {
+        "slot": 3,
+        "id": "186B",
+        "name": "Growing Mushrooms",
+        "rating": 1200,
+        "tags": [
+          "greedy",
+          "sortings"
+        ],
+        "url": "https://codeforces.com/problemset/problem/186/B"
+      },
+      {
+        "slot": 4,
+        "id": "734C",
+        "name": "Anton and Making Potions",
+        "rating": 1600,
+        "tags": [
+          "binary search",
+          "dp",
+          "greedy",
+          "two pointers"
+        ],
+        "url": "https://codeforces.com/problemset/problem/734/C"
+      },
+      {
+        "slot": 5,
+        "id": "1343D",
+        "name": "Constant Palindrome Sum",
+        "rating": 1700,
+        "tags": [
+          "brute force",
+          "data structures",
+          "greedy",
+          "two pointers"
+        ],
+        "url": "https://codeforces.com/problemset/problem/1343/D"
+      },
+      {
+        "slot": 6,
+        "id": "1569D",
+        "name": "Inconvenient Pairs",
+        "rating": 1900,
+        "tags": [
+          "binary search",
+          "data structures",
+          "implementation",
+          "sortings",
+          "two pointers"
+        ],
+        "url": "https://codeforces.com/problemset/problem/1569/D"
+      }
+    ]
   }
 ]
