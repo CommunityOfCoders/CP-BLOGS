@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-09T18:32:06.731Z",
+  "updatedAt": "2026-11-09T19:02:08.994Z",
   "users": {
     "urabhay10": {
       "name": "Abhay Upadhyay",
@@ -338,25 +338,28 @@
         "2026-11-09": [
           "2025A",
           "48B"
+        ],
+        "2026-11-10": [
+          "1957B"
         ]
       },
       "lateSolves": {},
-      "totalSolved": 2,
-      "currentStreak": 1,
-      "longestStreak": 1,
-      "solvedToday": 0,
+      "totalSolved": 3,
+      "currentStreak": 2,
+      "longestStreak": 2,
+      "solvedToday": 1,
       "solvedBySlot": [
         1,
-        1,
+        2,
         0,
         0,
         0,
         0
       ],
-      "lastSolvedDate": "2026-11-09",
-      "points": 2000,
-      "lastCompletedAt": "2026-11-09T17:47:06.000Z",
-      "todayCompletedAt": null
+      "lastSolvedDate": "2026-11-10",
+      "points": 3100,
+      "lastCompletedAt": "2026-11-09T18:32:30.000Z",
+      "todayCompletedAt": "2026-11-09T18:32:30.000Z"
     },
     "kamathvivek91": {
       "name": "Vivek Kamath",
