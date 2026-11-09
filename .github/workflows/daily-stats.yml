@@ -1,0 +1,58 @@
+name: Daily Stats
+
+on:
+  schedule:
+    # Sync member solves from Codeforces every 30 minutes
+    - cron: "13,43 * * * *"
+  workflow_dispatch:
+    inputs:
+      backfill:
+        description: "Fetch a larger submission window"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-stats
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      VERCEL_DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            json
+            lib/daily
+            scripts
+
+      - name: Update stats
+        id: stats
+        continue-on-error: true
+        run: node scripts/update-daily-stats.mjs ${{ inputs.backfill && '--backfill' || '' }}
+
+      - name: Commit changes
+        id: commit
+        run: |
+          if [ -n "$(git status --porcelain json/daily)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add json/daily/stats.json
+            git commit -m "chore: update daily stats"
+            git pull --rebase
+            git push
+            echo "pushed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Trigger Vercel deploy
+        if: steps.commit.outputs.pushed == 'true' && env.VERCEL_DEPLOY_HOOK != ''
+        run: curl -fsS -X POST "$VERCEL_DEPLOY_HOOK"
+
+      - name: Report failures
+        if: steps.stats.outcome == 'failure'
+        run: exit 1

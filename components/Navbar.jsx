@@ -16,6 +16,7 @@ const Navbar = () => {
     { href: "/contest", label: "Contest" },
     { href: "/resources", label: "Resources" },
     { href: "/blogs", label: "Blogs" },
+    { href: "/daily", label: "Daily Question" },
   ];
 
   return (

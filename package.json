@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "daily:generate": "node scripts/generate-daily-questions.mjs",
+    "daily:stats": "node scripts/update-daily-stats.mjs"
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",

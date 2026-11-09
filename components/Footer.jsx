@@ -9,6 +9,7 @@ const Footer = () => {
         { href: "/contest", label: "Contests" },
         { href: "/resources", label: "Resources" },
         { href: "/blogs", label: "Blogs" },
+        { href: "/daily", label: "Daily Question" },
     ];
 
     const socialLinks = [

@@ -16,6 +16,7 @@ Built with [Next.js](https://nextjs.org), Tailwind CSS, Framer Motion, and a cyb
 - 📝 **Blogs & Editorials**: Markdown-based posts with GitHub-flavored Markdown, math (KaTeX), and syntax-friendly code blocks
 - 🔍 Client-side search and 🏷️ tag filtering on blogs
 - 🎨 Glassmorphism UI with animated binary rain, glow effects, and loading states
+- ⚡ **Daily Questions & Leaderboard**: 6 curated daily problems across rating tiers, interactive calendar, streak tracking, and automated Codeforces solve sync
 
 ---
 
