@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-09T18:02:09.694Z",
+  "updatedAt": "2026-11-09T18:32:06.731Z",
   "users": {
     "urabhay10": {
       "name": "Abhay Upadhyay",
@@ -344,7 +344,7 @@
       "totalSolved": 2,
       "currentStreak": 1,
       "longestStreak": 1,
-      "solvedToday": 2,
+      "solvedToday": 0,
       "solvedBySlot": [
         1,
         1,
@@ -356,7 +356,7 @@
       "lastSolvedDate": "2026-11-09",
       "points": 2000,
       "lastCompletedAt": "2026-11-09T17:47:06.000Z",
-      "todayCompletedAt": "2026-11-09T17:47:06.000Z"
+      "todayCompletedAt": null
     },
     "kamathvivek91": {
       "name": "Vivek Kamath",
@@ -471,23 +471,27 @@
     "sahilpojee": {
       "name": "Sahil Pojee",
       "cfHandle": "sahilpojee",
-      "solves": {},
+      "solves": {
+        "2026-11-09": [
+          "2025A"
+        ]
+      },
       "lateSolves": {},
-      "totalSolved": 0,
-      "currentStreak": 0,
-      "longestStreak": 0,
+      "totalSolved": 1,
+      "currentStreak": 1,
+      "longestStreak": 1,
       "solvedToday": 0,
       "solvedBySlot": [
-        0,
+        1,
         0,
         0,
         0,
         0,
         0
       ],
-      "lastSolvedDate": null,
-      "points": 0,
-      "lastCompletedAt": null,
+      "lastSolvedDate": "2026-11-09",
+      "points": 800,
+      "lastCompletedAt": "2026-11-09T18:20:40.000Z",
       "todayCompletedAt": null
     },
     "Vihaan_J24": {
@@ -502,7 +506,7 @@
       "totalSolved": 1,
       "currentStreak": 1,
       "longestStreak": 1,
-      "solvedToday": 1,
+      "solvedToday": 0,
       "solvedBySlot": [
         1,
         0,
@@ -514,7 +518,7 @@
       "lastSolvedDate": "2026-11-09",
       "points": 800,
       "lastCompletedAt": "2026-11-09T17:44:23.000Z",
-      "todayCompletedAt": "2026-11-09T17:44:23.000Z"
+      "todayCompletedAt": null
     },
     "yashsd9911": {
       "name": "Yash Sunil Deshmukh",
