@@ -28,7 +28,6 @@
     "lucide-react": "^0.454.0",
     "next": "15.5.29",
     "nextjs-toploader": "^3.7.15",
-    "puppeteer": "^25.16.0",
     "react": "^18.3.1",
     "react-calendar-heatmap": "^1.9.0",
     "react-chartjs-2": "^5.2.0",
