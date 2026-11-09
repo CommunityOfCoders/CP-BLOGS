@@ -1,1 +1,80 @@
-[]
+[
+  {
+    "date": "2026-11-09",
+    "problems": [
+      {
+        "slot": 1,
+        "id": "2025A",
+        "name": "Two Screens",
+        "rating": 800,
+        "tags": [
+          "binary search",
+          "greedy",
+          "strings",
+          "two pointers"
+        ],
+        "url": "https://codeforces.com/problemset/problem/2025/A"
+      },
+      {
+        "slot": 2,
+        "id": "48B",
+        "name": "Land Lot",
+        "rating": 1200,
+        "tags": [
+          "brute force",
+          "implementation"
+        ],
+        "url": "https://codeforces.com/problemset/problem/48/B"
+      },
+      {
+        "slot": 3,
+        "id": "1992D",
+        "name": "Test of Love",
+        "rating": 1200,
+        "tags": [
+          "dp",
+          "greedy",
+          "implementation"
+        ],
+        "url": "https://codeforces.com/problemset/problem/1992/D"
+      },
+      {
+        "slot": 4,
+        "id": "1228B",
+        "name": "Filling the Grid",
+        "rating": 1400,
+        "tags": [
+          "implementation",
+          "math"
+        ],
+        "url": "https://codeforces.com/problemset/problem/1228/B"
+      },
+      {
+        "slot": 5,
+        "id": "1883E",
+        "name": "Look Back",
+        "rating": 1700,
+        "tags": [
+          "bitmasks",
+          "greedy"
+        ],
+        "url": "https://codeforces.com/problemset/problem/1883/E"
+      },
+      {
+        "slot": 6,
+        "id": "1560F1",
+        "name": "Nearest Beautiful Number (easy version)",
+        "rating": 1900,
+        "tags": [
+          "binary search",
+          "bitmasks",
+          "brute force",
+          "constructive algorithms",
+          "dfs and similar",
+          "greedy"
+        ],
+        "url": "https://codeforces.com/problemset/problem/1560/F1"
+      }
+    ]
+  }
+]
