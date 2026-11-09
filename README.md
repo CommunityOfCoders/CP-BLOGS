@@ -1,47 +1,126 @@
-# CP Club VJTI Blog
+# CP Club Website
 
-A competitive programming blog for CP Club VJTI, featuring tutorial-style posts, problem-solving write-ups, and curated practice links. The site is built from Markdown files in `blogs/` and published through GitHub Pages.
+The official website of the **CP Club (VJTI)** — a competitive programming community hub featuring a live leaderboard, contest tracker, member profiles, CSES progress tracking, and a blog with editorials and tutorials. Developed by **COC**.
+
+Built with [Next.js](https://nextjs.org), Tailwind CSS, Framer Motion, and a cyberpunk / matrix-green theme. 💚
+
+---
 
 ## ✨ Features
 
-- 🖤 Dark/light theme toggle
-- 🔍 Client-side search across all blogs
-- 🏷️ Tag filtering
-- 📖 Reading progress bar on each post
-- 📱 Responsive layout with sidebar navigation
-- ⚡ Auto-deploy via GitHub Actions on every push to `main`
+- 🏆 **Leaderboard**: ranks club members using their Codeforces and LeetCode ratings
+- 📅 **Contests**: upcoming and past contests, plus a calendar view (powered by the Codolio contest API)
+- 🥇 **Past Contest Leaderboards**: club members' standings for past Codeforces and LeetCode contests
+- 👤 **Member Profiles**: LeetCode and Codeforces stats and contest history for each member
+- 📊 **CSES Tracker**: section-wise progress of the CSES problem set for any user
+- 📝 **Blogs & Editorials**: Markdown-based posts with GitHub-flavored Markdown, math (KaTeX), and syntax-friendly code blocks
+- 🔍 Client-side search and 🏷️ tag filtering on blogs
+- 🎨 Glassmorphism UI with animated binary rain, glow effects, and loading states
 
 ---
 
-## 🚀 Quick Start
+## 🛠️ Tech Stack
 
-### 1. Install Python dependencies
+| Area | Tools |
+|---|---|
+| Framework | Next.js (App Router) |
+| Styling | Tailwind CSS, shadcn/ui |
+| Animation | Framer Motion |
+| Icons | lucide-react |
+| Data fetching | axios, Next.js API routes |
+| Scraping | Puppeteer (CSES) |
+| Blogs | react-markdown, remark-gfm, remark-math, rehype-katex |
+| Dates | dayjs |
+
+---
+
+## ⚡ Getting Started
+
+### 1. Clone the repository
 
 ```bash
-pip install -r requirements.txt
+git clone <your-repo-url>
+cd <your-repo-folder>
 ```
 
-### 2. Add your logo
+### 2. Install dependencies
 
-Replace the placeholder at `static/assets/logo_placeholder.svg` with your actual logo image.
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
 
-### 3. Write or update posts
+### 3. Run the development server
 
-Create or edit markdown files in the `blogs/` folder using the naming convention:
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result. 🎉
+
+The page auto-updates as you edit files.
+
+### 4. Create New branch 
+
+Create and switch branch to add new feature or fix bug
 
 ```
-blogs/blog1_YourBlogTitle.md
-blogs/blog2_AnotherBlog.md
+git checkout -b fix-bug/add-feature
 ```
 
-Each file supports optional YAML frontmatter at the top:
+---
+
+## 📁 Project Structure
+
+```
+.
+├── app/
+├── components/              ← Navbar, Footer, Leaderboard, Profile, BlogsClient, ui/
+├── content/
+│   └── blogs/               ← Markdown blog posts ✍️
+├── lib/                     ← Helpers (blogs, getLeetCodeData, getCodeForcesData)
+├── json/
+│   ├── members.json         ← Club members & their handles
+│   └── cses_problems.json   ← CSES problem list by section
+
+```
+
+---
+
+## ✍️ How to Add a Blog
+
+Blogs are written as **Markdown files** inside the `content/blogs/` folder and are picked up automatically by the site.
+
+### 1. Create a file
+
+Use the naming convention:
+
+```
+content/blogs/blog1_YourBlogTitle.md
+content/blogs/blog2_AnotherBlog.md
+```
+
+### 2. Add frontmatter at the top
 
 ```yaml
 ---
+layout: post
 title: Your Blog Title
-date: 2024-01-15
+date: 2026-01-15 (YYYY-MM-DD)
 author: Your Name
-tags: [Tag1, Tag2, Tag3]
+categories: [Competitive Programming, Algorithms]
+tags: [DP, Graphs, Beginner]
 description: A short summary (shown in search results and blog cards).
 ---
 
@@ -50,76 +129,47 @@ description: A short summary (shown in search results and blog cards).
 Start writing content here...
 ```
 
-### 4. Edit the homepage
+### 3. Write your content
 
-Edit `blogs/home_page.md` to customize the landing page content for CP Club VJTI.
+Supported out of the box:
 
-### 5. Build locally
+-  GitHub-flavored Markdown (tables, task lists, strikethrough)
+-  Math using KaTeX, e.g. `$O(n \log n)$`
+-  Fenced code blocks (```` ```cpp ````)
+-  Images, blockquotes, and links
+
+### 4. Preview locally
 
 ```bash
-# If repo name is e.g. CP_Club_VJTI_Blogs (served at username.github.io/CP_Club_VJTI_Blogs):
-python build.py --base-url /CP_Club_VJTI_Blogs
-
-# If served from a custom domain root:
-python build.py
+npm run dev
 ```
 
-Open `docs/index.html` in a browser to preview.
+Then open [http://localhost:3000/blogs](http://localhost:3000/blogs) to see your post. 👀
+
+### 5. Open a PR 🎉
+
+Commit, push, and open a Pull Request (see the contribution guide below).
 
 ---
 
-## 🌐 GitHub Pages Setup (one-time)
+## 🤝 How to Contribute
 
-1. Push this repo to GitHub.
-2. Go to **Settings → Pages**.
-3. Set **Source** to: `Deploy from a branch` → Branch: `main` → Folder: `/docs`.
-4. Click **Save**.
-
-After the first push, GitHub Actions will auto-build and your site will be live at:
-`https://<username>.github.io/<repo-name>/`
-
-## 🧭 Content Rules
-
-The repository also follows the contribution process in `CONTRIBUTING.md`:
-
-- Only CP Club members should contribute for now.
-- For problem-solution posts, the only required change is adding the solution link next to the problem link in the relevant markdown file.
-- Keep problem code clean and short, and avoid adding extra template sections.
-- Open a PR after committing and mention the related issue.
+Please Read [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ---
 
-## 📁 Project Structure
+## 🌐 Deployment
 
-```
-CP_Club_VJTI_Blogs/
-├── blogs/                  ← Put your .md files here
-│   ├── home_page.md        ← Homepage content
-│   ├── blog1_IntroToDP.md
-│   └── blog2_GraphAlgorithms.md
-├── templates/              ← Jinja2 HTML templates (edit for layout tweaks)
-│   ├── base.html
-│   ├── index.html
-│   └── blog.html
-├── static/                 ← CSS, JS, assets
-│   ├── style.css
-│   ├── search.js
-│   ├── theme.js
-│   └── assets/
-│       └── logo_placeholder.svg  ← Replace with your actual logo
-├── build.py                ← Build script
-├── requirements.txt
-└── .github/
-    └── workflows/
-        └── deploy.yml      ← Auto-deploy on push
-```
+The easiest way to deploy is the [Vercel Platform](https://vercel.com/new). See the [Next.js deployment docs](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-## 🎨 Customization
+---
 
-| What | Where |
-|---|---|
-| Colors & fonts | `static/style.css` → `:root` CSS variables |
-| Logo | Replace `static/assets/logo_placeholder.svg` |
-| GitHub link in footer | `templates/base.html` → footer section |
-| Blog layout | `templates/blog.html` |
-| Home page layout | `templates/index.html` |
+## 📚 Learn More
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Learn Next.js](https://nextjs.org/learn)
+- [Tailwind CSS](https://tailwindcss.com/docs)
+
+---
+
+Happy Coding! 💻💚
