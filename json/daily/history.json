@@ -157,5 +157,81 @@
         "url": "https://codeforces.com/problemset/problem/1569/D"
       }
     ]
+  },
+  {
+    "date": "2026-11-11",
+    "problems": [
+      {
+        "slot": 1,
+        "id": "1538A",
+        "name": "Stone Game",
+        "rating": 800,
+        "tags": [
+          "brute force",
+          "dp",
+          "greedy"
+        ],
+        "url": "https://codeforces.com/problemset/problem/1538/A"
+      },
+      {
+        "slot": 2,
+        "id": "754A",
+        "name": "Lesha and array splitting",
+        "rating": 1200,
+        "tags": [
+          "constructive algorithms",
+          "greedy",
+          "implementation"
+        ],
+        "url": "https://codeforces.com/problemset/problem/754/A"
+      },
+      {
+        "slot": 3,
+        "id": "1973B",
+        "name": "Cat, Fox and the Lonely Array",
+        "rating": 1300,
+        "tags": [
+          "binary search",
+          "bitmasks",
+          "data structures",
+          "greedy",
+          "math",
+          "two pointers"
+        ],
+        "url": "https://codeforces.com/problemset/problem/1973/B"
+      },
+      {
+        "slot": 4,
+        "id": "1824A",
+        "name": "LuoTianyi and the Show",
+        "rating": 1400,
+        "tags": [
+          "greedy",
+          "implementation"
+        ],
+        "url": "https://codeforces.com/problemset/problem/1824/A"
+      },
+      {
+        "slot": 5,
+        "id": "1295B",
+        "name": "Infinite Prefixes",
+        "rating": 1700,
+        "tags": [
+          "math",
+          "strings"
+        ],
+        "url": "https://codeforces.com/problemset/problem/1295/B"
+      },
+      {
+        "slot": 6,
+        "id": "1234E",
+        "name": "Special Permutations",
+        "rating": 2000,
+        "tags": [
+          "math"
+        ],
+        "url": "https://codeforces.com/problemset/problem/1234/E"
+      }
+    ]
   }
 ]
