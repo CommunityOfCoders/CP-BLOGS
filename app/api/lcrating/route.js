@@ -54,7 +54,7 @@ export async function GET(req) {
   }
 
   // Collect usernames from the JSON file
-  const userHandles = Object.values(users).map((user) => user.lc_username);
+  const userHandles = Object.values(users).map((user) => user.lc_username?.trim()).filter(Boolean);
 
   // Fetch LeetCode ratings for all users in parallel
   const ratingPromises = userHandles.map((handle) =>

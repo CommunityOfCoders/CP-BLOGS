@@ -108,7 +108,7 @@ const Leaderboard = () => {
 
   const fetchRatingsAndAttendance = useCallback(async () => {
     const handles = Object.keys(members).map(
-      (member) => members[member].cf_username
+      (member) => members[member].cf_username?.trim()
     );
     setIsProfileLoading(true);
     setIsAttendanceLoading(true);
@@ -118,7 +118,7 @@ const Leaderboard = () => {
 
     try {
       const attendanceMap = handles.reduce((acc, handle) => {
-        acc[handle] = [false, false, false, false, false];
+        if (handle) acc[handle.trim().toLowerCase()] = [false, false, false, false, false];
         return acc;
       }, {});
 
@@ -127,8 +127,9 @@ const Leaderboard = () => {
       const updatedMembers = [];
 
       for (const [username, data] of Object.entries(members)) {
+        const cfKey = data.cf_username?.trim().toLowerCase();
         const cfData = cfRatings.find(
-          (user) => user.handle === data.cf_username
+          (user) => user.handle?.trim().toLowerCase() === cfKey
         );
 
         const memberData = {
@@ -146,15 +147,9 @@ const Leaderboard = () => {
               ? "bg-red-500 text-white"
               : getRankColor(cfData?.rating || 0),
           leetCodeRating:
-            leetCodeRating.find((item) => item.username === data.lc_username)
+            leetCodeRating.find((item) => item.username?.trim().toLowerCase() === data.lc_username?.trim().toLowerCase())
               ?.rating || 0,
-          attendance: attendanceMap[data.cf_username] === undefined ? [
-            false,
-            false,
-            false,
-            false,
-            false,
-          ] : attendanceMap[data.cf_username],
+          attendance: (cfKey && attendanceMap[cfKey]) || [false, false, false, false, false],
         };
 
         updatedMembers.push(memberData);
@@ -165,7 +160,7 @@ const Leaderboard = () => {
       setIsProfileLoading(false);
 let handleMap={};
 for(let handle of validHandles){
-  handleMap[handle]=true;
+  if (handle) handleMap[handle.trim().toLowerCase()] = true;
 };
 for(let contestId of lastFiveContests) {
   try{
@@ -175,7 +170,7 @@ for(let contestId of lastFiveContests) {
     let contestIndex=lastFiveContests.indexOf(contestId);
     for(let row of response.data.result.rows){
       for(let member of row.party.members){
-        let handle=member.handle;
+        let handle = member.handle?.trim().toLowerCase();
         if(handleMap[handle]&&attendanceMap[handle]!=null) {
           attendanceMap[handle][contestIndex] = true;
         }
@@ -185,7 +180,7 @@ for(let contestId of lastFiveContests) {
     console.error(`Error fetching standings for contest ${contestId}:`,error);
   }
 }
-      setAttendanceMap(attendanceMap);
+      setAttendanceMap({ ...attendanceMap });
       setIsAttendanceLoading(false);
       // console.log("Attendance Map:", attendanceMap);
 
@@ -480,7 +475,7 @@ for(let contestId of lastFiveContests) {
                         Array.from({ length: 5 }).map((_, i) => (
                           <div key={i} className="w-4 h-4 bg-zinc-700 rounded-full animate-pulse" />
                         ))
-                      ) : attendanceMap[member.cf_username]?.map((attended, i) => (
+                      ) : attendanceMap[member.cf_username?.trim().toLowerCase()]?.map((attended, i) => (
                         <span key={i}>
                           {attended ? (
                             <CircleCheck size={18} className="text-green-500" />

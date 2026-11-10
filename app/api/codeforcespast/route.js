@@ -21,10 +21,14 @@ export async function GET(req) {
         const users = JSON.parse(data);
 
         userMapping = Object.fromEntries(
-            Object.values(users).map((user) => [user.cf_username, user.name])
+            Object.values(users)
+                .filter((user) => user.cf_username)
+                .map((user) => [user.cf_username.trim().toLowerCase(), user.name])
         );
         userRefMapping = Object.fromEntries(
-            Object.entries(users).map(([key, user]) => [user.cf_username, key])
+            Object.entries(users)
+                .filter(([_, user]) => user.cf_username)
+                .map(([key, user]) => [user.cf_username.trim().toLowerCase(), key])
         );
     } catch (error) {
         console.error("Error reading JSON file:", error);
@@ -42,31 +46,33 @@ export async function GET(req) {
             const uniqueMap = new Map();
 
             for (const row of standings) {
-                const handle = row.party.members[0].handle;
-                if (userMapping[handle]) {
-                const type = row.party.participantType;
+                const handle = row.party.members[0]?.handle;
+                const lowerHandle = handle?.trim().toLowerCase();
+                if (lowerHandle && userMapping[lowerHandle]) {
+                    const type = row.party.participantType;
 
-                if (!uniqueMap.has(handle)) {
-                    uniqueMap.set(handle, row); // first appearance
-                } else {
-                    // prefer official participation if multiple exist
-                    const existing = uniqueMap.get(handle);
-                    const priority = { CONTESTANT: 3, OUT_OF_COMPETITION: 2, PRACTICE: 1, VIRTUAL: 0 };
-                    if ((priority[type] || 0) > (priority[existing.party.participantType] || 0)) {
-                        uniqueMap.set(handle, row);
+                    if (!uniqueMap.has(lowerHandle)) {
+                        uniqueMap.set(lowerHandle, row); // first appearance
+                    } else {
+                        // prefer official participation if multiple exist
+                        const existing = uniqueMap.get(lowerHandle);
+                        const priority = { CONTESTANT: 3, OUT_OF_COMPETITION: 2, PRACTICE: 1, VIRTUAL: 0 };
+                        if ((priority[type] || 0) > (priority[existing.party.participantType] || 0)) {
+                            uniqueMap.set(lowerHandle, row);
+                        }
                     }
                 }
             }
-            }
             const formattedData = Array.from(uniqueMap.values()).map((row) => {
                 const handle = row.party.members[0].handle;
-                const userName = userMapping[handle] || "Unknown";
-                const ref = userRefMapping[handle] || "Unknown";
+                const lowerHandle = handle?.trim().toLowerCase();
+                const userName = userMapping[lowerHandle] || "Unknown";
+                const ref = userRefMapping[lowerHandle] || "Unknown";
 
                 return {
                     name: userName,
                     handle,
-                    standing: row.rank==0 ? "-" : row.rank,
+                    standing: row.rank == 0 ? "-" : row.rank,
                     points: row.points,
                     penalty: row.penalty,
                     participantType: row.party.participantType,

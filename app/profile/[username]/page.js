@@ -5,11 +5,11 @@ import members from "@/json/members.json";
 import { getCodeForcesData } from "@/lib/getCodeForcesData";
 
 async function page({ params }) {
-  const key = (await params).username;
+  const key = (await params).username?.trim();
   const user_data = members[key];
 
-  const leetCodeData = await getLeetCodeData(user_data.lc_username);
-  const codeForcesData = await getCodeForcesData(user_data.cf_username);
+  const leetCodeData = user_data?.lc_username ? await getLeetCodeData(user_data.lc_username.trim()) : null;
+  const codeForcesData = user_data?.cf_username ? await getCodeForcesData(user_data.cf_username.trim()) : null;
 
   let data = {
     user_data: user_data,
