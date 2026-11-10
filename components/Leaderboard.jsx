@@ -138,9 +138,10 @@ const Leaderboard = () => {
           maxRating: cfData?.maxRating || 0,
           rank: cfData?.rank || "N/A",
           maxRank: cfData?.maxRank || "N/A",
-          titlePhoto: cfData?.titlePhoto
-            ? `https://codeforces.com/${cfData.titlePhoto.replace(/^(https?:)?\/\//, "")}`
-            : "https://codeforces.com/userpic.codeforces.org/no-title.jpg",
+          titlePhoto: 
+            cfData?.titlePhoto && !cfData.titlePhoto.includes("no-title")
+              ? `https://codeforces.com/${cfData.titlePhoto.replace(/^(https?:)?\/\//, "")}`
+              : "/images/nouserpic-photo.jpg",
           rankColor:
             cfData?.rank === "N/A"
               ? "bg-red-500 text-white"
