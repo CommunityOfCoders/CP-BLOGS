@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-11T12:31:59.967Z",
+  "updatedAt": "2026-11-11T18:32:02.810Z",
   "users": {
     "urabhay10": {
       "name": "Abhay Upadhyay",
@@ -345,7 +345,7 @@
       },
       "lateSolves": {},
       "totalSolved": 3,
-      "currentStreak": 2,
+      "currentStreak": 0,
       "longestStreak": 2,
       "solvedToday": 0,
       "solvedBySlot": [
@@ -489,7 +489,7 @@
       "totalSolved": 3,
       "currentStreak": 3,
       "longestStreak": 3,
-      "solvedToday": 1,
+      "solvedToday": 0,
       "solvedBySlot": [
         3,
         0,
@@ -501,7 +501,7 @@
       "lastSolvedDate": "2026-11-11",
       "points": 2500,
       "lastCompletedAt": "2026-11-11T10:09:34.000Z",
-      "todayCompletedAt": "2026-11-11T10:09:34.000Z"
+      "todayCompletedAt": null
     },
     "Vihaan_J24": {
       "name": "Vihaan Jain",
@@ -521,7 +521,7 @@
       "totalSolved": 3,
       "currentStreak": 3,
       "longestStreak": 3,
-      "solvedToday": 1,
+      "solvedToday": 0,
       "solvedBySlot": [
         3,
         0,
@@ -533,7 +533,7 @@
       "lastSolvedDate": "2026-11-11",
       "points": 2500,
       "lastCompletedAt": "2026-11-11T01:01:05.000Z",
-      "todayCompletedAt": "2026-11-11T01:01:05.000Z"
+      "todayCompletedAt": null
     },
     "yashsd9911": {
       "name": "Yash Sunil Deshmukh",
