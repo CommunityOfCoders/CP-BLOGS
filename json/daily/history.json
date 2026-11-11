@@ -233,5 +233,85 @@
         "url": "https://codeforces.com/problemset/problem/1234/E"
       }
     ]
+  },
+  {
+    "date": "2026-11-12",
+    "problems": [
+      {
+        "slot": 1,
+        "id": "1929A",
+        "name": "Sasha and the Beautiful Array",
+        "rating": 800,
+        "tags": [
+          "constructive algorithms",
+          "greedy",
+          "math",
+          "sortings"
+        ],
+        "url": "https://codeforces.com/problemset/problem/1929/A"
+      },
+      {
+        "slot": 2,
+        "id": "1829E",
+        "name": "The Lakes",
+        "rating": 1100,
+        "tags": [
+          "dfs and similar",
+          "dsu",
+          "graphs",
+          "implementation"
+        ],
+        "url": "https://codeforces.com/problemset/problem/1829/E"
+      },
+      {
+        "slot": 3,
+        "id": "2260C",
+        "name": "Maximize XOR, Minimize Operations",
+        "rating": 1300,
+        "tags": [
+          "bitmasks",
+          "greedy"
+        ],
+        "url": "https://codeforces.com/problemset/problem/2260/C"
+      },
+      {
+        "slot": 4,
+        "id": "1909C",
+        "name": "Heavy Intervals",
+        "rating": 1400,
+        "tags": [
+          "constructive algorithms",
+          "data structures",
+          "dsu",
+          "greedy",
+          "math",
+          "sortings"
+        ],
+        "url": "https://codeforces.com/problemset/problem/1909/C"
+      },
+      {
+        "slot": 5,
+        "id": "246D",
+        "name": "Colorful Graph",
+        "rating": 1600,
+        "tags": [
+          "brute force",
+          "dfs and similar",
+          "graphs"
+        ],
+        "url": "https://codeforces.com/problemset/problem/246/D"
+      },
+      {
+        "slot": 6,
+        "id": "2022C",
+        "name": "Gerrymandering",
+        "rating": 1800,
+        "tags": [
+          "dp",
+          "implementation"
+        ],
+        "url": "https://codeforces.com/problemset/problem/2022/C"
+      }
+    ]
   }
 ]
