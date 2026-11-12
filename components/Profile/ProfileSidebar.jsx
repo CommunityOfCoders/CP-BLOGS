@@ -56,7 +56,11 @@ const ProfileSidebar = ({ data }) => {
           <Image
             width={112}
             height={112}
-            src={data.codeForcesData?.titlePhoto}
+            src={
+              data.codeForcesData.titlePhoto && !data.codeForcesData.titlePhoto.includes("no-title")
+                ? data.codeForcesData.titlePhoto
+                : "/images/nouserpic-photo.jpg"
+            }
             alt={data.user_data?.name}
             className="w-28 h-28 rounded-full ring-4 ring-green-500 ring-offset-4 ring-offset-black"
           />
