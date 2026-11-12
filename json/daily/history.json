@@ -313,5 +313,80 @@
         "url": "https://codeforces.com/problemset/problem/2022/C"
       }
     ]
+  },
+  {
+    "date": "2026-11-13",
+    "problems": [
+      {
+        "slot": 1,
+        "id": "1398B",
+        "name": "Substring Removal Game",
+        "rating": 800,
+        "tags": [
+          "games",
+          "greedy",
+          "sortings"
+        ],
+        "url": "https://codeforces.com/problemset/problem/1398/B"
+      },
+      {
+        "slot": 2,
+        "id": "69B",
+        "name": "Bets",
+        "rating": 1200,
+        "tags": [
+          "greedy",
+          "implementation"
+        ],
+        "url": "https://codeforces.com/problemset/problem/69/B"
+      },
+      {
+        "slot": 3,
+        "id": "1066C",
+        "name": "Books Queries",
+        "rating": 1400,
+        "tags": [
+          "implementation"
+        ],
+        "url": "https://codeforces.com/problemset/problem/1066/C"
+      },
+      {
+        "slot": 4,
+        "id": "930A",
+        "name": "Peculiar apple-tree",
+        "rating": 1500,
+        "tags": [
+          "dfs and similar",
+          "graphs",
+          "trees"
+        ],
+        "url": "https://codeforces.com/problemset/problem/930/A"
+      },
+      {
+        "slot": 5,
+        "id": "1748C",
+        "name": "Zero-Sum Prefixes",
+        "rating": 1600,
+        "tags": [
+          "brute force",
+          "data structures",
+          "dp",
+          "greedy",
+          "implementation"
+        ],
+        "url": "https://codeforces.com/problemset/problem/1748/C"
+      },
+      {
+        "slot": 6,
+        "id": "128C",
+        "name": "Games with Rectangle",
+        "rating": 2000,
+        "tags": [
+          "combinatorics",
+          "dp"
+        ],
+        "url": "https://codeforces.com/problemset/problem/128/C"
+      }
+    ]
   }
 ]
