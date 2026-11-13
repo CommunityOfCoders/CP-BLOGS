@@ -388,5 +388,80 @@
         "url": "https://codeforces.com/problemset/problem/128/C"
       }
     ]
+  },
+  {
+    "date": "2026-11-14",
+    "problems": [
+      {
+        "slot": 1,
+        "id": "1999B",
+        "name": "Card Game",
+        "rating": 1000,
+        "tags": [
+          "brute force",
+          "constructive algorithms",
+          "implementation"
+        ],
+        "url": "https://codeforces.com/problemset/problem/1999/B"
+      },
+      {
+        "slot": 2,
+        "id": "1950D",
+        "name": "Product of Binary Decimals",
+        "rating": 1100,
+        "tags": [
+          "brute force",
+          "dp",
+          "implementation",
+          "number theory"
+        ],
+        "url": "https://codeforces.com/problemset/problem/1950/D"
+      },
+      {
+        "slot": 3,
+        "id": "1000A",
+        "name": "Codehorses T-shirts",
+        "rating": 1200,
+        "tags": [
+          "greedy",
+          "implementation"
+        ],
+        "url": "https://codeforces.com/problemset/problem/1000/A"
+      },
+      {
+        "slot": 4,
+        "id": "120D",
+        "name": "Three Sons",
+        "rating": 1400,
+        "tags": [
+          "brute force"
+        ],
+        "url": "https://codeforces.com/problemset/problem/120/D"
+      },
+      {
+        "slot": 5,
+        "id": "1475E",
+        "name": "Advertising Agency",
+        "rating": 1600,
+        "tags": [
+          "combinatorics",
+          "math",
+          "sortings"
+        ],
+        "url": "https://codeforces.com/problemset/problem/1475/E"
+      },
+      {
+        "slot": 6,
+        "id": "1986F",
+        "name": "Non-academic Problem",
+        "rating": 1900,
+        "tags": [
+          "dfs and similar",
+          "graphs",
+          "trees"
+        ],
+        "url": "https://codeforces.com/problemset/problem/1986/F"
+      }
+    ]
   }
 ]
