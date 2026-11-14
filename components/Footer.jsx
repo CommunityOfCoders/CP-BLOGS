@@ -1,116 +1,74 @@
-"use client";
 import React from "react";
 import Link from "next/link";
-import { Github, MessageSquare, Code2, Heart } from "lucide-react";
+import { Github, MessageSquare } from "lucide-react";
 
-const Footer = () => {
-    const quickLinks = [
-        { href: "/leaderboard", label: "Leaderboard" },
-        { href: "/contest", label: "Contests" },
-        { href: "/arena", label: "Battle Arena" },
-        { href: "/resources", label: "Resources" },
-        { href: "/blogs", label: "Blogs" },
-        { href: "/daily", label: "Daily Question" },
-    ];
+const quickLinks = [
+  { href: "/leaderboard", label: "Leaderboard" },
+  { href: "/contest", label: "Contests" },
+  { href: "/arena", label: "Battle Arena" },
+  { href: "/resources", label: "Resources" },
+  { href: "/blogs", label: "Blogs" },
+  { href: "/daily", label: "Daily Question" },
+];
 
-    const socialLinks = [
-        {
-            href: "https://github.com/Amal-Verma/COC-CP-CLUB-Practice-Questions",
-            label: "GitHub",
-            icon: Github,
-        },
-        {
-            href: "https://chat.whatsapp.com/ITzWAJLkazz0XIJDZ5BZpv",
-            label: "Community Chat",
-            icon: MessageSquare,
-        },
-    ];
+const socialLinks = [
+  { href: "https://github.com/Amal-Verma/COC-CP-CLUB-Practice-Questions", label: "GitHub", icon: Github },
+  { href: "https://chat.whatsapp.com/ITzWAJLkazz0XIJDZ5BZpv", label: "Community Chat", icon: MessageSquare },
+];
 
-    return (
-        <footer className="border-t border-white/10 bg-black/30 backdrop-blur-sm mt-auto">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {/* Column 1: About */}
-                    <div className="space-y-4">
-                        <div className="flex items-center space-x-2">
-                            <Code2 className="w-6 h-6 text-matrix-200" />
-                            <h3 className="text-lg font-mono font-bold text-white">
-                                CP Club
-                            </h3>
-                        </div>
-                        <p className="text-sm text-zinc-400 leading-relaxed">
-                            Competitive Programming Club dedicated to improving problem-solving
-                            skills and algorithmic thinking.
-                        </p>
-                        <div className="flex items-center space-x-1 text-xs text-zinc-500">
-                            <span>Built with</span>
-                            <Heart className="w-3 h-3 text-red-500 fill-red-500 animate-pulse" />
-                            <span>by Senate</span>
-                        </div>
-                    </div>
+const Footer = () => (
+  <footer className="footer">
+    <div className="container">
+      <div className="footer__top">
+        <div>
+          <span className="footer__wordmark">
+            CP Club
+            <br />
+            at VJTI<span className="footer__dot">.</span>
+          </span>
+          <p className="footer__tag">
+            Competitive programming, problem-solving and algorithmic thinking, built by Community of Coders.
+          </p>
+        </div>
 
-                    {/* Column 2: Quick Links */}
-                    <div className="space-y-4">
-                        <h3 className="text-sm font-mono font-bold text-matrix-200 uppercase tracking-wider">
-                            Quick Links
-                        </h3>
-                        <ul className="space-y-2">
-                            {quickLinks.map((link) => (
-                                <li key={link.href}>
-                                    <Link
-                                        href={link.href}
-                                        className="text-sm text-zinc-400 hover:text-matrix-200 transition-colors duration-300 inline-flex items-center group"
-                                    >
-                                        <span className="w-0 h-px bg-matrix-200 group-hover:w-4 transition-all duration-300 mr-0 group-hover:mr-2" />
-                                        {link.label}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+        <div className="footer__cols">
+          <div className="footer__col">
+            <span className="footer__col-title">Explore</span>
+            {quickLinks.map((l) => (
+              <Link key={l.href} href={l.href} className="footer__link">
+                {l.label}
+              </Link>
+            ))}
+          </div>
+          <div className="footer__col">
+            <span className="footer__col-title">Connect</span>
+            {socialLinks.map((l) => (
+              <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" className="footer__link">
+                {l.label}
+              </a>
+            ))}
+            <a href="https://github.com/CommunityOfCoders" target="_blank" rel="noopener noreferrer" className="footer__link">
+              Community of Coders
+            </a>
+          </div>
+        </div>
+      </div>
 
-                    {/* Column 3: Connect */}
-                    <div className="space-y-4">
-                        <h3 className="text-sm font-mono font-bold text-matrix-200 uppercase tracking-wider">
-                            Connect
-                        </h3>
-                        <div className="flex space-x-3">
-                            {socialLinks.map((link) => {
-                                const Icon = link.icon;
-                                return (
-                                    <a
-                                        key={link.href}
-                                        href={link.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="p-2 rounded-lg bg-zinc-900/50 border border-white/10 text-zinc-400 hover:text-matrix-200 hover:border-matrix-200/40 hover:shadow-glow-sm transition-all duration-300"
-                                        aria-label={link.label}
-                                    >
-                                        <Icon className="w-5 h-5" />
-                                    </a>
-                                );
-                            })}
-                        </div>
-                        <p className="text-xs text-zinc-500 mt-4">
-                            Join our community and level up your coding skills together!
-                        </p>
-                    </div>
-                </div>
-
-                {/* Bottom Bar */}
-                <div className="mt-12 pt-8 border-t border-white/10">
-                    <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-                        <p className="text-xs text-zinc-500 font-mono">
-                            © 2026-27 CP Club. All rights reserved.
-                        </p>
-                        <p className="text-xs text-zinc-600 font-mono">
-                            SYSTEM_STATUS: <span className="text-matrix-200 animate-pulse">ONLINE</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </footer>
-    );
-};
+      <div className="footer__bottom">
+        <span>© 2026-27 CP Club, VJTI.</span>
+        <div className="footer__socials">
+          {socialLinks.map((l) => {
+            const Icon = l.icon;
+            return (
+              <a key={l.href} href={l.href} target="_blank" rel="noopener noreferrer" className="footer__social" aria-label={l.label}>
+                <Icon />
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  </footer>
+);
 
 export default Footer;

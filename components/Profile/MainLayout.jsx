@@ -203,7 +203,7 @@ function MainLayout({ data }) {
             key={index}
             className="w-full py-6 px-7 rounded-xl glass-card flex items-center gap-5"
           >
-            <div className="bg-matrix-200/10 border border-matrix-200/20 rounded-full w-14 h-14 flex justify-center items-center shadow-glow-sm">
+            <div className="bg-matrix-200/10 border border-matrix-200/20 rounded-full w-14 h-14 flex justify-center items-center ">
               <Image
                 src={data.image}
                 alt={data.title}

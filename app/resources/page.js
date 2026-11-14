@@ -131,7 +131,7 @@ const Resources = () => {
         {/* Header */}
         <div className="mb-12">
           <h1 className="text-4xl sm:text-5xl font-mono font-bold text-white mb-3">
-            <span className="bg-gradient-to-r from-matrix-100 via-matrix-200 to-emerald-400 bg-clip-text text-transparent">
+            <span className="text-matrix-200">
               Resources
             </span>
           </h1>
@@ -246,7 +246,7 @@ const Resources = () => {
                         <button
                           onClick={() => copyToClipboard(resource.url, resource.name)}
                           className={`flex-shrink-0 p-2 rounded-lg border transition-all ${copiedUrl === resource.name
-                              ? "bg-matrix-200/20 border-matrix-200 text-matrix-200 shadow-glow-sm"
+                              ? "bg-matrix-200/20 border-matrix-200 text-matrix-200 "
                               : "bg-zinc-900/50 border-white/10 text-zinc-400 hover:border-matrix-200/40 hover:text-matrix-200"
                             }`}
                           title="Copy link"
@@ -301,7 +301,7 @@ const Resources = () => {
                       <button
                         onClick={() => copyToClipboard(resource.url, resource.name)}
                         className={`flex-shrink-0 p-2 rounded-lg border transition-all ${copiedUrl === resource.name
-                            ? "bg-matrix-200/20 border-matrix-200 text-matrix-200 shadow-glow-sm"
+                            ? "bg-matrix-200/20 border-matrix-200 text-matrix-200 "
                             : "bg-zinc-900/50 border-white/10 text-zinc-400 hover:border-matrix-200/40 hover:text-matrix-200"
                           }`}
                         title="Copy link"

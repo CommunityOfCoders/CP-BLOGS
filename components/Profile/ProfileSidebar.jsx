@@ -62,10 +62,10 @@ const ProfileSidebar = ({ data }) => {
                 : "/images/nouserpic-photo.jpg"
             }
             alt={data.user_data?.name}
-            className="w-28 h-28 rounded-full ring-4 ring-green-500 ring-offset-4 ring-offset-black"
+            className="w-28 h-28 rounded-full ring-2 ring-matrix-200 ring-offset-4 ring-offset-black"
           />
         ) : (
-          <div className="bg-gradient-to-br from-matrix-200 to-emerald-600 px-4 py-2 rounded-full w-28 h-28 text-black flex justify-center items-center ring-4 ring-green-500 ring-offset-4 ring-offset-black">
+          <div className="bg-matrix-200 px-4 py-2 rounded-full w-28 h-28 text-black flex justify-center items-center ring-2 ring-matrix-200 ring-offset-4 ring-offset-black">
             <p className="font-bold text-4xl font-mono">
               {data.user_data?.name?.charAt(0).toUpperCase()}
             </p>

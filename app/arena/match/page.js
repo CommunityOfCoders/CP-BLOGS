@@ -111,7 +111,7 @@ function MatchContent() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white font-mono">
+      <div className="min-h-screen flex flex-col items-center justify-center text-white font-mono">
         <RefreshCw className="w-8 h-8 animate-spin text-matrix-200 mb-4" />
         <p className="text-zinc-400">Loading battle arena...</p>
       </div>
@@ -120,7 +120,7 @@ function MatchContent() {
 
   if (error || !matchData) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center bg-black text-white font-mono px-4">
+      <div className="min-h-screen flex flex-col items-center justify-center text-white font-mono px-4">
         <div className="p-6 rounded-2xl bg-zinc-900 border border-red-500/30 max-w-md text-center">
           <AlertTriangle className="w-10 h-10 text-red-500 mx-auto mb-3" />
           <h2 className="text-xl font-bold text-red-400 mb-2">Battle Error</h2>
@@ -141,7 +141,7 @@ function MatchContent() {
   const p2 = match.p2;
 
   return (
-    <div className="min-h-screen py-16 px-4 sm:px-6 lg:px-8 bg-black text-white relative">
+    <div className="min-h-screen py-16 px-4 sm:px-6 lg:px-8 text-white relative">
       <div className="max-w-5xl mx-auto pt-6">
         {/* Top bar with back and share */}
         <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
@@ -176,7 +176,7 @@ function MatchContent() {
         {/* PRE-MATCH COUNTDOWN BANNER (WHEN isPending IS TRUE) */}
         {isPending ? (
           <div className="mb-10 text-center">
-            <div className="p-8 rounded-2xl bg-zinc-900/90 border-2 border-matrix-200/40 backdrop-blur-xl shadow-glow-md max-w-xl mx-auto">
+            <div className="p-8 rounded-2xl bg-zinc-900/90 border-2 border-matrix-200/40 max-w-xl mx-auto">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-matrix-200/10 border border-matrix-200/30 text-matrix-200 text-xs font-mono mb-4">
                 <Hourglass className="w-4 h-4 animate-spin" /> Synchronizing Countdown
               </div>
@@ -190,7 +190,7 @@ function MatchContent() {
 
               <button
                 onClick={copyMatchLink}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-matrix-200 text-black font-mono font-bold text-sm shadow-glow-sm hover:scale-105 transition-all"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-matrix-200 text-black font-mono font-bold text-sm hover:scale-105 transition-all"
               >
                 {copied ? <Check className="w-4 h-4" /> : <Share2 className="w-4 h-4" />}
                 {copied ? "Match Link Copied!" : "Copy & Send Match Link"}
@@ -200,7 +200,7 @@ function MatchContent() {
         ) : (
           /* ACTIVE OR FINISHED TIMER BANNER */
           <div className="text-center mb-8">
-            <div className="inline-block p-4 px-6 rounded-2xl bg-zinc-900/80 border border-white/10 backdrop-blur-md shadow-2xl">
+            <div className="inline-block p-4 px-6 rounded-2xl bg-zinc-900/80 border border-white/10 shadow-2xl">
               <div className="flex items-center justify-center gap-2 text-xs font-mono text-zinc-400 uppercase tracking-widest mb-1">
                 <Timer className="w-4 h-4 text-matrix-200" />
                 {isFinished ? "Match Ended" : "Time Remaining"}
@@ -218,7 +218,7 @@ function MatchContent() {
 
         {/* Winner Announcement Banner */}
         {isFinished && (
-          <div className="mb-8 p-6 rounded-2xl bg-gradient-to-r from-matrix-200/20 via-zinc-900 to-matrix-200/20 border-2 border-matrix-200/50 text-center shadow-glow-lg">
+          <div className="mb-8 p-6 rounded-2xl bg-zinc-900 border-2 border-matrix-200/50 text-center ">
             <Trophy className="w-12 h-12 text-yellow-400 mx-auto mb-2 animate-bounce" />
             <h2 className="text-2xl sm:text-3xl font-mono font-bold text-white">
               {outcome === "tie" ? "IT'S A TIE!" : `VICTORY FOR ${winner.toUpperCase()}!`}
@@ -235,7 +235,7 @@ function MatchContent() {
           {/* Player 1 Card */}
           <div
             className={`p-6 rounded-2xl bg-zinc-900/80 border transition-all ${
-              winner === p1 ? "border-matrix-200 shadow-glow-md ring-2 ring-matrix-200/40" : "border-matrix-200/20"
+              winner === p1 ? "border-matrix-200 ring-2 ring-matrix-200/40" : "border-matrix-200/20"
             }`}
           >
             <div className="flex items-center justify-between mb-4">
@@ -261,7 +261,7 @@ function MatchContent() {
           {/* Player 2 Card */}
           <div
             className={`p-6 rounded-2xl bg-zinc-900/80 border transition-all ${
-              winner === p2 ? "border-red-400 shadow-glow-md ring-2 ring-red-400/40" : "border-red-500/20"
+              winner === p2 ? "border-red-400 ring-2 ring-red-400/40" : "border-red-500/20"
             }`}
           >
             <div className="flex items-center justify-between mb-4">
@@ -398,7 +398,7 @@ export default function ArenaMatchPage() {
   return (
     <Suspense
       fallback={
-        <div className="min-h-screen flex items-center justify-center bg-black text-white font-mono">
+        <div className="min-h-screen flex items-center justify-center text-white font-mono">
           <RefreshCw className="w-8 h-8 animate-spin text-matrix-200" />
         </div>
       }

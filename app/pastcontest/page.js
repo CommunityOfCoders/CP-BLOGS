@@ -96,12 +96,12 @@ function ContestLeaderboardContent() {
       <div className="max-w-7xl mx-auto">
         {/* Header Section - Glass Card with Platform Glow */}
         <div
-          className={`mb-8 rounded-xl bg-zinc-900/50 backdrop-blur-xl border-2 ${platformStyle.borderGlow} p-8 transition-all duration-300`}
+          className={`mb-8 rounded-xl bg-zinc-900/50 border-2 ${platformStyle.borderGlow} p-8 transition-all duration-300`}
         >
           <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-6 sm:space-y-0">
             <div className="relative">
               {/* Glowing ring around logo */}
-              <div className={`absolute inset-0 animate-pulse rounded-full ring-4 ${platformStyle.ringColor} opacity-60`}></div>
+              <div className={`absolute inset-0 rounded-full ring-2 ${platformStyle.ringColor} opacity-60`}></div>
               <Image
                 src={platformLogos[platform]}
                 alt={`${platform} logo`}
@@ -110,14 +110,14 @@ function ContestLeaderboardContent() {
                 className="relative h-16 w-16 rounded-full border-4 border-white/20 shadow-lg"
               />
             </div>
-            <h1 className={`text-center text-3xl font-mono font-extrabold sm:text-4xl bg-gradient-to-r ${platformStyle.textGradient} bg-clip-text text-transparent`}>
+            <h1 className={`text-center text-3xl font-mono font-extrabold sm:text-4xl text-white`}>
               {contestName || "Default Contest Name"}
             </h1>
           </div>
           {/* Participant Count Badge */}
           {!loading && participants.length > 0 && (
             <div className="mt-4 flex justify-center">
-              <div className="px-4 py-2 rounded-full bg-green-500/10 border border-green-500/30 backdrop-blur-sm">
+              <div className="px-4 py-2 rounded-full bg-green-500/10 border border-green-500/30 ">
                 <span className="text-sm font-mono text-green-400">
                   {participants.length} Participant{participants.length !== 1 ? 's' : ''}
                 </span>

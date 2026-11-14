@@ -18,7 +18,7 @@ const platformLogos = {
 const platformColors = {
   codeforces: "bg-red-500/10 text-red-400 border-red-500/20",
   leetcode: "bg-yellow-500/10 text-yellow-400 border-yellow-500/20",
-  codechef: "bg-purple-500/10 text-purple-400 border-purple-500/20",
+  codechef: "bg-zinc-800 text-zinc-300 border-white/10",
   atcoder: "bg-blue-500/10 text-blue-400 border-blue-500/20",
   geeksforgeeks: "bg-green-500/10 text-green-400 border-green-500/20"
 }
@@ -196,7 +196,7 @@ export default function Component() {
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-4xl sm:text-5xl font-mono font-bold text-white mb-2">
-          <span className="bg-gradient-to-r from-matrix-100 via-matrix-200 to-emerald-400 bg-clip-text text-transparent">
+          <span className="text-matrix-200">
             Contests
           </span>
         </h1>
@@ -210,7 +210,7 @@ export default function Component() {
         <button
           onClick={() => setActiveTab("upcoming")}
           className={`px-6 py-3 rounded-lg font-mono font-medium transition-all duration-300 ${activeTab === "upcoming"
-              ? "bg-matrix-200 text-black shadow-glow-md"
+              ? "bg-matrix-200 text-black "
               : "glass border border-white/10 text-zinc-300 hover:border-matrix-200/40 hover:text-matrix-200"
             }`}
         >
@@ -219,7 +219,7 @@ export default function Component() {
         <button
           onClick={() => setActiveTab("previous")}
           className={`px-6 py-3 rounded-lg font-mono font-medium transition-all duration-300 ${activeTab === "previous"
-              ? "bg-matrix-200 text-black shadow-glow-md"
+              ? "bg-matrix-200 text-black "
               : "glass border border-white/10 text-zinc-300 hover:border-matrix-200/40 hover:text-matrix-200"
             }`}
         >
@@ -228,7 +228,7 @@ export default function Component() {
         <button
           onClick={() => setActiveTab("calendar")}
           className={`px-6 py-3 rounded-lg font-mono font-medium transition-all duration-300 ${activeTab === "calendar"
-              ? "bg-matrix-200 text-black shadow-glow-md"
+              ? "bg-matrix-200 text-black "
               : "glass border border-white/10 text-zinc-300 hover:border-matrix-200/40 hover:text-matrix-200"
             }`}
         >

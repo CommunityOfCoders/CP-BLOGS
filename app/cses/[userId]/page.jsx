@@ -69,24 +69,24 @@ const CSESUserPage = () => {
   const renderProblemCard = (problem, index) => (
     <div key={`${problem.id}-${index}`} className={`border rounded-lg p-4 hover:shadow-md transition-shadow ${
       problem.status === 'Solved' 
-        ? 'bg-green-50 border-green-200' 
-        : 'bg-gray-50 border-gray-200'
+        ? 'bg-zinc-900 border-matrix-200/40' 
+        : 'bg-zinc-900 border-white/10'
     }`}>
       <div className="flex items-start justify-between">
         <div className="flex-1">
-          <div className="text-sm font-medium text-gray-600 mb-1">
+          <div className="text-sm font-medium text-zinc-400 mb-1">
             Problem #{problem.id}
           </div>
-          <h4 className="font-semibold text-gray-800 text-sm leading-tight mb-2">
+          <h4 className="font-semibold text-white text-sm leading-tight mb-2">
             {problem.title}
           </h4>
-          <div className="text-xs text-gray-500 mb-2">
+          <div className="text-xs text-zinc-500 mb-2">
             {problem.stats}
           </div>
           <span className={`inline-flex items-center px-2 py-1 rounded-full text-xs font-medium ${
             problem.status === 'Solved' 
-              ? 'bg-green-100 text-green-800' 
-              : 'bg-gray-100 text-gray-800'
+              ? 'bg-matrix-200/15 text-matrix-200' 
+              : 'bg-zinc-800 text-white'
           }`}>
             {problem.status === 'Solved' ? '✓ Solved' : '○ Unsolved'}
           </span>
@@ -96,7 +96,7 @@ const CSESUserPage = () => {
         href={problem.link} 
         target="_blank" 
         rel="noopener noreferrer"
-        className="mt-3 inline-flex items-center text-xs text-blue-600 hover:text-blue-800 font-medium"
+        className="mt-3 inline-flex items-center text-xs text-zinc-400 hover:text-zinc-300 font-medium"
       >
         View Problem →
       </a>
@@ -118,14 +118,14 @@ const CSESUserPage = () => {
 
     return (
       <div key={sectionName} className="mb-8">
-        <div className="bg-gradient-to-r from-blue-50 to-indigo-100 p-4 rounded-lg border border-blue-200 mb-4">
+        <div className="bg-zinc-900 p-4 rounded-lg border border-white/10 mb-4">
           <div className="flex items-center justify-between">
-            <h3 className="text-lg font-bold text-gray-800">{sectionName}</h3>
+            <h3 className="text-lg font-bold text-white">{sectionName}</h3>
             <div className="flex items-center space-x-4">
-              <div className="text-sm text-gray-600">
+              <div className="text-sm text-zinc-400">
                 {sectionData.solvedCount}/{sectionData.totalCount} solved
               </div>
-              <div className="text-sm font-medium text-purple-600">
+              <div className="text-sm font-medium text-matrix-200">
                 {sectionData.completionPercentage}%
               </div>
             </div>
@@ -133,9 +133,9 @@ const CSESUserPage = () => {
           
           {/* Section Progress Bar */}
           <div className="mt-2">
-            <div className="w-full bg-gray-200 rounded-full h-2">
+            <div className="w-full bg-zinc-700 rounded-full h-2">
               <div 
-                className="bg-gradient-to-r from-green-400 to-green-600 h-2 rounded-full transition-all duration-500"
+                className="bg-matrix-200 h-2 rounded-full transition-all duration-500"
                 style={{ width: `${sectionData.completionPercentage}%` }}
               ></div>
             </div>
@@ -155,10 +155,10 @@ const CSESUserPage = () => {
 
   return (
     <div className="p-6">
-      <h1 className="text-3xl font-bold mb-6 text-gray-800">CSES Problem Set</h1>
+      <h1 className="text-3xl font-bold mb-6 text-white">CSES Problem Set</h1>
       
       {loading && (
-        <div className="flex items-center space-x-2 text-blue-600 p-4">
+        <div className="flex items-center space-x-2 text-zinc-400 p-4">
           <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600"></div>
           <p>Loading CSES data... (This may take a moment as we need to login)</p>
         </div>
@@ -173,30 +173,30 @@ const CSESUserPage = () => {
       {csesData && (
         <div className="space-y-6">
           {/* User Stats Card */}
-          <div className="bg-gradient-to-r from-blue-50 to-indigo-100 p-6 rounded-lg border border-blue-200">
-            <h2 className="text-2xl font-bold text-gray-800 mb-4">
+          <div className="bg-zinc-900 p-6 rounded-lg border border-white/10">
+            <h2 className="text-2xl font-bold text-white mb-4">
               {csesData.username} ({csesData.userId})
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="text-center">
                 <div className="text-3xl font-bold text-green-600">{csesData.solvedProblems}</div>
-                <div className="text-sm text-gray-600">Problems Solved</div>
+                <div className="text-sm text-zinc-400">Problems Solved</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">{csesData.totalProblems}</div>
-                <div className="text-sm text-gray-600">Total Problems</div>
+                <div className="text-3xl font-bold text-zinc-400">{csesData.totalProblems}</div>
+                <div className="text-sm text-zinc-400">Total Problems</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-purple-600">{csesData.completionPercentage}%</div>
-                <div className="text-sm text-gray-600">Completion Rate</div>
+                <div className="text-3xl font-bold text-matrix-200">{csesData.completionPercentage}%</div>
+                <div className="text-sm text-zinc-400">Completion Rate</div>
               </div>
             </div>
             
             {/* Overall Progress Bar */}
             <div className="mt-4">
-              <div className="w-full bg-gray-200 rounded-full h-3">
+              <div className="w-full bg-zinc-700 rounded-full h-3">
                 <div 
-                  className="bg-gradient-to-r from-green-400 to-green-600 h-3 rounded-full transition-all duration-500"
+                  className="bg-matrix-200 h-3 rounded-full transition-all duration-500"
                   style={{ width: `${csesData.completionPercentage}%` }}
                 ></div>
               </div>
@@ -204,15 +204,15 @@ const CSESUserPage = () => {
           </div>
 
           {/* Filters */}
-          <div className="flex flex-wrap gap-4 items-center justify-between bg-white p-4 rounded-lg border border-gray-200">
+          <div className="flex flex-wrap gap-4 items-center justify-between bg-zinc-900 p-4 rounded-lg border border-white/10">
             <div className="flex flex-wrap gap-2">
-              <span className="text-sm font-medium text-gray-700">Show:</span>
+              <span className="text-sm font-medium text-zinc-300">Show:</span>
               <button
                 onClick={() => setShowFilter('all')}
                 className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
                   showFilter === 'all' 
-                    ? 'bg-blue-100 text-blue-800' 
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    ? 'bg-zinc-800 text-zinc-300' 
+                    : 'bg-zinc-800 text-zinc-400 hover:bg-zinc-700'
                 }`}
               >
                 All Problems
@@ -221,8 +221,8 @@ const CSESUserPage = () => {
                 onClick={() => setShowFilter('solved')}
                 className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
                   showFilter === 'solved' 
-                    ? 'bg-green-100 text-green-800' 
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    ? 'bg-matrix-200/15 text-matrix-200' 
+                    : 'bg-zinc-800 text-zinc-400 hover:bg-zinc-700'
                 }`}
               >
                 Solved Only
@@ -232,7 +232,7 @@ const CSESUserPage = () => {
                 className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
                   showFilter === 'unsolved' 
                     ? 'bg-orange-100 text-orange-800' 
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    : 'bg-zinc-800 text-zinc-400 hover:bg-zinc-700'
                 }`}
               >
                 Unsolved Only
@@ -243,7 +243,7 @@ const CSESUserPage = () => {
           {/* Sections */}
           {csesData.sections && (
             <div>
-              <h3 className="text-xl font-bold mb-6 text-gray-800">
+              <h3 className="text-xl font-bold mb-6 text-white">
                 Problems by Section
               </h3>
               <div className="space-y-8">

@@ -318,7 +318,7 @@ for(let contestId of lastFiveContests) {
       {/* Header */}
       <div className="w-full max-w-7xl mb-8">
         <h1 className="text-4xl sm:text-5xl font-mono font-bold text-white mb-2">
-          <span className="bg-gradient-to-r from-matrix-100 via-matrix-200 to-emerald-400 bg-clip-text text-transparent">
+          <span className="text-matrix-200">
             Leaderboard
           </span>
         </h1>
@@ -332,7 +332,7 @@ for(let contestId of lastFiveContests) {
         <button
           onClick={() => setActiveTab("all")}
           className={`px-6 py-3 rounded-lg font-mono font-medium transition-all duration-300 ${activeTab === "all"
-            ? "bg-matrix-200 text-black shadow-glow-md"
+            ? "bg-matrix-200 text-black "
             : "glass border border-white/10 text-zinc-300 hover:border-matrix-200/40 hover:text-matrix-200"
             }`}
         >
@@ -341,7 +341,7 @@ for(let contestId of lastFiveContests) {
         <button
           onClick={() => setActiveTab("club")}
           className={`px-6 py-3 rounded-lg font-mono font-medium transition-all duration-300 ${activeTab === "club"
-            ? "bg-matrix-200 text-black shadow-glow-md"
+            ? "bg-matrix-200 text-black "
             : "glass border border-white/10 text-zinc-300 hover:border-matrix-200/40 hover:text-matrix-200"
             }`}
         >
@@ -350,7 +350,7 @@ for(let contestId of lastFiveContests) {
         <button
           onClick={() => setActiveTab("nonclub")}
           className={`px-6 py-3 rounded-lg font-mono font-medium transition-all duration-300 ${activeTab === "nonclub"
-            ? "bg-matrix-200 text-black shadow-glow-md"
+            ? "bg-matrix-200 text-black "
             : "glass border border-white/10 text-zinc-300 hover:border-matrix-200/40 hover:text-matrix-200"
             }`}
         >
@@ -409,7 +409,7 @@ for(let contestId of lastFiveContests) {
               {filteredData.map((member, index) => (
                 <tr
                   key={index}
-                  className={`border-b border-white/5 transition-all duration-300 hover:scale-[1.01] hover:border-matrix-200/40 hover:shadow-glow-sm group ${index % 2 === 0 ? "bg-black/30" : "bg-zinc-900/30"
+                  className={`border-b border-white/5 transition-all duration-300 hover:scale-[1.01] hover:border-matrix-200/40 group ${index % 2 === 0 ? "bg-black/30" : "bg-zinc-900/30"
                     }`}
                 >
                   {/* Rank Column with Medals */}

@@ -1,38 +1,43 @@
-import localFont from "next/font/local";
 import "./globals.css";
 import "katex/dist/katex.min.css";
 import NextTopLoader from "nextjs-toploader";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import FluxLines from "@/components/FluxLines";
 
 export const metadata = {
-  title: "CP Club 2026-27",
-  description: "Developed by COC",
+  title: "CP Club · VJTI",
+  description: "Competitive Programming Club at VJTI, by Community of Coders.",
 };
+
+export const viewport = { themeColor: "#0A0A0A" };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
-      >
-        <Navbar />
-        <NextTopLoader color="#22c55e" />
-        <main className="flex-1">
-          {children}
-        </main>
-        <Footer />
+      <head>
+        <link rel="preconnect" href="https://api.fontshare.com" crossOrigin="" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link
+          rel="stylesheet"
+          href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800&f[]=switzer@400,500,600&display=swap"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap"
+        />
+      </head>
+      <body className="antialiased">
+        <div className="site-flux-bg" aria-hidden="true">
+          <FluxLines />
+        </div>
+        <div className="shell">
+          <Navbar />
+          <NextTopLoader color="#1DB954" showSpinner={false} />
+          <main>{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );

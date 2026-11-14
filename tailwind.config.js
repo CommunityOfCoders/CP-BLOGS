@@ -32,8 +32,8 @@ module.exports = {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "#1DB954",
+          foreground: "#011a0a",
         },
         popover: {
           DEFAULT: "hsl(var(--popover))",
@@ -45,30 +45,45 @@ module.exports = {
         },
 
         // Cyberpunk Custom Colors
+        // CoC design system: one accent (electric spring green) + ink/grey scale
         matrix: {
-          50: "rgb(134 239 172)",
-          100: "rgb(74 222 128)",
-          200: "rgb(34 197 94)",
-          300: "rgb(22 163 74)",
-          400: "rgb(16 185 129)",
-          500: "rgb(5 150 105)",
+          50: "#A6EDBF",
+          100: "#4FD27D",
+          200: "#1DB954",
+          300: "#169040",
+          400: "#1DB954",
+          500: "#0F6B2E",
         },
         cyber: {
-          cyan: "rgb(6 182 212)",
-          purple: "rgb(168 85 247)",
-          pink: "rgb(236 72 153)",
+          cyan: "#1DB954",
+          purple: "#9AA09C",
+          pink: "#9AA09C",
+        },
+        zinc: {
+          50: "#F5F7F5",
+          100: "#EEEFEA",
+          200: "#D9DBD7",
+          300: "#B9BDBA",
+          400: "#9AA09C",
+          500: "#737975",
+          600: "#4A504D",
+          700: "#2E3330",
+          800: "#1D211F",
+          900: "#151817",
+          950: "#0E100F",
         },
       },
 
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: "20px",
+        md: "14px",
+        sm: "10px",
       },
 
       fontFamily: {
-        sans: ["var(--font-geist-sans)", "Inter", "system-ui", "sans-serif"],
-        mono: ["var(--font-geist-mono)", "JetBrains Mono", "Courier New", "monospace"],
+        sans: ["Switzer", "system-ui", "sans-serif"],
+        display: ["Cabinet Grotesk", "Switzer", "sans-serif"],
+        mono: ["DM Mono", "ui-monospace", "monospace"],
       },
 
       keyframes: {
@@ -256,11 +271,11 @@ module.exports = {
       },
 
       boxShadow: {
-        "glow-sm": "0 0 10px rgba(34, 197, 94, 0.3)",
-        "glow-md": "0 0 20px rgba(34, 197, 94, 0.4), 0 0 30px rgba(34, 197, 94, 0.2)",
-        "glow-lg": "0 0 30px rgba(34, 197, 94, 0.5), 0 0 50px rgba(34, 197, 94, 0.3)",
-        "glow-cyan": "0 0 20px rgba(6, 182, 212, 0.4), 0 0 30px rgba(6, 182, 212, 0.2)",
-        "glow-purple": "0 0 20px rgba(168, 85, 247, 0.4), 0 0 30px rgba(168, 85, 247, 0.2)",
+        "glow-sm": "none",
+        "glow-md": "none",
+        "glow-lg": "none",
+        "glow-cyan": "none",
+        "glow-purple": "none",
       },
     },
   },

@@ -83,7 +83,7 @@ export default function DailyQuestionsPage() {
       <div className="max-w-6xl mx-auto">
         <div className="mb-12">
           <h1 className="text-4xl sm:text-5xl font-mono font-bold text-white mb-3">
-            <span className="bg-gradient-to-r from-matrix-100 via-matrix-200 to-emerald-400 bg-clip-text text-transparent">
+            <span className="text-matrix-200">
               Daily Questions
             </span>
           </h1>

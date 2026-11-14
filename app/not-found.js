@@ -4,7 +4,7 @@ import { Home, AlertTriangle } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 bg-black">
+    <div className="min-h-screen flex items-center justify-center px-4">
       <div className="text-center">
         {/* 404 with Glitch Effect */}
         <div className="relative mb-8">

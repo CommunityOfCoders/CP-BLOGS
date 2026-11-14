@@ -102,10 +102,8 @@ export default function ArenaLobby() {
   };
 
   return (
-    <div className="min-h-screen py-16 px-4 sm:px-6 lg:px-8 bg-black text-white relative overflow-hidden">
+    <div className="min-h-screen py-16 px-4 sm:px-6 lg:px-8 text-white relative overflow-hidden">
       {/* Background glow effects */}
-      <div className="absolute top-10 left-1/4 w-96 h-96 bg-matrix-200/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-10 right-1/4 w-96 h-96 bg-red-500/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-4xl mx-auto relative z-10 pt-8">
         {/* Header */}
@@ -122,7 +120,7 @@ export default function ArenaLobby() {
         </div>
 
         {/* Setup Card */}
-        <div className="glass-card rounded-2xl border border-white/10 p-6 sm:p-8 backdrop-blur-xl shadow-2xl">
+        <div className="glass-card rounded-2xl border border-white/10 p-6 sm:p-8 shadow-2xl">
           {errorMsg && (
             <div className="mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 flex items-start gap-3">
               <AlertCircle className="w-5 h-5 flex-shrink-0 mt-0.5" />
@@ -134,7 +132,7 @@ export default function ArenaLobby() {
             {/* Players Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative">
               {/* VS badge */}
-              <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-zinc-900 border-2 border-matrix-200 items-center justify-center font-mono font-bold text-matrix-200 shadow-glow-sm">
+              <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-zinc-900 border-2 border-matrix-200 items-center justify-center font-mono font-bold text-matrix-200 ">
                 VS
               </div>
 
@@ -316,7 +314,7 @@ export default function ArenaLobby() {
             <button
               type="submit"
               disabled={isGenerating || loadingMembers}
-              className="w-full py-4 mt-4 bg-matrix-200 hover:bg-emerald-400 text-black font-mono font-bold text-base rounded-xl transition-all shadow-glow-md hover:shadow-glow-lg flex items-center justify-center gap-2 disabled:opacity-50"
+              className="w-full py-4 mt-4 bg-matrix-200 hover:bg-emerald-400 text-black font-mono font-bold text-base rounded-xl transition-all flex items-center justify-center gap-2 disabled:opacity-50"
             >
               {isGenerating ? (
                 <>
