@@ -463,5 +463,78 @@
         "url": "https://codeforces.com/problemset/problem/1986/F"
       }
     ]
+  },
+  {
+    "date": "2026-11-15",
+    "problems": [
+      {
+        "slot": 1,
+        "id": "2002B",
+        "name": "Removals Game",
+        "rating": 1000,
+        "tags": [
+          "constructive algorithms",
+          "games"
+        ],
+        "url": "https://codeforces.com/problemset/problem/2002/B"
+      },
+      {
+        "slot": 2,
+        "id": "402A",
+        "name": "Nuts",
+        "rating": 1100,
+        "tags": [
+          "greedy",
+          "math"
+        ],
+        "url": "https://codeforces.com/problemset/problem/402/A"
+      },
+      {
+        "slot": 3,
+        "id": "221B",
+        "name": "Little Elephant and Numbers",
+        "rating": 1300,
+        "tags": [
+          "implementation"
+        ],
+        "url": "https://codeforces.com/problemset/problem/221/B"
+      },
+      {
+        "slot": 4,
+        "id": "1294D",
+        "name": "MEX maximizing",
+        "rating": 1600,
+        "tags": [
+          "data structures",
+          "greedy",
+          "implementation",
+          "math"
+        ],
+        "url": "https://codeforces.com/problemset/problem/1294/D"
+      },
+      {
+        "slot": 5,
+        "id": "294B",
+        "name": "Shaass and Bookshelf",
+        "rating": 1700,
+        "tags": [
+          "dp",
+          "greedy"
+        ],
+        "url": "https://codeforces.com/problemset/problem/294/B"
+      },
+      {
+        "slot": 6,
+        "id": "600C",
+        "name": "Make Palindrome",
+        "rating": 1800,
+        "tags": [
+          "constructive algorithms",
+          "greedy",
+          "strings"
+        ],
+        "url": "https://codeforces.com/problemset/problem/600/C"
+      }
+    ]
   }
 ]
