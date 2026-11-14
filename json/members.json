@@ -136,12 +136,12 @@
   },
   "sakshikalunge07": {
     "name": "Sakshi Kalunge ",
-    "year": "SY",
+    "year": "TY",
     "lc_username": "sakshi_kalunge",
     "cc_username": "sakshi_kalunge",
     "cf_username": "sakshi_kalunge",
-    "cses_id": null,
-    "inClub": false
+    "cses_id": "446085",
+    "inClub": true
   },
   "avanishsalunke16": {
     "name": "Avanish Bharat Salunke",
@@ -191,11 +191,11 @@
   "82aaryan": {
     "name": "Aaryan Johri",
     "year": "SY",
-    "lc_username": "aar28",
+    "lc_username": "aaryan_leet_cp",
     "cc_username": "atjohri",
     "cf_username": "aajoh",
     "cses_id": "379780",
-    "inClub": false
+    "inClub": true
   },
   "pg8355914779": {
     "name": "Aashish Gupta",
@@ -291,10 +291,10 @@
     "name": "Shubham Ashok Patil ",
     "year": "SY",
     "lc_username": "dudpatil07",
-    "cc_username": "bale_ponies_31",
+    "cc_username": "dudfarms",
     "cf_username": "dudpatil07",
-    "cses_id": null,
-    "inClub": false
+    "cses_id": "401383",
+    "inClub": true
   },
   "ajatsatru787": {
     "name": "Utsav Ojha",
@@ -307,7 +307,7 @@
   },
   "akshat_2807": {
     "name": "Akshat Chauhan",
-    "year": "SY",
+    "year": "TY",
     "lc_username": "akshat_2807",
     "cc_username": "akshat2807",
     "cf_username": "akshat2807",
@@ -347,8 +347,8 @@
     "lc_username": "ruturaaj16",
     "cc_username": "hero_dragon166",
     "cf_username": "hero_dragon",
-    "cses_id": null,
-    "inClub": false
+    "cses_id": "523433",
+    "inClub": true
   },
   "shreymojidra06": {
     "name": "Shreyansh",
@@ -361,12 +361,12 @@
   },
   "yadavhim1": {
     "name": "Himanshu Singh Yadav ",
-    "year": "SY",
-    "lc_username": "Himanshu__Y",
+    "year": "TY",
+    "lc_username": "its__himanshu",
     "cc_username": "himanshu_y",
     "cf_username": "itss_himanshu",
     "cses_id": "379997",
-    "inClub": false
+    "inClub": true
   },
   "ssdunit456": {
     "name": "Sunit Dighe",
@@ -469,8 +469,8 @@
   },
   "pratyur06": {
     "name": "Pratyush Rao",
-    "year": "SY",
-    "lc_username": "Prats06",
+    "year": "TY",
+    "lc_username": "prats06",
     "cc_username": "pratyur06",
     "cf_username": "pratyur06",
     "cses_id": "377722",
@@ -487,7 +487,7 @@
   },
   "sahilpojee": {
     "name": "Sahil Pojee",
-    "year": "FY",
+    "year": "SY",
     "lc_username": "sahilpojee",
     "cc_username": "sahilpojee",
     "cf_username": "sahilpojee",
@@ -496,7 +496,7 @@
   },
   "Vihaan_J24": {
     "name": "Vihaan Jain",
-    "year": "FY",
+    "year": "SY",
     "lc_username": "Vihaan_J",
     "cc_username": "vihaan_j",
     "cf_username": "vihaan24",
@@ -613,7 +613,7 @@
   },
   "phadkea25": {
     "name": "Amit Phadke",
-    "year": "FY",
+    "year": "SY",
     "lc_username": "amitphadke1405",
     "cc_username": "amitphadke1405",
     "cf_username": "amitphadke1405",
@@ -622,7 +622,7 @@
   },
   "janhaviamahajan1": {
     "name": "Janhavi Atul Mahajan ",
-    "year": "FY",
+    "year": "SY",
     "lc_username": "JanhaviMahajan07",
     "cc_username": "janhavi_m",
     "cf_username": "janhaviamahajan07",
@@ -657,12 +657,12 @@
     "inClub": true
   },
   "sanvi_naik0103": {
-    "name": "Sanvi Naik ",
-    "year": "FY",
+    "name": "Sanvi Abhijit Naik",
+    "year": "SY",
     "lc_username": "sanvinaik",
     "cc_username": "sanvinaik",
     "cf_username": "sanvinaik",
-    "cses_id": null,
+    "cses_id": "sanvinaik",
     "inClub": true
   },
   "Darsh_Shah_UD": {
@@ -782,13 +782,400 @@
     "cses_id": null,
     "inClub": false
   },
-  "kartiklande70":{
-    "name": "Kartik Lande", 
+  "kartiklande70": {
+    "name": "Kartik Lande",
     "year": "TY",
     "lc_username": "kartiklande70",
     "cc_username": "kartik70_30",
     "cf_username": "kartik70",
     "cses_id": null,
     "inClub": true
+  },
+  "kudalkarhishant": {
+    "name": "Hishant Rupesh Kudalkar",
+    "year": "SY",
+    "lc_username": "vnMluhFfMi",
+    "cc_username": "tidy_silk_11",
+    "cf_username": "kudalkarhishant",
+    "cses_id": "523258",
+    "inClub": true
+  },
+  "aditya_pore07": {
+    "name": "Aditya Pore",
+    "year": "SY",
+    "lc_username": "Aditya357leetcode",
+    "cc_username": "chunk_bats_25",
+    "cf_username": "Aditya_789",
+    "cses_id": "439034",
+    "inClub": true
+  },
+  "pandeypranshu201": {
+    "name": "Pranshu Pandey",
+    "year": "SY",
+    "lc_username": "pranshup04",
+    "cc_username": "pranshup04",
+    "cf_username": "pandeypranshu2007",
+    "cses_id": null,
+    "inClub": true
+  },
+  "sunandapandit53": {
+    "name": "Sunanda Pandit",
+    "year": "SY",
+    "lc_username": "sunandapandit_03",
+    "cc_username": "trip_sheep_44",
+    "cf_username": "sunandapandit533",
+    "cses_id": null,
+    "inClub": true
+  },
+  "rajbhalekar1000": {
+    "name": "Raj Bhalekar",
+    "year": "FY",
+    "lc_username": "rajyesh1",
+    "cc_username": "rajyesh1",
+    "cf_username": "Rajyesh1",
+    "cses_id": "rajyesh1",
+    "inClub": true
+  },
+  "vighneshtakke4": {
+    "name": "Vighnesh Takke",
+    "year": "FY",
+    "lc_username": "vighneshtakke4",
+    "cc_username": "vighneshtakke4",
+    "cf_username": "vighneshtakke4",
+    "cses_id": null,
+    "inClub": true
+  },
+  "shauryamulik": {
+    "name": "Shaurya Mulik",
+    "year": "SY",
+    "lc_username": "Shaurya_Mulik",
+    "cc_username": "shauryagoat_13",
+    "cf_username": "shauryamulik",
+    "cses_id": "506822",
+    "inClub": true
+  },
+  "nayakkedar2008": {
+    "name": "Kedar Damodar Nayak",
+    "year": "SY",
+    "lc_username": "T7KqWlI7Em",
+    "cc_username": "tight_cliff_42",
+    "cf_username": "nayakkedar2008",
+    "cses_id": "523396",
+    "inClub": true
+  },
+  "yashsawant0903": {
+    "name": "Yash Sawant",
+    "year": "FY",
+    "lc_username": "blue96",
+    "cc_username": "happy_fish_01",
+    "cf_username": "yashsawant0903",
+    "cses_id": null,
+    "inClub": true
+  },
+  "rushil23shah": {
+    "name": "Rushil Shah",
+    "year": "SY",
+    "lc_username": "secret_superstar",
+    "cc_username": "rushil_shah45",
+    "cf_username": "rushil23shah",
+    "cses_id": "523443",
+    "inClub": true
+  },
+  "advaitshaileshd1": {
+    "name": "Advait Deodhar",
+    "year": "SY",
+    "lc_username": "Advait77",
+    "cc_username": "advait77",
+    "cf_username": "advaitshaileshdeodhar",
+    "cses_id": null,
+    "inClub": true
+  },
+  "TheFool_": {
+    "name": "Soham Sunil Margaj",
+    "year": "LY",
+    "lc_username": "Soham_Margaj",
+    "cc_username": "sohammargaj526",
+    "cf_username": "sohammargaj55555",
+    "cses_id": "373199",
+    "inClub": true
+  },
+  "sohamsa7": {
+    "name": "Soham Ajgaonkar",
+    "year": "SY",
+    "lc_username": "sohamsa7",
+    "cc_username": "sohamsa7",
+    "cf_username": "sohamsa7",
+    "cses_id": null,
+    "inClub": true
+  },
+  "shauryas2107": {
+    "name": "Shaurya Shah",
+    "year": "SY",
+    "lc_username": "Shaurya37",
+    "cc_username": "valid_array_45",
+    "cf_username": "shaurya_2107",
+    "cses_id": null,
+    "inClub": true
+  },
+  "takmanisha67": {
+    "name": "Manisha Tak",
+    "year": "FY",
+    "lc_username": "manisha-tak-1",
+    "cc_username": null,
+    "cf_username": "manisha_1236",
+    "cses_id": "523449",
+    "inClub": true
+  },
+  "bhushanop123": {
+    "name": "Bhushan Dhavale",
+    "year": "SY",
+    "lc_username": "Obscure99",
+    "cc_username": "obscure99",
+    "cf_username": "Obscure99",
+    "cses_id": null,
+    "inClub": true
+  },
+  "paramgosar13": {
+    "name": "Param Gosar",
+    "year": "SY",
+    "lc_username": "nW9puna1RO",
+    "cc_username": "suave_crane_47",
+    "cf_username": "paramgosar13",
+    "cses_id": "523454",
+    "inClub": true
+  },
+  "sohamk8c2220": {
+    "name": "Soham Dattu Kharatmal",
+    "year": "SY",
+    "lc_username": "SohamKharatmal",
+    "cc_username": "sohamkharatmal",
+    "cf_username": "Sohaaam",
+    "cses_id": "sohamkharatmal",
+    "inClub": true
+  },
+  "avanish_thakur01": {
+    "name": "Avanish Thakur",
+    "year": "FY",
+    "lc_username": "Avanish_Thakur",
+    "cc_username": "avanish_thakur",
+    "cf_username": "Avanish_Thakur",
+    "cses_id": "523450",
+    "inClub": true
+  },
+  "pruthvirajsolas1": {
+    "name": "Pruthviraj Solase",
+    "year": "SY",
+    "lc_username": "RJ_Coder",
+    "cc_username": "rj_coder_30",
+    "cf_username": "RJ_Coder_30",
+    "cses_id": "523467",
+    "inClub": true
+  },
+  "swayamdudhela": {
+    "name": "Swayam Dudhela",
+    "year": "SY",
+    "lc_username": "swayamdudhela",
+    "cc_username": "swayamdudhela",
+    "cf_username": "swayamdudhela",
+    "cses_id": null,
+    "inClub": true
+  },
+  "rahulsoundatti": {
+    "name": "Rahul Soundatti",
+    "year": "FY",
+    "lc_username": "retrx03",
+    "cc_username": "husk_elf_92",
+    "cf_username": "rahuls0",
+    "cses_id": null,
+    "inClub": true
+  },
+  "joshijainam7": {
+    "name": "Jainam Joshi",
+    "year": "SY",
+    "lc_username": "Jainam_06",
+    "cc_username": "jainam06",
+    "cf_username": "jainam0006",
+    "cses_id": "523471",
+    "inClub": true
+  },
+  "bodkepranav18": {
+    "name": "Pranav Bodke",
+    "year": "FY",
+    "lc_username": "pranavcodex2008",
+    "cc_username": "pranav_1809",
+    "cf_username": "pranav_bodke",
+    "cses_id": "523486",
+    "inClub": true
+  },
+  "shivambhalerao96": {
+    "name": "Shivam Bhalerao",
+    "year": "SY",
+    "lc_username": "Y4kji7c61g",
+    "cc_username": "hey_shivam",
+    "cf_username": "Shivam_is_here",
+    "cses_id": null,
+    "inClub": true
+  },
+  "vanshvora_cpp": {
+    "name": "Vansh vora",
+    "year": "FY",
+    "lc_username": "vanshvoracpp",
+    "cc_username": "vanshvora123",
+    "cf_username": "Vanshvora_",
+    "cses_id": null,
+    "inClub": true
+  },
+  "aanavare_b26": {
+    "name": "Aditya Anand Navare",
+    "year": "FY",
+    "lc_username": "Adiwolf",
+    "cc_username": "adiwolf",
+    "cf_username": "QuantAdi",
+    "cses_id": "523505",
+    "inClub": true
+  },
+  "hitika_nathani": {
+    "name": "Hitika Nathani",
+    "year": "FY",
+    "lc_username": "hitika_nathani",
+    "cc_username": "hitika_nathani",
+    "cf_username": "hitika_nathani",
+    "cses_id": "hitika_nathani",
+    "inClub": true
+  },
+  "cdkhatri_b26": {
+    "name": "Chahat Khatri",
+    "year": "FY",
+    "lc_username": "Ckhat_15",
+    "cc_username": "cdkhatri_b26",
+    "cf_username": "cdkhatri_b26",
+    "cses_id": "523530",
+    "inClub": true
+  },
+  "kin34": {
+    "name": "Advait Wadke",
+    "year": "SY",
+    "lc_username": "kin34",
+    "cc_username": "kin34",
+    "cf_username": "Kin34",
+    "cses_id": "452838",
+    "inClub": true
+  },
+  "preetjain0241": {
+    "name": "Preet Jain",
+    "year": "FY",
+    "lc_username": "Preet_Jain_241",
+    "cc_username": "preetjain241",
+    "cf_username": "preetjain0241",
+    "cses_id": null,
+    "inClub": true
+  },
+  "rohitpawar6459": {
+    "name": "Rohit Sanjay Pawar",
+    "year": "SY",
+    "lc_username": "Rohitt_14",
+    "cc_username": "sane_calm_84",
+    "cf_username": "Rohit1405",
+    "cses_id": null,
+    "inClub": true
+  },
+  "sejawtp": {
+    "name": "Sejal Jawale",
+    "year": "SY",
+    "lc_username": "sejkov149",
+    "cc_username": "covey_manor_70",
+    "cf_username": "skaiser22",
+    "cses_id": "sejkov149",
+    "inClub": true
+  },
+  "d4rshn": {
+    "name": "Darshan Mahale",
+    "year": "SY",
+    "lc_username": "d4rshn",
+    "cc_username": "d4rshn",
+    "cf_username": "d4rshn",
+    "cses_id": "523714",
+    "inClub": true
+  },
+  "onkarraskar030": {
+    "name": "Onkar Raskar",
+    "year": "SY",
+    "lc_username": "Onkar_Raskar",
+    "cc_username": "stud_coyote_26",
+    "cf_username": "onkar_2502",
+    "cses_id": "onkarraskar030",
+    "inClub": true
+  },
+  "iamsanketspatil": {
+    "name": "Sanket Patil",
+    "year": "SY",
+    "lc_username": "Wizard_027",
+    "cc_username": null,
+    "cf_username": "TheOGWizard_27",
+    "cses_id": null,
+    "inClub": false
+  },
+  "rugs24": {
+    "name": "Rugved Patil",
+    "year": "SY",
+    "lc_username": "rugs24",
+    "cc_username": "rugs07",
+    "cf_username": "rugs07",
+    "cses_id": "407590",
+    "inClub": false
+  },
+  "raajchandanshive": {
+    "name": "Raj Chandanshive",
+    "year": "SY",
+    "lc_username": "raaj_2222",
+    "cc_username": "sharp_owls_11",
+    "cf_username": "raaj_2222",
+    "cses_id": null,
+    "inClub": false
+  },
+  "kacchwahtanmay": {
+    "name": "Tanmay Kacchwah",
+    "year": "FY",
+    "lc_username": "TANMAY_KACCHWAH",
+    "cc_username": "uzumaki_26",
+    "cf_username": "Tanmay_Kacchwah10",
+    "cses_id": "523515",
+    "inClub": false
+  },
+  "ashish_devcore": {
+    "name": "Ashish Bhat",
+    "year": "FY",
+    "lc_username": "Ashish_x_coder",
+    "cc_username": "ashish_x_coder",
+    "cf_username": "Ashish_x_coder",
+    "cses_id": "523528",
+    "inClub": false
+  },
+  "rehan13228": {
+    "name": "Mohammed Rehan",
+    "year": "SY",
+    "lc_username": "rehancoder_01",
+    "cc_username": "rehanshaikh001",
+    "cf_username": "rehan_shaikh001",
+    "cses_id": "441409",
+    "inClub": false
+  },
+  "sahilphad07": {
+    "name": "Sahil Phad",
+    "year": "SY",
+    "lc_username": "sahilphad07",
+    "cc_username": "sahil_5911",
+    "cf_username": "sahil_phad",
+    "cses_id": null,
+    "inClub": false
+  },
+  "sahillshah29": {
+    "name": "Sahil Shah",
+    "year": "FY",
+    "lc_username": "xzEC360G6m",
+    "cc_username": "ssscoder_009",
+    "cf_username": "sssdeveloper_009",
+    "cses_id": null,
+    "inClub": false
   }
 }
