@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T12:33:21.645Z",
+  "updatedAt": "2026-11-14T17:33:22.046Z",
   "users": {
     "urabhay10": {
       "name": "Abhay Upadhyay",
@@ -1195,24 +1195,28 @@
     "pandeypranshu201": {
       "name": "Pranshu Pandey",
       "cfHandle": "pandeypranshu2007",
-      "solves": {},
+      "solves": {
+        "2026-11-14": [
+          "1999B"
+        ]
+      },
       "lateSolves": {},
-      "totalSolved": 0,
-      "currentStreak": 0,
-      "longestStreak": 0,
-      "solvedToday": 0,
+      "totalSolved": 1,
+      "currentStreak": 1,
+      "longestStreak": 1,
+      "solvedToday": 1,
       "solvedBySlot": [
-        0,
+        1,
         0,
         0,
         0,
         0,
         0
       ],
-      "lastSolvedDate": null,
-      "points": 0,
-      "lastCompletedAt": null,
-      "todayCompletedAt": null
+      "lastSolvedDate": "2026-11-14",
+      "points": 1000,
+      "lastCompletedAt": "2026-11-14T14:07:04.000Z",
+      "todayCompletedAt": "2026-11-14T14:07:04.000Z"
     },
     "sunandapandit53": {
       "name": "Sunanda Pandit",
@@ -1727,24 +1731,28 @@
     "aanavare_b26": {
       "name": "Aditya Anand Navare",
       "cfHandle": "QuantAdi",
-      "solves": {},
+      "solves": {
+        "2026-11-14": [
+          "1999B"
+        ]
+      },
       "lateSolves": {},
-      "totalSolved": 0,
-      "currentStreak": 0,
-      "longestStreak": 0,
-      "solvedToday": 0,
+      "totalSolved": 1,
+      "currentStreak": 1,
+      "longestStreak": 1,
+      "solvedToday": 1,
       "solvedBySlot": [
-        0,
+        1,
         0,
         0,
         0,
         0,
         0
       ],
-      "lastSolvedDate": null,
-      "points": 0,
-      "lastCompletedAt": null,
-      "todayCompletedAt": null
+      "lastSolvedDate": "2026-11-14",
+      "points": 1000,
+      "lastCompletedAt": "2026-11-14T13:19:37.000Z",
+      "todayCompletedAt": "2026-11-14T13:19:37.000Z"
     },
     "hitika_nathani": {
       "name": "Hitika Nathani",
@@ -1881,24 +1889,28 @@
     "d4rshn": {
       "name": "Darshan Mahale",
       "cfHandle": "d4rshn",
-      "solves": {},
+      "solves": {
+        "2026-11-14": [
+          "1999B"
+        ]
+      },
       "lateSolves": {},
-      "totalSolved": 0,
-      "currentStreak": 0,
-      "longestStreak": 0,
-      "solvedToday": 0,
+      "totalSolved": 1,
+      "currentStreak": 1,
+      "longestStreak": 1,
+      "solvedToday": 1,
       "solvedBySlot": [
-        0,
+        1,
         0,
         0,
         0,
         0,
         0
       ],
-      "lastSolvedDate": null,
-      "points": 0,
-      "lastCompletedAt": null,
-      "todayCompletedAt": null
+      "lastSolvedDate": "2026-11-14",
+      "points": 1000,
+      "lastCompletedAt": "2026-11-14T16:33:56.000Z",
+      "todayCompletedAt": "2026-11-14T16:33:56.000Z"
     },
     "onkarraskar030": {
       "name": "Onkar Raskar",
