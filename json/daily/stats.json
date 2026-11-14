@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-14T09:25:27.309Z",
+  "updatedAt": "2026-11-14T12:33:21.645Z",
   "users": {
     "urabhay10": {
       "name": "Abhay Upadhyay",
@@ -331,6 +331,116 @@
       "lastCompletedAt": null,
       "todayCompletedAt": null
     },
+    "sakshikalunge07": {
+      "name": "Sakshi Kalunge ",
+      "cfHandle": "sakshi_kalunge",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "82aaryan": {
+      "name": "Aaryan Johri",
+      "cfHandle": "aajoh",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "shubham885577531": {
+      "name": "Shubham Ashok Patil ",
+      "cfHandle": "dudpatil07",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "ruturaaj161": {
+      "name": "Ruturaaj Deshpande",
+      "cfHandle": "hero_dragon",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "yadavhim1": {
+      "name": "Himanshu Singh Yadav ",
+      "cfHandle": "itss_himanshu",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
     "awwab_wadekar": {
       "name": "Awwab Sajid Wadekar",
       "cfHandle": "Awwab_coder123",
@@ -526,26 +636,28 @@
           "1398B"
         ],
         "2026-11-14": [
-          "1999B"
+          "1999B",
+          "1950D",
+          "1000A"
         ]
       },
       "lateSolves": {},
-      "totalSolved": 6,
+      "totalSolved": 8,
       "currentStreak": 6,
       "longestStreak": 6,
-      "solvedToday": 1,
+      "solvedToday": 3,
       "solvedBySlot": [
         6,
-        0,
-        0,
+        1,
+        1,
         0,
         0,
         0
       ],
       "lastSolvedDate": "2026-11-14",
-      "points": 5100,
-      "lastCompletedAt": "2026-11-14T07:42:43.000Z",
-      "todayCompletedAt": "2026-11-14T07:42:43.000Z"
+      "points": 7400,
+      "lastCompletedAt": "2026-11-14T12:12:04.000Z",
+      "todayCompletedAt": "2026-11-14T12:12:04.000Z"
     },
     "yashsd9911": {
       "name": "Yash Sunil Deshmukh",
@@ -922,7 +1034,7 @@
       "todayCompletedAt": null
     },
     "sanvi_naik0103": {
-      "name": "Sanvi Naik ",
+      "name": "Sanvi Abhijit Naik",
       "cfHandle": "sanvinaik",
       "solves": {},
       "lateSolves": {},
@@ -1012,6 +1124,785 @@
     "kartiklande70": {
       "name": "Kartik Lande",
       "cfHandle": "kartik70",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "kudalkarhishant": {
+      "name": "Hishant Rupesh Kudalkar",
+      "cfHandle": "kudalkarhishant",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "aditya_pore07": {
+      "name": "Aditya Pore",
+      "cfHandle": "Aditya_789",
+      "solves": {
+        "2026-11-14": [
+          "1999B",
+          "1950D"
+        ]
+      },
+      "lateSolves": {},
+      "totalSolved": 2,
+      "currentStreak": 1,
+      "longestStreak": 1,
+      "solvedToday": 2,
+      "solvedBySlot": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": "2026-11-14",
+      "points": 2100,
+      "lastCompletedAt": "2026-11-14T12:10:52.000Z",
+      "todayCompletedAt": "2026-11-14T12:10:52.000Z"
+    },
+    "pandeypranshu201": {
+      "name": "Pranshu Pandey",
+      "cfHandle": "pandeypranshu2007",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "sunandapandit53": {
+      "name": "Sunanda Pandit",
+      "cfHandle": "sunandapandit533",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "rajbhalekar1000": {
+      "name": "Raj Bhalekar",
+      "cfHandle": "Rajyesh1",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "vighneshtakke4": {
+      "name": "Vighnesh Takke",
+      "cfHandle": "vighneshtakke4",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "shauryamulik": {
+      "name": "Shaurya Mulik",
+      "cfHandle": "shauryamulik",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "nayakkedar2008": {
+      "name": "Kedar Damodar Nayak",
+      "cfHandle": "nayakkedar2008",
+      "solves": {
+        "2026-11-14": [
+          "1999B"
+        ]
+      },
+      "lateSolves": {},
+      "totalSolved": 1,
+      "currentStreak": 1,
+      "longestStreak": 1,
+      "solvedToday": 1,
+      "solvedBySlot": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": "2026-11-14",
+      "points": 1000,
+      "lastCompletedAt": "2026-11-14T12:21:25.000Z",
+      "todayCompletedAt": "2026-11-14T12:21:25.000Z"
+    },
+    "yashsawant0903": {
+      "name": "Yash Sawant",
+      "cfHandle": "yashsawant0903",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "rushil23shah": {
+      "name": "Rushil Shah",
+      "cfHandle": "rushil23shah",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "advaitshaileshd1": {
+      "name": "Advait Deodhar",
+      "cfHandle": "advaitshaileshdeodhar",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "TheFool_": {
+      "name": "Soham Sunil Margaj",
+      "cfHandle": "sohammargaj55555",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "sohamsa7": {
+      "name": "Soham Ajgaonkar",
+      "cfHandle": "sohamsa7",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "shauryas2107": {
+      "name": "Shaurya Shah",
+      "cfHandle": "shaurya_2107",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "takmanisha67": {
+      "name": "Manisha Tak",
+      "cfHandle": "manisha_1236",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "bhushanop123": {
+      "name": "Bhushan Dhavale",
+      "cfHandle": "Obscure99",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "paramgosar13": {
+      "name": "Param Gosar",
+      "cfHandle": "paramgosar13",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "sohamk8c2220": {
+      "name": "Soham Dattu Kharatmal",
+      "cfHandle": "Sohaaam",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "avanish_thakur01": {
+      "name": "Avanish Thakur",
+      "cfHandle": "Avanish_Thakur",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "pruthvirajsolas1": {
+      "name": "Pruthviraj Solase",
+      "cfHandle": "RJ_Coder_30",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "swayamdudhela": {
+      "name": "Swayam Dudhela",
+      "cfHandle": "swayamdudhela",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "rahulsoundatti": {
+      "name": "Rahul Soundatti",
+      "cfHandle": "rahuls0",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "joshijainam7": {
+      "name": "Jainam Joshi",
+      "cfHandle": "jainam0006",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "bodkepranav18": {
+      "name": "Pranav Bodke",
+      "cfHandle": "pranav_bodke",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "shivambhalerao96": {
+      "name": "Shivam Bhalerao",
+      "cfHandle": "Shivam_is_here",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "vanshvora_cpp": {
+      "name": "Vansh vora",
+      "cfHandle": "Vanshvora_",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "aanavare_b26": {
+      "name": "Aditya Anand Navare",
+      "cfHandle": "QuantAdi",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "hitika_nathani": {
+      "name": "Hitika Nathani",
+      "cfHandle": "hitika_nathani",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "cdkhatri_b26": {
+      "name": "Chahat Khatri",
+      "cfHandle": "cdkhatri_b26",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "kin34": {
+      "name": "Advait Wadke",
+      "cfHandle": "Kin34",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "preetjain0241": {
+      "name": "Preet Jain",
+      "cfHandle": "preetjain0241",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "rohitpawar6459": {
+      "name": "Rohit Sanjay Pawar",
+      "cfHandle": "Rohit1405",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "sejawtp": {
+      "name": "Sejal Jawale",
+      "cfHandle": "skaiser22",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "d4rshn": {
+      "name": "Darshan Mahale",
+      "cfHandle": "d4rshn",
+      "solves": {},
+      "lateSolves": {},
+      "totalSolved": 0,
+      "currentStreak": 0,
+      "longestStreak": 0,
+      "solvedToday": 0,
+      "solvedBySlot": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "lastSolvedDate": null,
+      "points": 0,
+      "lastCompletedAt": null,
+      "todayCompletedAt": null
+    },
+    "onkarraskar030": {
+      "name": "Onkar Raskar",
+      "cfHandle": "onkar_2502",
       "solves": {},
       "lateSolves": {},
       "totalSolved": 0,
